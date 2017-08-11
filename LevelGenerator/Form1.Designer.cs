@@ -33,6 +33,16 @@ namespace LevelGenerator
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.gViewerLeft = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             this.gViewerRight = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+            this.panelLeftGraph = new System.Windows.Forms.Panel();
+            this.panelRightGraph = new System.Windows.Forms.Panel();
+            this.tBNewNode = new System.Windows.Forms.TextBox();
+            this.buttonAddNode = new System.Windows.Forms.Button();
+            this.buttonDeleteNode = new System.Windows.Forms.Button();
+            this.buttonNewRule = new System.Windows.Forms.Button();
+            this.tBNewRule = new System.Windows.Forms.TextBox();
+            this.lBRules = new System.Windows.Forms.ListBox();
+            this.panelLeftGraph.SuspendLayout();
+            this.panelRightGraph.SuspendLayout();
             this.SuspendLayout();
             // 
             // gViewerLeft
@@ -50,7 +60,7 @@ namespace LevelGenerator
             this.gViewerLeft.InsertingEdge = false;
             this.gViewerLeft.LayoutAlgorithmSettingsButtonVisible = true;
             this.gViewerLeft.LayoutEditingEnabled = true;
-            this.gViewerLeft.Location = new System.Drawing.Point(12, 12);
+            this.gViewerLeft.Location = new System.Drawing.Point(-1, -1);
             this.gViewerLeft.LooseOffsetForRouting = 0.25D;
             this.gViewerLeft.MouseHitDistance = 0.05D;
             this.gViewerLeft.Name = "gViewerLeft";
@@ -64,7 +74,7 @@ namespace LevelGenerator
             this.gViewerLeft.SaveButtonVisible = true;
             this.gViewerLeft.SaveGraphButtonVisible = true;
             this.gViewerLeft.SaveInVectorFormatEnabled = true;
-            this.gViewerLeft.Size = new System.Drawing.Size(340, 284);
+            this.gViewerLeft.Size = new System.Drawing.Size(354, 237);
             this.gViewerLeft.TabIndex = 0;
             this.gViewerLeft.TightOffsetForRouting = 0.125D;
             this.gViewerLeft.ToolBarIsVisible = true;
@@ -73,6 +83,7 @@ namespace LevelGenerator
             this.gViewerLeft.WindowZoomButtonPressed = false;
             this.gViewerLeft.ZoomF = 1D;
             this.gViewerLeft.ZoomWindowThreshold = 0.05D;
+            this.gViewerLeft.Click += new System.EventHandler(this.gViewerLeft_Click);
             // 
             // gViewerRight
             // 
@@ -89,7 +100,7 @@ namespace LevelGenerator
             this.gViewerRight.InsertingEdge = false;
             this.gViewerRight.LayoutAlgorithmSettingsButtonVisible = true;
             this.gViewerRight.LayoutEditingEnabled = true;
-            this.gViewerRight.Location = new System.Drawing.Point(358, 12);
+            this.gViewerRight.Location = new System.Drawing.Point(-2, -1);
             this.gViewerRight.LooseOffsetForRouting = 0.25D;
             this.gViewerRight.MouseHitDistance = 0.05D;
             this.gViewerRight.Name = "gViewerRight";
@@ -103,7 +114,7 @@ namespace LevelGenerator
             this.gViewerRight.SaveButtonVisible = true;
             this.gViewerRight.SaveGraphButtonVisible = true;
             this.gViewerRight.SaveInVectorFormatEnabled = true;
-            this.gViewerRight.Size = new System.Drawing.Size(335, 272);
+            this.gViewerRight.Size = new System.Drawing.Size(357, 236);
             this.gViewerRight.TabIndex = 1;
             this.gViewerRight.TightOffsetForRouting = 0.125D;
             this.gViewerRight.ToolBarIsVisible = true;
@@ -112,18 +123,100 @@ namespace LevelGenerator
             this.gViewerRight.WindowZoomButtonPressed = false;
             this.gViewerRight.ZoomF = 1D;
             this.gViewerRight.ZoomWindowThreshold = 0.05D;
+            this.gViewerRight.Click += new System.EventHandler(this.gViewerRight_Click);
+            // 
+            // panelLeftGraph
+            // 
+            this.panelLeftGraph.BackColor = System.Drawing.SystemColors.Control;
+            this.panelLeftGraph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLeftGraph.Controls.Add(this.gViewerLeft);
+            this.panelLeftGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.panelLeftGraph.Location = new System.Drawing.Point(12, 12);
+            this.panelLeftGraph.Name = "panelLeftGraph";
+            this.panelLeftGraph.Size = new System.Drawing.Size(354, 237);
+            this.panelLeftGraph.TabIndex = 3;
+            // 
+            // panelRightGraph
+            // 
+            this.panelRightGraph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelRightGraph.Controls.Add(this.gViewerRight);
+            this.panelRightGraph.Location = new System.Drawing.Point(373, 13);
+            this.panelRightGraph.Name = "panelRightGraph";
+            this.panelRightGraph.Size = new System.Drawing.Size(356, 236);
+            this.panelRightGraph.TabIndex = 4;
+            // 
+            // tBNewNode
+            // 
+            this.tBNewNode.Location = new System.Drawing.Point(12, 255);
+            this.tBNewNode.Name = "tBNewNode";
+            this.tBNewNode.Size = new System.Drawing.Size(100, 20);
+            this.tBNewNode.TabIndex = 5;
+            // 
+            // buttonAddNode
+            // 
+            this.buttonAddNode.Location = new System.Drawing.Point(118, 255);
+            this.buttonAddNode.Name = "buttonAddNode";
+            this.buttonAddNode.Size = new System.Drawing.Size(75, 20);
+            this.buttonAddNode.TabIndex = 6;
+            this.buttonAddNode.Text = "Add node";
+            this.buttonAddNode.UseVisualStyleBackColor = true;
+            this.buttonAddNode.Click += new System.EventHandler(this.buttonAddNode_Click);
+            // 
+            // buttonDeleteNode
+            // 
+            this.buttonDeleteNode.Location = new System.Drawing.Point(13, 282);
+            this.buttonDeleteNode.Name = "buttonDeleteNode";
+            this.buttonDeleteNode.Size = new System.Drawing.Size(180, 23);
+            this.buttonDeleteNode.TabIndex = 7;
+            this.buttonDeleteNode.Text = "Delete";
+            this.buttonDeleteNode.UseVisualStyleBackColor = true;
+            this.buttonDeleteNode.Click += new System.EventHandler(this.buttonDeleteNode_Click);
+            // 
+            // buttonNewRule
+            // 
+            this.buttonNewRule.Location = new System.Drawing.Point(12, 336);
+            this.buttonNewRule.Name = "buttonNewRule";
+            this.buttonNewRule.Size = new System.Drawing.Size(180, 23);
+            this.buttonNewRule.TabIndex = 8;
+            this.buttonNewRule.Text = "New rule";
+            this.buttonNewRule.UseVisualStyleBackColor = true;
+            this.buttonNewRule.Click += new System.EventHandler(this.buttonNewRule_Click);
+            // 
+            // tBNewRule
+            // 
+            this.tBNewRule.Location = new System.Drawing.Point(13, 310);
+            this.tBNewRule.Name = "tBNewRule";
+            this.tBNewRule.Size = new System.Drawing.Size(179, 20);
+            this.tBNewRule.TabIndex = 9;
+            // 
+            // lBRules
+            // 
+            this.lBRules.FormattingEnabled = true;
+            this.lBRules.Location = new System.Drawing.Point(199, 255);
+            this.lBRules.Name = "lBRules";
+            this.lBRules.Size = new System.Drawing.Size(167, 108);
+            this.lBRules.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 646);
-            this.Controls.Add(this.gViewerRight);
-            this.Controls.Add(this.gViewerLeft);
+            this.Controls.Add(this.lBRules);
+            this.Controls.Add(this.tBNewRule);
+            this.Controls.Add(this.buttonNewRule);
+            this.Controls.Add(this.buttonDeleteNode);
+            this.Controls.Add(this.buttonAddNode);
+            this.Controls.Add(this.tBNewNode);
+            this.Controls.Add(this.panelRightGraph);
+            this.Controls.Add(this.panelLeftGraph);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.panelLeftGraph.ResumeLayout(false);
+            this.panelRightGraph.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -131,6 +224,14 @@ namespace LevelGenerator
 
         private GViewer gViewerLeft;
         private GViewer gViewerRight;
+        private System.Windows.Forms.Panel panelLeftGraph;
+        private System.Windows.Forms.Panel panelRightGraph;
+        private System.Windows.Forms.TextBox tBNewNode;
+        private System.Windows.Forms.Button buttonAddNode;
+        private System.Windows.Forms.Button buttonDeleteNode;
+        private System.Windows.Forms.Button buttonNewRule;
+        private System.Windows.Forms.TextBox tBNewRule;
+        private System.Windows.Forms.ListBox lBRules;
     }
 }
 
