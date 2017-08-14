@@ -68,8 +68,14 @@ namespace LevelGenerator
             if (text == null) return;
 
             Graph g = _currentGViewer.Graph;
-            Node newNode = new Node(g.NodeCount.ToString());
-            newNode.LabelText = text;
+            int nodeNumber = g.NodeCount;
+            Node newNode = new Node(nodeNumber.ToString());
+
+            newNode.RuleNodeID = nodeNumber;
+            newNode.NodeSymbol = text;
+
+            newNode.LabelText = nodeNumber + ":" + text;
+
             _currentGViewer.Graph.AddNode(newNode);
             _currentGViewer.Graph = g;
         }

@@ -31,6 +31,22 @@ namespace Microsoft.Msagl.Drawing {
     [Serializable]
     public class Node : DrawingObject, ILabeledObject {
         
+        //user added
+        private int ruleNodeID;
+
+        public int RuleNodeID
+        {
+            get { return ruleNodeID; }
+            set { ruleNodeID = value; }
+        }
+
+        private string nodeSymbol;
+
+        public string NodeSymbol
+        {
+            get { return nodeSymbol; }
+            set { nodeSymbol = value; }
+        }
         
         Label label;
         /// <summary>
