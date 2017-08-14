@@ -117,17 +117,55 @@ namespace LevelGenerator
             if (text == null) return;
 
             Rule rule = new Rule();
-            rule.SetRule(text, _leftGraph, _rightGraph);
+            Graph leftSide = new Graph();
+            Graph rightSide = new Graph();
+            rule.SetRule(text, leftSide, rightSide);
             _rules.Add(rule);
 
             RefreshListBox(lBRules, _rules, "Name");
+            SetNewRule(rule);
         }
 
-        private void RefreshListBox<T>(ListBox lb, List<T> dataSource, string displayMember)
+        private static void RefreshListBox<T>(ListControl lb, List<T> dataSource, string displayMember)
         {
             lb.DataSource = null;
             lb.DataSource = dataSource;
             lb.DisplayMember = displayMember;
+        }
+
+        private void lBRules_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Rule r = GetItemFromListBox<Rule>(lBRules);
+            if (r != null)
+            {
+                SetNewRule(r.LeftSide, r.RightSide);
+            }
+        }
+
+        private T GetItemFromListBox<T>(ListControl lB)
+        {
+            int selectedIndex = lB.SelectedIndex;
+            if (selectedIndex == -1) return default(T);
+            List<T> dataSource = (List<T>) lB.DataSource;
+            return dataSource[selectedIndex];
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            SetNewRule(new Graph(), new Graph());
+        }
+
+        private void SetNewRule(Graph left, Graph right)
+        {
+            _leftGraph = left;
+            _rightGraph = right;
+            gViewerLeft.Graph = _leftGraph;
+            gViewerRight.Graph = _rightGraph;
+        }
+
+        private void SetNewRule(Rule rule)
+        {
+            SetNewRule(rule.LeftSide, rule.RightSide);
         }
     }
 }

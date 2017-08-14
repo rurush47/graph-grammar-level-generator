@@ -41,6 +41,7 @@ namespace LevelGenerator
             this.buttonNewRule = new System.Windows.Forms.Button();
             this.tBNewRule = new System.Windows.Forms.TextBox();
             this.lBRules = new System.Windows.Forms.ListBox();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.panelLeftGraph.SuspendLayout();
             this.panelRightGraph.SuspendLayout();
             this.SuspendLayout();
@@ -147,14 +148,14 @@ namespace LevelGenerator
             // 
             // tBNewNode
             // 
-            this.tBNewNode.Location = new System.Drawing.Point(12, 255);
+            this.tBNewNode.Location = new System.Drawing.Point(14, 368);
             this.tBNewNode.Name = "tBNewNode";
             this.tBNewNode.Size = new System.Drawing.Size(100, 20);
             this.tBNewNode.TabIndex = 5;
             // 
             // buttonAddNode
             // 
-            this.buttonAddNode.Location = new System.Drawing.Point(118, 255);
+            this.buttonAddNode.Location = new System.Drawing.Point(118, 369);
             this.buttonAddNode.Name = "buttonAddNode";
             this.buttonAddNode.Size = new System.Drawing.Size(75, 20);
             this.buttonAddNode.TabIndex = 6;
@@ -164,19 +165,19 @@ namespace LevelGenerator
             // 
             // buttonDeleteNode
             // 
-            this.buttonDeleteNode.Location = new System.Drawing.Point(13, 282);
+            this.buttonDeleteNode.Location = new System.Drawing.Point(14, 339);
             this.buttonDeleteNode.Name = "buttonDeleteNode";
             this.buttonDeleteNode.Size = new System.Drawing.Size(180, 23);
             this.buttonDeleteNode.TabIndex = 7;
-            this.buttonDeleteNode.Text = "Delete";
+            this.buttonDeleteNode.Text = "Delete node";
             this.buttonDeleteNode.UseVisualStyleBackColor = true;
             this.buttonDeleteNode.Click += new System.EventHandler(this.buttonDeleteNode_Click);
             // 
             // buttonNewRule
             // 
-            this.buttonNewRule.Location = new System.Drawing.Point(12, 336);
+            this.buttonNewRule.Location = new System.Drawing.Point(13, 255);
             this.buttonNewRule.Name = "buttonNewRule";
-            this.buttonNewRule.Size = new System.Drawing.Size(180, 23);
+            this.buttonNewRule.Size = new System.Drawing.Size(181, 23);
             this.buttonNewRule.TabIndex = 8;
             this.buttonNewRule.Text = "New rule";
             this.buttonNewRule.UseVisualStyleBackColor = true;
@@ -184,7 +185,7 @@ namespace LevelGenerator
             // 
             // tBNewRule
             // 
-            this.tBNewRule.Location = new System.Drawing.Point(13, 310);
+            this.tBNewRule.Location = new System.Drawing.Point(14, 284);
             this.tBNewRule.Name = "tBNewRule";
             this.tBNewRule.Size = new System.Drawing.Size(179, 20);
             this.tBNewRule.TabIndex = 9;
@@ -192,16 +193,28 @@ namespace LevelGenerator
             // lBRules
             // 
             this.lBRules.FormattingEnabled = true;
-            this.lBRules.Location = new System.Drawing.Point(199, 255);
+            this.lBRules.Location = new System.Drawing.Point(200, 255);
             this.lBRules.Name = "lBRules";
             this.lBRules.Size = new System.Drawing.Size(167, 108);
             this.lBRules.TabIndex = 10;
+            this.lBRules.SelectedIndexChanged += new System.EventHandler(this.lBRules_SelectedIndexChanged);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(14, 310);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(181, 23);
+            this.buttonClear.TabIndex = 11;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 646);
+            this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.lBRules);
             this.Controls.Add(this.tBNewRule);
             this.Controls.Add(this.buttonNewRule);
@@ -232,6 +245,7 @@ namespace LevelGenerator
         private System.Windows.Forms.Button buttonNewRule;
         private System.Windows.Forms.TextBox tBNewRule;
         private System.Windows.Forms.ListBox lBRules;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
 
