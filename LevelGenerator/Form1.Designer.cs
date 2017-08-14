@@ -42,6 +42,7 @@ namespace LevelGenerator
             this.tBNewRule = new System.Windows.Forms.TextBox();
             this.lBRules = new System.Windows.Forms.ListBox();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.gViewerMission = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             this.panelLeftGraph.SuspendLayout();
             this.panelRightGraph.SuspendLayout();
             this.SuspendLayout();
@@ -141,21 +142,21 @@ namespace LevelGenerator
             // 
             this.panelRightGraph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelRightGraph.Controls.Add(this.gViewerRight);
-            this.panelRightGraph.Location = new System.Drawing.Point(373, 13);
+            this.panelRightGraph.Location = new System.Drawing.Point(12, 255);
             this.panelRightGraph.Name = "panelRightGraph";
             this.panelRightGraph.Size = new System.Drawing.Size(356, 236);
             this.panelRightGraph.TabIndex = 4;
             // 
             // tBNewNode
             // 
-            this.tBNewNode.Location = new System.Drawing.Point(14, 368);
+            this.tBNewNode.Location = new System.Drawing.Point(13, 610);
             this.tBNewNode.Name = "tBNewNode";
             this.tBNewNode.Size = new System.Drawing.Size(100, 20);
             this.tBNewNode.TabIndex = 5;
             // 
             // buttonAddNode
             // 
-            this.buttonAddNode.Location = new System.Drawing.Point(118, 369);
+            this.buttonAddNode.Location = new System.Drawing.Point(117, 611);
             this.buttonAddNode.Name = "buttonAddNode";
             this.buttonAddNode.Size = new System.Drawing.Size(75, 20);
             this.buttonAddNode.TabIndex = 6;
@@ -165,7 +166,7 @@ namespace LevelGenerator
             // 
             // buttonDeleteNode
             // 
-            this.buttonDeleteNode.Location = new System.Drawing.Point(14, 339);
+            this.buttonDeleteNode.Location = new System.Drawing.Point(13, 581);
             this.buttonDeleteNode.Name = "buttonDeleteNode";
             this.buttonDeleteNode.Size = new System.Drawing.Size(180, 23);
             this.buttonDeleteNode.TabIndex = 7;
@@ -175,7 +176,7 @@ namespace LevelGenerator
             // 
             // buttonNewRule
             // 
-            this.buttonNewRule.Location = new System.Drawing.Point(13, 255);
+            this.buttonNewRule.Location = new System.Drawing.Point(12, 497);
             this.buttonNewRule.Name = "buttonNewRule";
             this.buttonNewRule.Size = new System.Drawing.Size(181, 23);
             this.buttonNewRule.TabIndex = 8;
@@ -185,7 +186,7 @@ namespace LevelGenerator
             // 
             // tBNewRule
             // 
-            this.tBNewRule.Location = new System.Drawing.Point(14, 284);
+            this.tBNewRule.Location = new System.Drawing.Point(13, 526);
             this.tBNewRule.Name = "tBNewRule";
             this.tBNewRule.Size = new System.Drawing.Size(179, 20);
             this.tBNewRule.TabIndex = 9;
@@ -193,7 +194,7 @@ namespace LevelGenerator
             // lBRules
             // 
             this.lBRules.FormattingEnabled = true;
-            this.lBRules.Location = new System.Drawing.Point(200, 255);
+            this.lBRules.Location = new System.Drawing.Point(199, 497);
             this.lBRules.Name = "lBRules";
             this.lBRules.Size = new System.Drawing.Size(167, 108);
             this.lBRules.TabIndex = 10;
@@ -201,7 +202,7 @@ namespace LevelGenerator
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(14, 310);
+            this.buttonClear.Location = new System.Drawing.Point(13, 552);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(181, 23);
             this.buttonClear.TabIndex = 11;
@@ -209,11 +210,51 @@ namespace LevelGenerator
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // gViewerMission
+            // 
+            this.gViewerMission.ArrowheadLength = 10D;
+            this.gViewerMission.AsyncLayout = false;
+            this.gViewerMission.AutoScroll = true;
+            this.gViewerMission.BackwardEnabled = false;
+            this.gViewerMission.BuildHitTree = true;
+            this.gViewerMission.CurrentLayoutMethod = Microsoft.Msagl.GraphViewerGdi.LayoutMethod.UseSettingsOfTheGraph;
+            this.gViewerMission.EdgeInsertButtonVisible = true;
+            this.gViewerMission.FileName = "";
+            this.gViewerMission.ForwardEnabled = false;
+            this.gViewerMission.Graph = null;
+            this.gViewerMission.InsertingEdge = false;
+            this.gViewerMission.LayoutAlgorithmSettingsButtonVisible = true;
+            this.gViewerMission.LayoutEditingEnabled = true;
+            this.gViewerMission.Location = new System.Drawing.Point(765, 12);
+            this.gViewerMission.LooseOffsetForRouting = 0.25D;
+            this.gViewerMission.MouseHitDistance = 0.05D;
+            this.gViewerMission.Name = "gViewerMission";
+            this.gViewerMission.NavigationVisible = true;
+            this.gViewerMission.NeedToCalculateLayout = true;
+            this.gViewerMission.OffsetForRelaxingInRouting = 0.6D;
+            this.gViewerMission.PaddingForEdgeRouting = 8D;
+            this.gViewerMission.PanButtonPressed = false;
+            this.gViewerMission.SaveAsImageEnabled = true;
+            this.gViewerMission.SaveAsMsaglEnabled = true;
+            this.gViewerMission.SaveButtonVisible = true;
+            this.gViewerMission.SaveGraphButtonVisible = true;
+            this.gViewerMission.SaveInVectorFormatEnabled = true;
+            this.gViewerMission.Size = new System.Drawing.Size(335, 582);
+            this.gViewerMission.TabIndex = 12;
+            this.gViewerMission.TightOffsetForRouting = 0.125D;
+            this.gViewerMission.ToolBarIsVisible = true;
+            this.gViewerMission.Transform = ((Microsoft.Msagl.Core.Geometry.Curves.PlaneTransformation)(resources.GetObject("gViewerMission.Transform")));
+            this.gViewerMission.UndoRedoButtonsVisible = true;
+            this.gViewerMission.WindowZoomButtonPressed = false;
+            this.gViewerMission.ZoomF = 1D;
+            this.gViewerMission.ZoomWindowThreshold = 0.05D;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 646);
+            this.ClientSize = new System.Drawing.Size(1112, 672);
+            this.Controls.Add(this.gViewerMission);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.lBRules);
             this.Controls.Add(this.tBNewRule);
@@ -246,6 +287,7 @@ namespace LevelGenerator
         private System.Windows.Forms.TextBox tBNewRule;
         private System.Windows.Forms.ListBox lBRules;
         private System.Windows.Forms.Button buttonClear;
+        private GViewer gViewerMission;
     }
 }
 

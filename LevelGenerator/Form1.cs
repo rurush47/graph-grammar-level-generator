@@ -18,8 +18,9 @@ namespace LevelGenerator
     {
         private Graph _leftGraph;
         private Graph _rightGraph;
+        private Graph _missionGraph;
         private GViewer _currentGViewer;
-        private List<Rule> _rules = new List<Rule>(); 
+        private List<Rule> _rules = new List<Rule>();
 
         public Form1()
         {
@@ -28,9 +29,13 @@ namespace LevelGenerator
             _currentGViewer = gViewerLeft;
             _leftGraph = new Graph();
             _rightGraph = new Graph();
+            _missionGraph = new Graph();
 
             gViewerLeft.Graph = _leftGraph;
             gViewerRight.Graph = _rightGraph;
+
+            _missionGraph.AddNode("S");
+            gViewerMission.Graph = _missionGraph;
         }
 
         private void Form1_Load(object sender, EventArgs e)
