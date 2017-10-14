@@ -25,6 +25,11 @@ namespace Microsoft.Msagl.Drawing {
             set { isTightCoupled = value; }
         }
 
+        public bool IsEqual(Edge otherEdge)
+        {
+            return Source == otherEdge.Source && Target == otherEdge.Target;
+        }
+
         Core.Layout.Edge geometryEdge;
         /// <summary>
         /// gets and sets the geometry edge
