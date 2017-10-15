@@ -64,32 +64,34 @@ namespace Test
             Node nnn1 = new Node("1");
             Node nnn2 = new Node("2");
             Node nnn3 = new Node("3");
-            //Node nnn4 = new Node("4");
 
             g3.AddNode(nnn1);
             g3.AddNode(nnn2);
             g3.AddNode(nnn3);
-            //g3.AddNode(nnn4);
 
             nnn1.NodeSymbol = "B";
             nnn2.NodeSymbol = "C";
             nnn3.NodeSymbol = "D";
-            //nnn4.NodeSymbol = "A";
 
             g3.AddEdge("1", "2");
             g3.AddEdge("2", "3");
             g3.AddEdge("3", "1");
-            //g3.AddEdge("3", "4");
-
 
             Rule r = new Rule();
             r.SetRule("xd", g2, g2);
 
-            Algorithm a = new Algorithm();
-            bool res = a.CheckSubgraphPresent(r, g);
-            List<Match> matches = a.matches;
+            Rule r2 = new Rule();
+            r2.SetRule("xd2", g3, g3);
+
+            Matcher a = new Matcher();
 
             Assert.IsTrue(a.CheckSubgraphPresent(r, g));
+            Assert.AreEqual(a.Matches.Count, 2);
+
+            a = new Matcher();
+
+            Assert.IsTrue(a.CheckSubgraphPresent(r2, g));
+            Assert.AreEqual(a.Matches.Count, 2);
         }
     }
 }
