@@ -9,6 +9,7 @@ namespace LevelGenerator
     {
         public List<string> nodesIDs = new List<string>();
         public List<string> edgeIDs = new List<string>();
+        public List<Match> matches = new List<Match>();
 
         public bool CheckSubgraphPresent(Rule rule, Graph graph)
         {
@@ -22,7 +23,13 @@ namespace LevelGenerator
                     {
                         //Console.WriteLine("Compare returned true");
                         compareReturnValue = true;
-                        break;
+                        Match newMatch = new Match();
+                        newMatch.edgeIDs = edgeIDs;
+                        newMatch.nodeIDs = nodesIDs;
+                        edgeIDs = new List<string>();
+                        nodesIDs = new List<string>();
+                        matches.Add(newMatch);
+                        //break;
                     }
                     else
                     {
@@ -40,9 +47,10 @@ namespace LevelGenerator
                 return false;
             else
             {
+                nodesIDs.Add(mainNode.Id);
                 foreach (Edge ruleEdge in ruleNode.OutEdges.ToList())
                 {
-                    if (visitedEdges.Any(e => e.IsEqual(ruleEdge)))
+                    if (visitedEdges.Contains(ruleEdge))
                     {
                         continue;
                     }
@@ -55,7 +63,6 @@ namespace LevelGenerator
                             Compare(ruleEdge.TargetNode, mainEdge.TargetNode, ruleLeft, visitedEdges))
                         {
                             edgeIDs.Add(mainEdge.LabelText);
-                            nodesIDs.Add(mainEdge.TargetNode.Id);
                             matched = true;
                             break;
                         }
