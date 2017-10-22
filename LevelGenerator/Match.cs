@@ -5,7 +5,6 @@ namespace LevelGenerator
 {
     public class Match
     {
-        public List<Node> Nodes = new List<Node>();
-        public List<Edge> Edges = new List<Edge>();
+        public Dictionary<int, Node> Nodes = new Dictionary<int, Node>();
     }
 }

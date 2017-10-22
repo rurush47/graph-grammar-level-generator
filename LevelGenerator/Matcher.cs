@@ -7,8 +7,7 @@ namespace LevelGenerator
 {
     public class Matcher
     {
-        private List<Node> _mNodes = new List<Node>();
-        private List<Edge> mEdges = new List<Edge>();
+        private Dictionary<int, Node> _mNodes = new Dictionary<int, Node>();
         public List<Match> Matches = new List<Match>();
 
         public bool CheckSubgraphPresent(Rule rule, Graph graph)
@@ -24,10 +23,8 @@ namespace LevelGenerator
                         compareReturnValue = true;
 
                         Match newMatch = new Match();
-                        newMatch.Edges = mEdges;
                         newMatch.Nodes = _mNodes;
-                        mEdges = new List<Edge>();
-                        _mNodes = new List<Node>();
+                        _mNodes = new Dictionary<int, Node>();
                         Matches.Add(newMatch);
                     }
                 }
@@ -41,7 +38,7 @@ namespace LevelGenerator
             if (ruleNode.NodeSymbol != mainNode.NodeSymbol)
                 return false;
 
-            _mNodes.Add(mainNode);
+            _mNodes.Add(ruleNode.RuleNodeID, mainNode);
             foreach (Edge ruleEdge in ruleNode.OutEdges.ToList())
             {
                 if (visitedEdges.Contains(ruleEdge))
@@ -55,7 +52,6 @@ namespace LevelGenerator
                     if (/*ruleEdge.TightCoupling == mainEdge.TightCoupling && */
                         Compare(ruleEdge.TargetNode, mainEdge.TargetNode, ruleLeft, visitedEdges))
                     {
-                        mEdges.Add(mainEdge);
                         matched = true;
                         break;
                     }

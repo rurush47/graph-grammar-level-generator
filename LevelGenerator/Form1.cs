@@ -61,13 +61,14 @@ namespace LevelGenerator
             if (text == null) return;
 
             Graph g = _currentGViewer.Graph;
-            int nodeNumber = g.NodeCount;
+            int nodeNumber = GetNumberFromTextBox(tBNodeNumber);
+
             Node newNode = new Node(nodeNumber.ToString());
 
             newNode.RuleNodeID = nodeNumber;
             newNode.NodeSymbol = text;
 
-            newNode.LabelText = nodeNumber + ":" + text;
+            newNode.LabelText = nodeNumber == -1 ? text : nodeNumber + ":" + text;
 
             _currentGViewer.Graph.AddNode(newNode);
             _currentGViewer.Graph = g;
@@ -170,6 +171,24 @@ namespace LevelGenerator
         private void SetNewRule(Rule rule)
         {
             SetNewRule(rule.LeftSide, rule.RightSide);
+        }
+
+        private int GetNumberFromTextBox(TextBox tb)
+        {
+            int number;
+            try
+            {
+                number = Int32.Parse(tb.Text);
+            }
+            catch (FormatException)
+            {
+                return -1;
+            }
+            if (number < 0)
+            {
+                return -1;
+            }
+            return number;
         }
     }
 }
