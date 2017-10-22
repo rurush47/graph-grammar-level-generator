@@ -39,6 +39,7 @@ namespace LevelGenerator
                 return false;
 
             _mNodes.Add(ruleNode.RuleNodeID, mainNode);
+
             foreach (Edge ruleEdge in ruleNode.OutEdges.ToList())
             {
                 if (visitedEdges.Contains(ruleEdge))

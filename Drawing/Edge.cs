@@ -232,7 +232,7 @@ namespace Microsoft.Msagl.Drawing {
         /// </summary>
         public Node SourceNode {
             get { return sourceNode; }
-            internal set { sourceNode = value; }
+            set { sourceNode = value; }
         }
         private Node targetNode;
         /// <summary>
@@ -240,7 +240,7 @@ namespace Microsoft.Msagl.Drawing {
         /// </summary>
         public Node TargetNode {
             get { return targetNode; }
-            internal set { targetNode = value; }
+            set { targetNode = value; }
         }
 /// <summary>
 /// gets the corresponding geometry edge

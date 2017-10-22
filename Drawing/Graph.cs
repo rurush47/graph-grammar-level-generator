@@ -22,6 +22,24 @@ namespace Microsoft.Msagl.Drawing {
         ///</summary>
         public Subgraph RootSubgraph { get { return rootSubgraph; } set { rootSubgraph = value; } }
 
+        #region UserAdded
+
+        public Node GetNodeWithRuleID(int id)
+        {
+            return Nodes.ToList().Exists(x => x.RuleNodeID == id) 
+                ? Nodes.ToList().FirstOrDefault(x => x.RuleNodeID == id)
+                : null;
+        }
+
+        private int _ids = 0;
+
+        public int GetNewID()
+        {
+            _ids++;
+            return _ids;
+        }
+
+        #endregion
 
 #if TEST_MSAGL
         [NonSerialized] Database dataBase;
@@ -304,7 +322,20 @@ namespace Microsoft.Msagl.Drawing {
             foreach (Edge e in delendi)
                 RemoveEdge(e);
             NodeMap.Remove(node.Id);
-            GeometryGraph.Nodes.Remove(node.GeometryObject as Core.Layout.Node);
+            GeometryGraph?.Nodes.Remove(node.GeometryObject as Core.Layout.Node);
+        }
+
+        public void RemoveNodeWithoutEdges(Node node)
+        {
+            if (node == null || !NodeMap.ContainsKey(node.Id))
+                return;
+            var delendi = new ArrayList();
+            foreach (Edge e in node.SelfEdges)
+                delendi.Add(e);
+            foreach (Edge e in delendi)
+                RemoveEdge(e);
+            NodeMap.Remove(node.Id);
+            GeometryGraph?.Nodes.Remove(node.GeometryObject as Core.Layout.Node);
         }
 
         /// <summary>

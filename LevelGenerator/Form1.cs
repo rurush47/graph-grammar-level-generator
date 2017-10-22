@@ -63,7 +63,7 @@ namespace LevelGenerator
             Graph g = _currentGViewer.Graph;
             int nodeNumber = GetNumberFromTextBox(tBNodeNumber);
 
-            Node newNode = new Node(nodeNumber.ToString());
+            Node newNode = new Node(g.GetNewID().ToString());
 
             newNode.RuleNodeID = nodeNumber;
             newNode.NodeSymbol = text;
