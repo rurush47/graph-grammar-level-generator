@@ -27,7 +27,11 @@ namespace LevelGenerator
             gViewerLeft.Graph = _leftGraph;
             gViewerRight.Graph = _rightGraph;
 
-            _missionGraph.AddNode("S");
+            Node startNode = new Node(_missionGraph.GetNewID().ToString());
+            startNode.NodeSymbol = "S";
+            startNode.Label.Text = "S";
+            _missionGraph.AddNode(startNode);
+
             gViewerMission.Graph = _missionGraph;
         }
 
@@ -189,6 +193,41 @@ namespace LevelGenerator
                 return -1;
             }
             return number;
+        }
+
+        private void buttonApplyRule_Click(object sender, EventArgs e)
+        {
+            Graph targetGraph = _missionGraph;
+            Rule currentRule = GetItemFromListBox<Rule>(lBRules);
+
+            Matcher matcher = new Matcher();
+            matcher.CheckSubgraphPresent(currentRule, targetGraph);
+
+            if (matcher.Matches.Count == 0)
+            {
+                ShowMessage("No matches found in mission graph!");
+                return;
+            }
+
+            Random r = new Random();
+            int randomIndex = r.Next(0, matcher.Matches.Count - 1);
+
+            Match m = matcher.Matches[randomIndex];
+
+            Replacer.ReplaceNodesWithARule(targetGraph, currentRule, m);
+
+            //TODO make a method for that
+            foreach (Node node in targetGraph.Nodes)
+            {
+                node.Label.Text = node.NodeSymbol;
+            }
+            foreach (Edge edge in targetGraph.Edges)
+            {
+                edge.Label.Text = " ";
+            }
+
+            _missionGraph = targetGraph;
+            gViewerMission.Graph = _missionGraph;
         }
     }
 }

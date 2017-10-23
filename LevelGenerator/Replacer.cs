@@ -9,6 +9,7 @@ namespace LevelGenerator
         public static void ReplaceNodesWithARule(Graph graph, Rule rule, Match match)
         {
             List<Node> newNodes = new List<Node>();
+            Dictionary<string, string> rrNodes = new Dictionary<string, string>();
             //remove all edges
             foreach (Node node in match.Nodes.Values)
             {
@@ -46,6 +47,7 @@ namespace LevelGenerator
                 newNode.RuleNodeID = m.Key;
                 newNode.NodeSymbol = newSymbol;
                 graph.AddNode(newNode);
+                rrNodes.Add(rrNode.Id, newNode.Id);
                 newNodes.Add(newNode);
 
                 foreach (Edge edge in graph.Edges.ToList().Where(x => Equals(x.TargetNode.Id, m.Value.Id)))
@@ -66,13 +68,15 @@ namespace LevelGenerator
                 newNode.RuleNodeID = -1;
                 newNode.NodeSymbol = node.NodeSymbol;
                 graph.AddNode(newNode);
+                rrNodes.Add(node.Id, newNode.Id);
+                newNodes.Add(newNode);
             }
 
             //copy edges
             foreach (Edge e in rule.RightSide.Edges)
             {
-                Node n1 = graph.GetNodeWithRuleID(e.SourceNode.RuleNodeID);
-                Node n2 = graph.GetNodeWithRuleID(e.TargetNode.RuleNodeID);
+                Node n1 = graph.GetNode(rrNodes[e.SourceNode.Id]);
+                Node n2 = graph.GetNode(rrNodes[e.TargetNode.Id]);
 
                 graph.AddEdge(n1.Id, n1.NodeSymbol + n2.NodeSymbol, n2.Id);
             }

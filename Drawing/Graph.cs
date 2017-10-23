@@ -31,6 +31,11 @@ namespace Microsoft.Msagl.Drawing {
                 : null;
         }
 
+        public Node GetNode(string ID)
+        {
+            return Nodes.ToList().FirstOrDefault(x => x.Id == ID);
+        }
+
         private int _ids = 0;
 
         public int GetNewID()
