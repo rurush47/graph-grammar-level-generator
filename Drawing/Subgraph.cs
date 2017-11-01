@@ -51,6 +51,11 @@ namespace Microsoft.Msagl.Drawing
         {
         }
 
+        public Subgraph()
+        {
+            
+        }
+
         internal Set<Subgraph> subgraphs = new Set<Subgraph>();
         internal Set<Node> nodes = new Set<Node>();
         bool isUpdated;

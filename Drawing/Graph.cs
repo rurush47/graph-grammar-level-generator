@@ -36,12 +36,12 @@ namespace Microsoft.Msagl.Drawing {
             return Nodes.ToList().FirstOrDefault(x => x.Id == ID);
         }
 
-        private int _ids = 0;
+        public int IDs = 0;
 
         public int GetNewID()
         {
-            _ids++;
-            return _ids;
+            IDs++;
+            return IDs;
         }
 
         #endregion

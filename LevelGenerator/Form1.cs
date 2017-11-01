@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using Microsoft.Msagl.Drawing;
 using Microsoft.Msagl.GraphViewerGdi;
 
@@ -228,6 +230,65 @@ namespace LevelGenerator
 
             _missionGraph = targetGraph;
             gViewerMission.Graph = _missionGraph;
+        }
+
+        private void bSaveRules_Click(object sender, EventArgs e)
+        {
+            XmlSerializer x = new XmlSerializer(typeof(List<Rule.SerializedRule>));
+
+            List<Rule.SerializedRule> ruleList = new List<Rule.SerializedRule>();
+            foreach (Rule rule in _rules)
+            {
+                Rule.SerializedRule sr = new Rule.SerializedRule();
+                sr.Serialize(rule);
+                ruleList.Add(sr);
+            }
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "XML file|*.xml";
+            saveFileDialog1.Title = "Save as XML";
+            saveFileDialog1.ShowDialog();
+
+            // If the file name is not an empty string open it for saving.  
+            if (saveFileDialog1.FileName != "")
+            {
+                // Saves the Image via a FileStream created by the OpenFile method.  
+                System.IO.FileStream fs =
+                    (System.IO.FileStream)saveFileDialog1.OpenFile();
+                // Saves the Image in the appropriate ImageFormat based upon the  
+                // File type selected in the dialog box.  
+                // NOTE that the FilterIndex property is one-based.  
+                x.Serialize(fs, ruleList);
+
+                fs.Close();
+            }
+        }
+
+        private void bLoadRules_Click(object sender, EventArgs e)
+        {
+            XmlSerializer xs = new XmlSerializer(typeof(List<Rule.SerializedRule>));
+            List<Rule.SerializedRule> serializedRules = null;
+
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "XML file|*.xml";
+            openFileDialog1.Title = "Open XML";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                System.IO.StreamReader sr = new
+                    System.IO.StreamReader(openFileDialog1.FileName);
+                serializedRules = (List<Rule.SerializedRule>) xs.Deserialize(sr);
+                sr.Close();
+            }
+
+            List<Rule> rules = new List<Rule>();
+            foreach (Rule.SerializedRule serializedRule in serializedRules)
+            {
+                rules.Add(serializedRule.Deserialize());
+            }
+
+            _rules = rules;
+            RefreshListBox(lBRules, rules, "Name");
         }
     }
 }

@@ -32,6 +32,11 @@ namespace Microsoft.Msagl.Drawing {
     public class Node : DrawingObject, ILabeledObject {
         
         //user added
+        public Node()
+        {
+            
+        }
+
         private int ruleNodeID;
 
         public int RuleNodeID
