@@ -31,10 +31,12 @@ namespace LevelGenerator
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.gViewerLeft = new Microsoft.Msagl.GraphViewerGdi.GViewer();
-            this.gViewerRight = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             this.panelLeftGraph = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.gViewerLeft = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             this.panelRightGraph = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.gViewerRight = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             this.tBNewNode = new System.Windows.Forms.TextBox();
             this.buttonAddNode = new System.Windows.Forms.Button();
             this.buttonDeleteNode = new System.Windows.Forms.Button();
@@ -42,14 +44,52 @@ namespace LevelGenerator
             this.tBNewRule = new System.Windows.Forms.TextBox();
             this.lBRules = new System.Windows.Forms.ListBox();
             this.buttonClear = new System.Windows.Forms.Button();
-            this.gViewerMission = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             this.tBNodeNumber = new System.Windows.Forms.TextBox();
             this.buttonApplyRule = new System.Windows.Forms.Button();
             this.bSaveRules = new System.Windows.Forms.Button();
             this.bLoadRules = new System.Windows.Forms.Button();
+            this.gViewerMission = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.panelLeftGraph.SuspendLayout();
             this.panelRightGraph.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panelLeftGraph
+            // 
+            this.panelLeftGraph.BackColor = System.Drawing.SystemColors.Control;
+            this.panelLeftGraph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLeftGraph.Controls.Add(this.label8);
+            this.panelLeftGraph.Controls.Add(this.gViewerLeft);
+            this.panelLeftGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.panelLeftGraph.Location = new System.Drawing.Point(12, 13);
+            this.panelLeftGraph.Name = "panelLeftGraph";
+            this.panelLeftGraph.Size = new System.Drawing.Size(356, 236);
+            this.panelLeftGraph.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label8.Location = new System.Drawing.Point(116, 4);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 24);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "LEFT SIDE:";
             // 
             // gViewerLeft
             // 
@@ -66,9 +106,8 @@ namespace LevelGenerator
             this.gViewerLeft.InsertingEdge = false;
             this.gViewerLeft.LayoutAlgorithmSettingsButtonVisible = true;
             this.gViewerLeft.LayoutEditingEnabled = true;
-            this.gViewerLeft.Location = new System.Drawing.Point(-1, -1);
+            this.gViewerLeft.Location = new System.Drawing.Point(-1, 31);
             this.gViewerLeft.LooseOffsetForRouting = 0.25D;
-            this.gViewerLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gViewerLeft.MouseHitDistance = 0.05D;
             this.gViewerLeft.Name = "gViewerLeft";
             this.gViewerLeft.NavigationVisible = true;
@@ -81,7 +120,7 @@ namespace LevelGenerator
             this.gViewerLeft.SaveButtonVisible = true;
             this.gViewerLeft.SaveGraphButtonVisible = true;
             this.gViewerLeft.SaveInVectorFormatEnabled = true;
-            this.gViewerLeft.Size = new System.Drawing.Size(472, 292);
+            this.gViewerLeft.Size = new System.Drawing.Size(356, 205);
             this.gViewerLeft.TabIndex = 0;
             this.gViewerLeft.TightOffsetForRouting = 0.125D;
             this.gViewerLeft.ToolBarIsVisible = true;
@@ -91,6 +130,26 @@ namespace LevelGenerator
             this.gViewerLeft.ZoomF = 1D;
             this.gViewerLeft.ZoomWindowThreshold = 0.05D;
             this.gViewerLeft.Click += new System.EventHandler(this.gViewerLeft_Click);
+            // 
+            // panelRightGraph
+            // 
+            this.panelRightGraph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelRightGraph.Controls.Add(this.label9);
+            this.panelRightGraph.Controls.Add(this.gViewerRight);
+            this.panelRightGraph.Location = new System.Drawing.Point(12, 255);
+            this.panelRightGraph.Name = "panelRightGraph";
+            this.panelRightGraph.Size = new System.Drawing.Size(356, 236);
+            this.panelRightGraph.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label9.Location = new System.Drawing.Point(116, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(119, 24);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "RIGHT SIDE:";
             // 
             // gViewerRight
             // 
@@ -107,9 +166,8 @@ namespace LevelGenerator
             this.gViewerRight.InsertingEdge = false;
             this.gViewerRight.LayoutAlgorithmSettingsButtonVisible = true;
             this.gViewerRight.LayoutEditingEnabled = true;
-            this.gViewerRight.Location = new System.Drawing.Point(-3, -1);
+            this.gViewerRight.Location = new System.Drawing.Point(-2, 30);
             this.gViewerRight.LooseOffsetForRouting = 0.25D;
-            this.gViewerRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gViewerRight.MouseHitDistance = 0.05D;
             this.gViewerRight.Name = "gViewerRight";
             this.gViewerRight.NavigationVisible = true;
@@ -122,7 +180,7 @@ namespace LevelGenerator
             this.gViewerRight.SaveButtonVisible = true;
             this.gViewerRight.SaveGraphButtonVisible = true;
             this.gViewerRight.SaveInVectorFormatEnabled = true;
-            this.gViewerRight.Size = new System.Drawing.Size(476, 290);
+            this.gViewerRight.Size = new System.Drawing.Size(357, 205);
             this.gViewerRight.TabIndex = 1;
             this.gViewerRight.TightOffsetForRouting = 0.125D;
             this.gViewerRight.ToolBarIsVisible = true;
@@ -133,42 +191,18 @@ namespace LevelGenerator
             this.gViewerRight.ZoomWindowThreshold = 0.05D;
             this.gViewerRight.Click += new System.EventHandler(this.gViewerRight_Click);
             // 
-            // panelLeftGraph
-            // 
-            this.panelLeftGraph.BackColor = System.Drawing.SystemColors.Control;
-            this.panelLeftGraph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelLeftGraph.Controls.Add(this.gViewerLeft);
-            this.panelLeftGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.panelLeftGraph.Location = new System.Drawing.Point(16, 15);
-            this.panelLeftGraph.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panelLeftGraph.Name = "panelLeftGraph";
-            this.panelLeftGraph.Size = new System.Drawing.Size(471, 291);
-            this.panelLeftGraph.TabIndex = 3;
-            // 
-            // panelRightGraph
-            // 
-            this.panelRightGraph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelRightGraph.Controls.Add(this.gViewerRight);
-            this.panelRightGraph.Location = new System.Drawing.Point(16, 314);
-            this.panelRightGraph.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panelRightGraph.Name = "panelRightGraph";
-            this.panelRightGraph.Size = new System.Drawing.Size(474, 290);
-            this.panelRightGraph.TabIndex = 4;
-            // 
             // tBNewNode
             // 
-            this.tBNewNode.Location = new System.Drawing.Point(17, 751);
-            this.tBNewNode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBNewNode.Location = new System.Drawing.Point(6, 58);
             this.tBNewNode.Name = "tBNewNode";
-            this.tBNewNode.Size = new System.Drawing.Size(132, 22);
+            this.tBNewNode.Size = new System.Drawing.Size(156, 20);
             this.tBNewNode.TabIndex = 5;
             // 
             // buttonAddNode
             // 
-            this.buttonAddNode.Location = new System.Drawing.Point(156, 752);
-            this.buttonAddNode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddNode.Location = new System.Drawing.Point(3, 121);
             this.buttonAddNode.Name = "buttonAddNode";
-            this.buttonAddNode.Size = new System.Drawing.Size(100, 25);
+            this.buttonAddNode.Size = new System.Drawing.Size(159, 20);
             this.buttonAddNode.TabIndex = 6;
             this.buttonAddNode.Text = "Add node";
             this.buttonAddNode.UseVisualStyleBackColor = true;
@@ -176,10 +210,9 @@ namespace LevelGenerator
             // 
             // buttonDeleteNode
             // 
-            this.buttonDeleteNode.Location = new System.Drawing.Point(17, 715);
-            this.buttonDeleteNode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDeleteNode.Location = new System.Drawing.Point(3, 147);
             this.buttonDeleteNode.Name = "buttonDeleteNode";
-            this.buttonDeleteNode.Size = new System.Drawing.Size(240, 28);
+            this.buttonDeleteNode.Size = new System.Drawing.Size(159, 23);
             this.buttonDeleteNode.TabIndex = 7;
             this.buttonDeleteNode.Text = "Delete node";
             this.buttonDeleteNode.UseVisualStyleBackColor = true;
@@ -187,44 +220,79 @@ namespace LevelGenerator
             // 
             // buttonNewRule
             // 
-            this.buttonNewRule.Location = new System.Drawing.Point(16, 612);
-            this.buttonNewRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonNewRule.Location = new System.Drawing.Point(1, 120);
             this.buttonNewRule.Name = "buttonNewRule";
-            this.buttonNewRule.Size = new System.Drawing.Size(241, 28);
+            this.buttonNewRule.Size = new System.Drawing.Size(157, 23);
             this.buttonNewRule.TabIndex = 8;
-            this.buttonNewRule.Text = "New rule";
+            this.buttonNewRule.Text = "Save rule to list";
             this.buttonNewRule.UseVisualStyleBackColor = true;
             this.buttonNewRule.Click += new System.EventHandler(this.buttonNewRule_Click);
             // 
             // tBNewRule
             // 
-            this.tBNewRule.Location = new System.Drawing.Point(17, 647);
-            this.tBNewRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBNewRule.Location = new System.Drawing.Point(3, 94);
             this.tBNewRule.Name = "tBNewRule";
-            this.tBNewRule.Size = new System.Drawing.Size(237, 22);
+            this.tBNewRule.Size = new System.Drawing.Size(155, 20);
             this.tBNewRule.TabIndex = 9;
             // 
             // lBRules
             // 
             this.lBRules.FormattingEnabled = true;
-            this.lBRules.ItemHeight = 16;
-            this.lBRules.Location = new System.Drawing.Point(265, 612);
-            this.lBRules.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lBRules.Location = new System.Drawing.Point(2, 70);
             this.lBRules.Name = "lBRules";
-            this.lBRules.Size = new System.Drawing.Size(221, 132);
+            this.lBRules.Size = new System.Drawing.Size(167, 108);
             this.lBRules.TabIndex = 10;
             this.lBRules.SelectedIndexChanged += new System.EventHandler(this.lBRules_SelectedIndexChanged);
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(17, 679);
-            this.buttonClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonClear.Location = new System.Drawing.Point(1, 149);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(241, 28);
+            this.buttonClear.Size = new System.Drawing.Size(157, 23);
             this.buttonClear.TabIndex = 11;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
+            // tBNodeNumber
+            // 
+            this.tBNodeNumber.Location = new System.Drawing.Point(6, 96);
+            this.tBNodeNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.tBNodeNumber.Name = "tBNodeNumber";
+            this.tBNodeNumber.Size = new System.Drawing.Size(156, 20);
+            this.tBNodeNumber.TabIndex = 13;
+            // 
+            // buttonApplyRule
+            // 
+            this.buttonApplyRule.Location = new System.Drawing.Point(775, 438);
+            this.buttonApplyRule.Name = "buttonApplyRule";
+            this.buttonApplyRule.Size = new System.Drawing.Size(75, 23);
+            this.buttonApplyRule.TabIndex = 14;
+            this.buttonApplyRule.Text = "Apply rule";
+            this.buttonApplyRule.UseVisualStyleBackColor = true;
+            this.buttonApplyRule.Click += new System.EventHandler(this.buttonApplyRule_Click);
+            // 
+            // bSaveRules
+            // 
+            this.bSaveRules.Location = new System.Drawing.Point(3, 183);
+            this.bSaveRules.Margin = new System.Windows.Forms.Padding(2);
+            this.bSaveRules.Name = "bSaveRules";
+            this.bSaveRules.Size = new System.Drawing.Size(167, 19);
+            this.bSaveRules.TabIndex = 15;
+            this.bSaveRules.Text = "Save as XML";
+            this.bSaveRules.UseVisualStyleBackColor = true;
+            this.bSaveRules.Click += new System.EventHandler(this.bSaveRules_Click);
+            // 
+            // bLoadRules
+            // 
+            this.bLoadRules.Location = new System.Drawing.Point(3, 206);
+            this.bLoadRules.Margin = new System.Windows.Forms.Padding(2);
+            this.bLoadRules.Name = "bLoadRules";
+            this.bLoadRules.Size = new System.Drawing.Size(167, 19);
+            this.bLoadRules.TabIndex = 16;
+            this.bLoadRules.Text = "Load XML";
+            this.bLoadRules.UseVisualStyleBackColor = true;
+            this.bLoadRules.Click += new System.EventHandler(this.bLoadRules_Click);
             // 
             // gViewerMission
             // 
@@ -241,9 +309,8 @@ namespace LevelGenerator
             this.gViewerMission.InsertingEdge = false;
             this.gViewerMission.LayoutAlgorithmSettingsButtonVisible = true;
             this.gViewerMission.LayoutEditingEnabled = true;
-            this.gViewerMission.Location = new System.Drawing.Point(1020, 15);
+            this.gViewerMission.Location = new System.Drawing.Point(-1, 29);
             this.gViewerMission.LooseOffsetForRouting = 0.25D;
-            this.gViewerMission.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gViewerMission.MouseHitDistance = 0.05D;
             this.gViewerMission.Name = "gViewerMission";
             this.gViewerMission.NavigationVisible = true;
@@ -256,7 +323,7 @@ namespace LevelGenerator
             this.gViewerMission.SaveButtonVisible = true;
             this.gViewerMission.SaveGraphButtonVisible = true;
             this.gViewerMission.SaveInVectorFormatEnabled = true;
-            this.gViewerMission.Size = new System.Drawing.Size(447, 716);
+            this.gViewerMission.Size = new System.Drawing.Size(326, 390);
             this.gViewerMission.TabIndex = 12;
             this.gViewerMission.TightOffsetForRouting = 0.125D;
             this.gViewerMission.ToolBarIsVisible = true;
@@ -266,72 +333,163 @@ namespace LevelGenerator
             this.gViewerMission.ZoomF = 1D;
             this.gViewerMission.ZoomWindowThreshold = 0.05D;
             // 
-            // tBNodeNumber
+            // label1
             // 
-            this.tBNodeNumber.Location = new System.Drawing.Point(20, 784);
-            this.tBNodeNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tBNodeNumber.Name = "tBNodeNumber";
-            this.tBNodeNumber.Size = new System.Drawing.Size(129, 22);
-            this.tBNodeNumber.TabIndex = 13;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Node symbol:";
             // 
-            // buttonApplyRule
+            // label2
             // 
-            this.buttonApplyRule.Location = new System.Drawing.Point(893, 16);
-            this.buttonApplyRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonApplyRule.Name = "buttonApplyRule";
-            this.buttonApplyRule.Size = new System.Drawing.Size(100, 28);
-            this.buttonApplyRule.TabIndex = 14;
-            this.buttonApplyRule.Text = "Apply rule";
-            this.buttonApplyRule.UseVisualStyleBackColor = true;
-            this.buttonApplyRule.Click += new System.EventHandler(this.buttonApplyRule_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Node rule number:";
             // 
-            // bSaveRules
+            // label3
             // 
-            this.bSaveRules.Location = new System.Drawing.Point(411, 751);
-            this.bSaveRules.Name = "bSaveRules";
-            this.bSaveRules.Size = new System.Drawing.Size(75, 23);
-            this.bSaveRules.TabIndex = 15;
-            this.bSaveRules.Text = "Save";
-            this.bSaveRules.UseVisualStyleBackColor = true;
-            this.bSaveRules.Click += new System.EventHandler(this.bSaveRules_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Rule name:";
             // 
-            // bLoadRules
+            // panel1
             // 
-            this.bLoadRules.Location = new System.Drawing.Point(411, 783);
-            this.bLoadRules.Name = "bLoadRules";
-            this.bLoadRules.Size = new System.Drawing.Size(75, 23);
-            this.bLoadRules.TabIndex = 16;
-            this.bLoadRules.Text = "Load";
-            this.bLoadRules.UseVisualStyleBackColor = true;
-            this.bLoadRules.Click += new System.EventHandler(this.bLoadRules_Click);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.tBNewRule);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.buttonNewRule);
+            this.panel1.Controls.Add(this.buttonClear);
+            this.panel1.Location = new System.Drawing.Point(12, 497);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(164, 176);
+            this.panel1.TabIndex = 20;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label4.Location = new System.Drawing.Point(55, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 24);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "RULE:";
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.buttonAddNode);
+            this.panel2.Controls.Add(this.buttonDeleteNode);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.tBNewNode);
+            this.panel2.Controls.Add(this.tBNodeNumber);
+            this.panel2.Location = new System.Drawing.Point(201, 497);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(167, 175);
+            this.panel2.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label5.Location = new System.Drawing.Point(54, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 24);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "NODE:";
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.lBRules);
+            this.panel3.Controls.Add(this.bSaveRules);
+            this.panel3.Controls.Add(this.bLoadRules);
+            this.panel3.Location = new System.Drawing.Point(385, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(174, 237);
+            this.panel3.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 54);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Rules list:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label6.Location = new System.Drawing.Point(47, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 24);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "RULES:";
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.gViewerMission);
+            this.panel4.Location = new System.Drawing.Point(775, 12);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(325, 420);
+            this.panel4.TabIndex = 23;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label10.Location = new System.Drawing.Point(94, 2);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(139, 24);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "PRODUCTION:";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1483, 827);
-            this.Controls.Add(this.bLoadRules);
-            this.Controls.Add(this.bSaveRules);
+            this.ClientSize = new System.Drawing.Size(1112, 693);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonApplyRule);
-            this.Controls.Add(this.tBNodeNumber);
-            this.Controls.Add(this.gViewerMission);
-            this.Controls.Add(this.buttonClear);
-            this.Controls.Add(this.lBRules);
-            this.Controls.Add(this.tBNewRule);
-            this.Controls.Add(this.buttonNewRule);
-            this.Controls.Add(this.buttonDeleteNode);
-            this.Controls.Add(this.buttonAddNode);
-            this.Controls.Add(this.tBNewNode);
             this.Controls.Add(this.panelRightGraph);
             this.Controls.Add(this.panelLeftGraph);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelLeftGraph.ResumeLayout(false);
+            this.panelLeftGraph.PerformLayout();
             this.panelRightGraph.ResumeLayout(false);
+            this.panelRightGraph.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -353,6 +511,20 @@ namespace LevelGenerator
         private System.Windows.Forms.Button buttonApplyRule;
         private System.Windows.Forms.Button bSaveRules;
         private System.Windows.Forms.Button bLoadRules;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label10;
     }
 }
 

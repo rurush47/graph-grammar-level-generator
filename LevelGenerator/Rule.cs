@@ -45,5 +45,12 @@ namespace LevelGenerator
                 return rule;
             }
         }
+
+        public Rule CloneRule()
+        {
+            SerializedRule r = new SerializedRule();
+            r.Serialize(this);
+            return r.Deserialize();
+        }
     }
 }

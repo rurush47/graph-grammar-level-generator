@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using Microsoft.Msagl.Drawing;
 using Microsoft.Msagl.GraphViewerGdi;
+using Color = System.Drawing.Color;
 
 namespace LevelGenerator
 {
@@ -22,9 +23,11 @@ namespace LevelGenerator
             InitializeComponent();
 
             _currentGViewer = gViewerLeft;
+            panelLeftGraph.BackColor = Color.LightPink;
+
+            _missionGraph = new Graph();
             _leftGraph = new Graph();
             _rightGraph = new Graph();
-            _missionGraph = new Graph();
 
             gViewerLeft.Graph = _leftGraph;
             gViewerRight.Graph = _rightGraph;
@@ -83,11 +86,15 @@ namespace LevelGenerator
         private void gViewerRight_Click(object sender, EventArgs e)
         {
             _currentGViewer = gViewerRight;
+            panelRightGraph.BackColor = Color.LightPink;
+            panelLeftGraph.BackColor = Color.White;
         }
 
         private void gViewerLeft_Click(object sender, EventArgs e)
         {
             _currentGViewer = gViewerLeft;
+            panelLeftGraph.BackColor = Color.LightPink;
+            panelRightGraph.BackColor = Color.White;
         }
 
         private void buttonDeleteNode_Click(object sender, EventArgs e)
@@ -120,21 +127,39 @@ namespace LevelGenerator
         private void buttonNewRule_Click(object sender, EventArgs e)
         {
             string text = GetTextFromTextBox(tBNewRule);
-            AddNewRule(text);
+            SaveRuleToList(text);
         }
 
-        private void AddNewRule(string text)
+        private void SaveRuleToList(string text)
         {
             if (text == null) return;
 
             Rule rule = new Rule();
-            Graph leftSide = new Graph();
-            Graph rightSide = new Graph();
+            Graph leftSide = gViewerLeft.Graph;
+            Graph rightSide = gViewerRight.Graph;
             rule.SetRule(text, leftSide, rightSide);
-            _rules.Add(rule);
 
+            //Overwrite rule
+            Rule listRule = _rules.Find(r => r.Name == text);
+            if (listRule != null)
+            {
+                //TODO add question prompt
+                _rules.Remove(listRule);
+            }
+            _rules.Add(rule.CloneRule());
+
+            SetRuleFocus(rule);
             RefreshListBox(lBRules, _rules, "Name");
             SetNewRule(rule);
+        }
+
+        private void SetRuleFocus(Rule rule)
+        {
+            Rule r = rule.CloneRule();
+            _leftGraph = r.LeftSide;
+            _rightGraph = r.RightSide;
+            gViewerLeft.Graph = _leftGraph;
+            gViewerRight.Graph = _rightGraph;
         }
 
         private static void RefreshListBox<T>(ListControl lb, List<T> dataSource, string displayMember)
@@ -149,7 +174,7 @@ namespace LevelGenerator
             Rule r = GetItemFromListBox<Rule>(lBRules);
             if (r != null)
             {
-                SetNewRule(r.LeftSide, r.RightSide);
+                SetRuleFocus(r);
             }
         }
 
