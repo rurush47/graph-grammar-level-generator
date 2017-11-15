@@ -57,6 +57,7 @@ namespace LevelGenerator
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bDeleteRule = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -80,6 +81,7 @@ namespace LevelGenerator
             this.panelLeftGraph.Name = "panelLeftGraph";
             this.panelLeftGraph.Size = new System.Drawing.Size(356, 236);
             this.panelLeftGraph.TabIndex = 3;
+            this.panelLeftGraph.Click += new System.EventHandler(this.panelLeftGraph_Click);
             // 
             // label8
             // 
@@ -140,6 +142,7 @@ namespace LevelGenerator
             this.panelRightGraph.Name = "panelRightGraph";
             this.panelRightGraph.Size = new System.Drawing.Size(356, 236);
             this.panelRightGraph.TabIndex = 4;
+            this.panelRightGraph.Click += new System.EventHandler(this.panelRightGraph_Click);
             // 
             // label9
             // 
@@ -413,6 +416,7 @@ namespace LevelGenerator
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.bDeleteRule);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.lBRules);
@@ -420,8 +424,18 @@ namespace LevelGenerator
             this.panel3.Controls.Add(this.bLoadRules);
             this.panel3.Location = new System.Drawing.Point(385, 13);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(174, 237);
+            this.panel3.Size = new System.Drawing.Size(174, 260);
             this.panel3.TabIndex = 22;
+            // 
+            // bDeleteRule
+            // 
+            this.bDeleteRule.Location = new System.Drawing.Point(3, 230);
+            this.bDeleteRule.Name = "bDeleteRule";
+            this.bDeleteRule.Size = new System.Drawing.Size(166, 23);
+            this.bDeleteRule.TabIndex = 19;
+            this.bDeleteRule.Text = "Delete rule";
+            this.bDeleteRule.UseVisualStyleBackColor = true;
+            this.bDeleteRule.Click += new System.EventHandler(this.bDeleteRule_Click);
             // 
             // label7
             // 
@@ -476,7 +490,6 @@ namespace LevelGenerator
             this.Controls.Add(this.panelLeftGraph);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panelLeftGraph.ResumeLayout(false);
             this.panelLeftGraph.PerformLayout();
             this.panelRightGraph.ResumeLayout(false);
@@ -525,6 +538,7 @@ namespace LevelGenerator
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button bDeleteRule;
     }
 }
 

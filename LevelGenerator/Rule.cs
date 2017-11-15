@@ -46,6 +46,12 @@ namespace LevelGenerator
             }
         }
 
+        public bool IsValid()
+        {
+            //TODO implement
+            return false;
+        }
+
         public Rule CloneRule()
         {
             SerializedRule r = new SerializedRule();

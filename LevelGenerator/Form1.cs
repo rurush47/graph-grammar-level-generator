@@ -40,11 +40,6 @@ namespace LevelGenerator
             gViewerMission.Graph = _missionGraph;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void DeleteSelectedNode()
         {
             var al = new ArrayList();
@@ -81,20 +76,32 @@ namespace LevelGenerator
 
             _currentGViewer.Graph.AddNode(newNode);
             _currentGViewer.Graph = g;
+
+            tBNodeNumber.Text = "";
         }
 
         private void gViewerRight_Click(object sender, EventArgs e)
         {
-            _currentGViewer = gViewerRight;
-            panelRightGraph.BackColor = Color.LightPink;
-            panelLeftGraph.BackColor = Color.White;
+            FocusRightSide();
         }
 
         private void gViewerLeft_Click(object sender, EventArgs e)
         {
+            FocusLeftSide();
+        }
+
+        private void FocusLeftSide()
+        {
             _currentGViewer = gViewerLeft;
             panelLeftGraph.BackColor = Color.LightPink;
             panelRightGraph.BackColor = Color.White;
+        }
+
+        private void FocusRightSide()
+        {
+            _currentGViewer = gViewerRight;
+            panelRightGraph.BackColor = Color.LightPink;
+            panelLeftGraph.BackColor = Color.White;
         }
 
         private void buttonDeleteNode_Click(object sender, EventArgs e)
@@ -149,8 +156,8 @@ namespace LevelGenerator
             _rules.Add(rule.CloneRule());
 
             SetRuleFocus(rule);
-            RefreshListBox(lBRules, _rules, "Name");
-            SetNewRule(rule);
+            lBRules.SelectedIndex = _rules.IndexOf(rule) + 1;
+            RefreshListBox(lBRules, _rules);
         }
 
         private void SetRuleFocus(Rule rule)
@@ -162,7 +169,7 @@ namespace LevelGenerator
             gViewerRight.Graph = _rightGraph;
         }
 
-        private static void RefreshListBox<T>(ListControl lb, List<T> dataSource, string displayMember)
+        private static void RefreshListBox<T>(ListControl lb, List<T> dataSource, string displayMember = "Name")
         {
             lb.DataSource = null;
             lb.DataSource = dataSource;
@@ -188,20 +195,17 @@ namespace LevelGenerator
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            SetNewRule(new Graph(), new Graph());
+            SetBlankRule();
         }
 
-        private void SetNewRule(Graph left, Graph right)
+        private void SetBlankRule()
         {
-            _leftGraph = left;
-            _rightGraph = right;
+            Rule r = new Rule();
+            r.SetRule("", new Graph(), new Graph());
+            _leftGraph = r.LeftSide;
+            _rightGraph = r.RightSide;
             gViewerLeft.Graph = _leftGraph;
             gViewerRight.Graph = _rightGraph;
-        }
-
-        private void SetNewRule(Rule rule)
-        {
-            SetNewRule(rule.LeftSide, rule.RightSide);
         }
 
         private int GetNumberFromTextBox(TextBox tb)
@@ -313,7 +317,25 @@ namespace LevelGenerator
             }
 
             _rules = rules;
-            RefreshListBox(lBRules, rules, "Name");
+            RefreshListBox(lBRules, rules);
+        }
+
+        private void bDeleteRule_Click(object sender, EventArgs e)
+        {
+            Rule toDelete = GetItemFromListBox<Rule>(lBRules);
+            _rules.Remove(toDelete);
+            RefreshListBox(lBRules, _rules);
+            SetBlankRule();
+        }
+
+        private void panelRightGraph_Click(object sender, EventArgs e)
+        {
+            FocusRightSide();
+        }
+
+        private void panelLeftGraph_Click(object sender, EventArgs e)
+        {
+            FocusLeftSide();
         }
     }
 }
