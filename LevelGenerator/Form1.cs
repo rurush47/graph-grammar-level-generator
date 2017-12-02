@@ -156,7 +156,7 @@ namespace LevelGenerator
             _rules.Add(rule.CloneRule());
 
             SetRuleFocus(rule);
-            lBRules.SelectedIndex = _rules.IndexOf(rule) + 1;
+            //lBRules.SelectedIndex = _rules.IndexOf(rule) + 1;
             RefreshListBox(lBRules, _rules);
         }
 
@@ -306,7 +306,7 @@ namespace LevelGenerator
             {
                 System.IO.StreamReader sr = new
                     System.IO.StreamReader(openFileDialog1.FileName);
-                serializedRules = (List<Rule.SerializedRule>) xs.Deserialize(sr);
+                serializedRules = (List<Rule.SerializedRule>)xs.Deserialize(sr);
                 sr.Close();
             }
 

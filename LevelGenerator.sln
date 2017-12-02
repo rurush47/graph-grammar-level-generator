@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelGenerator", "LevelGenerator\LevelGenerator.csproj", "{E10DD4A8-3968-4253-B914-9D3A17F45698}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "msagl_projects", "msagl_projects", "{0F8BD738-7094-4350-8326-4C762D7A720E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{821BF0B5-ADC7-46CC-810F-C70163F9C4A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NecrodancerGenerator", "NecrodancerGenerator\NecrodancerGenerator.csproj", "{61761E37-3F6C-4DC7-BE3C-8A63F575364E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -547,6 +549,102 @@ Global
 		{821BF0B5-ADC7-46CC-810F-C70163F9C4A8}.Surface Graph Viewer - Release|x64.Build.0 = Release|Any CPU
 		{821BF0B5-ADC7-46CC-810F-C70163F9C4A8}.Surface Graph Viewer - Release|x86.ActiveCfg = Release|Any CPU
 		{821BF0B5-ADC7-46CC-810F-C70163F9C4A8}.Surface Graph Viewer - Release|x86.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.CutRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.CutRelease|Any CPU.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.CutRelease|Itanium.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.CutRelease|Itanium.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.CutRelease|x64.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.CutRelease|x64.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.CutRelease|x86.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.CutRelease|x86.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug Surface Graph Viewer|Any CPU.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug Surface Graph Viewer|Any CPU.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug Surface Graph Viewer|Itanium.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug Surface Graph Viewer|Itanium.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug Surface Graph Viewer|x64.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug Surface Graph Viewer|x64.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug Surface Graph Viewer|x86.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug Surface Graph Viewer|x86.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug|Itanium.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug|Itanium.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug|x64.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Debug|x86.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugDevTrace|Any CPU.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugDevTrace|Any CPU.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugDevTrace|Itanium.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugDevTrace|Itanium.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugDevTrace|x64.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugDevTrace|x64.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugDevTrace|x86.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugDevTrace|x86.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugSurface|Any CPU.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugSurface|Any CPU.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugSurface|Itanium.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugSurface|Itanium.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugSurface|x64.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugSurface|x64.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugSurface|x86.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugSurface|x86.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugWithoutRebuild|Any CPU.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugWithoutRebuild|Any CPU.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugWithoutRebuild|Itanium.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugWithoutRebuild|Itanium.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugWithoutRebuild|x64.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugWithoutRebuild|x64.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugWithoutRebuild|x86.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.DebugWithoutRebuild|x86.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.MinimalMsagl|Any CPU.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.MinimalMsagl|Any CPU.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.MinimalMsagl|Itanium.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.MinimalMsagl|Itanium.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.MinimalMsagl|x64.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.MinimalMsagl|x64.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.MinimalMsagl|x86.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.MinimalMsagl|x86.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Release|Itanium.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Release|Itanium.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Release|x64.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Release|x64.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Release|x86.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Release|x86.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Retail|Any CPU.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Retail|Any CPU.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Retail|Itanium.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Retail|Itanium.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Retail|x64.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Retail|x64.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Retail|x86.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Retail|x86.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Setup|Any CPU.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Setup|Any CPU.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Setup|Itanium.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Setup|Itanium.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Setup|x64.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Setup|x64.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Setup|x86.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Setup|x86.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Debug|Itanium.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Debug|Itanium.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Debug|x64.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Debug|x64.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Debug|x86.ActiveCfg = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Debug|x86.Build.0 = Debug|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Release|Any CPU.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Release|Itanium.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Release|Itanium.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Release|x64.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Release|x64.Build.0 = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Release|x86.ActiveCfg = Release|Any CPU
+		{61761E37-3F6C-4DC7-BE3C-8A63F575364E}.Surface Graph Viewer - Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
