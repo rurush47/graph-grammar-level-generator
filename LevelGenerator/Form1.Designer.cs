@@ -55,6 +55,7 @@ namespace LevelGenerator
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cBSymbols = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.bDeleteRule = new System.Windows.Forms.Button();
@@ -64,6 +65,10 @@ namespace LevelGenerator
             this.label10 = new System.Windows.Forms.Label();
             this.bSaveProduction = new System.Windows.Forms.Button();
             this.bLoadProduction = new System.Windows.Forms.Button();
+            this.bSaveSymbol = new System.Windows.Forms.Button();
+            this.lBSymbols = new System.Windows.Forms.ListBox();
+            this.bDeleteSymbol = new System.Windows.Forms.Button();
+            this.tBSymbolName = new System.Windows.Forms.TextBox();
             this.panelLeftGraph.SuspendLayout();
             this.panelRightGraph.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -392,6 +397,7 @@ namespace LevelGenerator
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.cBSymbols);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.buttonAddNode);
             this.panel2.Controls.Add(this.buttonDeleteNode);
@@ -401,8 +407,17 @@ namespace LevelGenerator
             this.panel2.Controls.Add(this.tBNodeNumber);
             this.panel2.Location = new System.Drawing.Point(201, 497);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(167, 175);
+            this.panel2.Size = new System.Drawing.Size(298, 175);
             this.panel2.TabIndex = 21;
+            // 
+            // cBSymbols
+            // 
+            this.cBSymbols.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBSymbols.Location = new System.Drawing.Point(172, 57);
+            this.cBSymbols.Name = "cBSymbols";
+            this.cBSymbols.Size = new System.Drawing.Size(121, 21);
+            this.cBSymbols.TabIndex = 22;
+            this.cBSymbols.SelectedIndexChanged += new System.EventHandler(this.cBSymbols_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -426,7 +441,7 @@ namespace LevelGenerator
             this.panel3.Controls.Add(this.bLoadRules);
             this.panel3.Location = new System.Drawing.Point(385, 13);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(174, 260);
+            this.panel3.Size = new System.Drawing.Size(174, 261);
             this.panel3.TabIndex = 22;
             // 
             // bDeleteRule
@@ -498,11 +513,50 @@ namespace LevelGenerator
             this.bLoadProduction.UseVisualStyleBackColor = true;
             this.bLoadProduction.Click += new System.EventHandler(this.bLoadProduction_Click);
             // 
+            // bSaveSymbol
+            // 
+            this.bSaveSymbol.Location = new System.Drawing.Point(388, 420);
+            this.bSaveSymbol.Name = "bSaveSymbol";
+            this.bSaveSymbol.Size = new System.Drawing.Size(166, 23);
+            this.bSaveSymbol.TabIndex = 26;
+            this.bSaveSymbol.Text = "Save Symbol";
+            this.bSaveSymbol.UseVisualStyleBackColor = true;
+            this.bSaveSymbol.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lBSymbols
+            // 
+            this.lBSymbols.FormattingEnabled = true;
+            this.lBSymbols.Location = new System.Drawing.Point(389, 286);
+            this.lBSymbols.Name = "lBSymbols";
+            this.lBSymbols.Size = new System.Drawing.Size(166, 95);
+            this.lBSymbols.TabIndex = 27;
+            // 
+            // bDeleteSymbol
+            // 
+            this.bDeleteSymbol.Location = new System.Drawing.Point(388, 449);
+            this.bDeleteSymbol.Name = "bDeleteSymbol";
+            this.bDeleteSymbol.Size = new System.Drawing.Size(166, 23);
+            this.bDeleteSymbol.TabIndex = 28;
+            this.bDeleteSymbol.Text = "Delete symbol";
+            this.bDeleteSymbol.UseVisualStyleBackColor = true;
+            this.bDeleteSymbol.Click += new System.EventHandler(this.bDeleteSymbol_Click);
+            // 
+            // tBSymbolName
+            // 
+            this.tBSymbolName.Location = new System.Drawing.Point(388, 394);
+            this.tBSymbolName.Name = "tBSymbolName";
+            this.tBSymbolName.Size = new System.Drawing.Size(164, 20);
+            this.tBSymbolName.TabIndex = 29;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 693);
+            this.Controls.Add(this.tBSymbolName);
+            this.Controls.Add(this.bDeleteSymbol);
+            this.Controls.Add(this.lBSymbols);
+            this.Controls.Add(this.bSaveSymbol);
             this.Controls.Add(this.bLoadProduction);
             this.Controls.Add(this.bSaveProduction);
             this.Controls.Add(this.panel4);
@@ -527,6 +581,7 @@ namespace LevelGenerator
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -565,6 +620,11 @@ namespace LevelGenerator
         private System.Windows.Forms.Button bDeleteRule;
         private System.Windows.Forms.Button bSaveProduction;
         private System.Windows.Forms.Button bLoadProduction;
+        private System.Windows.Forms.Button bSaveSymbol;
+        private System.Windows.Forms.ComboBox cBSymbols;
+        private System.Windows.Forms.ListBox lBSymbols;
+        private System.Windows.Forms.Button bDeleteSymbol;
+        private System.Windows.Forms.TextBox tBSymbolName;
     }
 }
 

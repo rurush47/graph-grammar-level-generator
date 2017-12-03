@@ -17,6 +17,7 @@ namespace LevelGenerator
         private Graph _productionGraph;
         private GViewer _currentGViewer;
         private List<Rule> _rules = new List<Rule>();
+        private List<string> _symbols = new List<string>();
 
         public Form1()
         {
@@ -33,8 +34,8 @@ namespace LevelGenerator
             gViewerRight.Graph = _rightGraph;
 
             Node startNode = new Node(_productionGraph.GetNewID().ToString());
-            startNode.NodeSymbol = "S";
-            startNode.Label.Text = "S";
+            startNode.NodeSymbol = "Start";
+            startNode.Label.Text = "Start";
             _productionGraph.AddNode(startNode);
 
             gViewerProduction.Graph = _productionGraph;
@@ -263,7 +264,7 @@ namespace LevelGenerator
 
         private void bSaveRules_Click(object sender, EventArgs e)
         {
-            XmlSerializer x = new XmlSerializer(typeof(List<Rule.SerializedRule>));
+            XmlSerializer x = new XmlSerializer(typeof(ProductionSet));
 
             List<Rule.SerializedRule> ruleList = new List<Rule.SerializedRule>();
             foreach (Rule rule in _rules)
@@ -272,6 +273,7 @@ namespace LevelGenerator
                 sr.Serialize(rule);
                 ruleList.Add(sr);
             }
+            ProductionSet ps = new ProductionSet(ruleList, _symbols);
 
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "XML file|*.xml";
@@ -282,15 +284,15 @@ namespace LevelGenerator
             {
                 System.IO.FileStream fs =
                     (System.IO.FileStream)saveFileDialog1.OpenFile();
-                x.Serialize(fs, ruleList);
+                x.Serialize(fs, ps);
                 fs.Close();
             }
         }
 
         private void bLoadRules_Click(object sender, EventArgs e)
         {
-            XmlSerializer xs = new XmlSerializer(typeof(List<Rule.SerializedRule>));
-            List<Rule.SerializedRule> serializedRules = null;
+            XmlSerializer xs = new XmlSerializer(typeof(ProductionSet));
+            ProductionSet ps = null;
 
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "XML file|*.xml";
@@ -300,18 +302,21 @@ namespace LevelGenerator
             {
                 System.IO.StreamReader sr = new
                     System.IO.StreamReader(openFileDialog1.FileName);
-                serializedRules = (List<Rule.SerializedRule>)xs.Deserialize(sr);
+                ps = (ProductionSet)xs.Deserialize(sr);
                 sr.Close();
             }
 
             List<Rule> rules = new List<Rule>();
-            foreach (Rule.SerializedRule serializedRule in serializedRules)
+            foreach (Rule.SerializedRule serializedRule in ps.Rules)
             {
                 rules.Add(serializedRule.Deserialize());
             }
 
             _rules = rules;
             RefreshListBox(lBRules, rules);
+
+            _symbols = ps.Symbols;
+            RefreshListBox(lBSymbols, _symbols);
         }
 
         private void bDeleteRule_Click(object sender, EventArgs e)
@@ -370,6 +375,34 @@ namespace LevelGenerator
                 _productionGraph = sg.Deserialize();
                 gViewerProduction.Graph = _productionGraph;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string symbol = GetTextFromTextBox(tBSymbolName);
+            if (symbol != null)
+            {
+                if (!_symbols.Contains(symbol))
+                {
+                    _symbols.Add(symbol);
+                    RefreshListBox(lBSymbols, _symbols);
+                    RefreshListBox(cBSymbols, _symbols);
+                    tBSymbolName.Text = "";
+                }
+            }
+        }
+
+        private void bDeleteSymbol_Click(object sender, EventArgs e)
+        {
+            string toDelete = GetItemFromListBox<string>(lBSymbols);
+            _symbols.Remove(toDelete);
+            RefreshListBox(lBSymbols, _symbols);
+            RefreshListBox(cBSymbols, _symbols);
+        }
+
+        private void cBSymbols_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tBNewNode.Text = GetItemFromListBox<string>(cBSymbols);
         }
     }
 }
