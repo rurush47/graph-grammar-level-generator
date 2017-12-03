@@ -14,7 +14,7 @@ namespace LevelGenerator
     {
         private Graph _leftGraph;
         private Graph _rightGraph;
-        private Graph _missionGraph;
+        private Graph _productionGraph;
         private GViewer _currentGViewer;
         private List<Rule> _rules = new List<Rule>();
 
@@ -25,19 +25,19 @@ namespace LevelGenerator
             _currentGViewer = gViewerLeft;
             panelLeftGraph.BackColor = Color.LightPink;
 
-            _missionGraph = new Graph();
+            _productionGraph = new Graph();
             _leftGraph = new Graph();
             _rightGraph = new Graph();
 
             gViewerLeft.Graph = _leftGraph;
             gViewerRight.Graph = _rightGraph;
 
-            Node startNode = new Node(_missionGraph.GetNewID().ToString());
+            Node startNode = new Node(_productionGraph.GetNewID().ToString());
             startNode.NodeSymbol = "S";
             startNode.Label.Text = "S";
-            _missionGraph.AddNode(startNode);
+            _productionGraph.AddNode(startNode);
 
-            gViewerMission.Graph = _missionGraph;
+            gViewerProduction.Graph = _productionGraph;
         }
 
         private void DeleteSelectedNode()
@@ -228,7 +228,7 @@ namespace LevelGenerator
 
         private void buttonApplyRule_Click(object sender, EventArgs e)
         {
-            Graph targetGraph = _missionGraph;
+            Graph targetGraph = _productionGraph;
             Rule currentRule = GetItemFromListBox<Rule>(lBRules);
 
             Matcher matcher = new Matcher();
@@ -257,8 +257,8 @@ namespace LevelGenerator
                 edge.Label.Text = " ";
             }
 
-            _missionGraph = targetGraph;
-            gViewerMission.Graph = _missionGraph;
+            _productionGraph = targetGraph;
+            gViewerProduction.Graph = _productionGraph;
         }
 
         private void bSaveRules_Click(object sender, EventArgs e)
@@ -278,17 +278,11 @@ namespace LevelGenerator
             saveFileDialog1.Title = "Save as XML";
             saveFileDialog1.ShowDialog();
 
-            // If the file name is not an empty string open it for saving.  
             if (saveFileDialog1.FileName != "")
             {
-                // Saves the Image via a FileStream created by the OpenFile method.  
                 System.IO.FileStream fs =
                     (System.IO.FileStream)saveFileDialog1.OpenFile();
-                // Saves the Image in the appropriate ImageFormat based upon the  
-                // File type selected in the dialog box.  
-                // NOTE that the FilterIndex property is one-based.  
                 x.Serialize(fs, ruleList);
-
                 fs.Close();
             }
         }
@@ -336,6 +330,46 @@ namespace LevelGenerator
         private void panelLeftGraph_Click(object sender, EventArgs e)
         {
             FocusLeftSide();
+        }
+
+        private void bSaveProduction_Click(object sender, EventArgs e)
+        {
+            XmlSerializer x = new XmlSerializer(typeof(SerializedGraph));
+            SerializedGraph sg = new SerializedGraph();
+            sg.Serialize(_productionGraph);
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "XML file|*.xml";
+            saveFileDialog1.Title = "Save as XML";
+            saveFileDialog1.ShowDialog();
+  
+            if (saveFileDialog1.FileName != "")
+            {
+                System.IO.FileStream fs =
+                    (System.IO.FileStream)saveFileDialog1.OpenFile();
+                x.Serialize(fs, sg);
+                fs.Close();
+            }
+        }
+
+        private void bLoadProduction_Click(object sender, EventArgs e)
+        {
+            XmlSerializer x = new XmlSerializer(typeof(SerializedGraph));
+
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "XML file|*.xml";
+            openFileDialog1.Title = "Open XML";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                System.IO.StreamReader sr = new
+                    System.IO.StreamReader(openFileDialog1.FileName);
+                SerializedGraph sg = (SerializedGraph)x.Deserialize(sr);
+                sr.Close();
+
+                _productionGraph = sg.Deserialize();
+                gViewerProduction.Graph = _productionGraph;
+            }
         }
     }
 }

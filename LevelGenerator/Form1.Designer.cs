@@ -48,7 +48,7 @@ namespace LevelGenerator
             this.buttonApplyRule = new System.Windows.Forms.Button();
             this.bSaveRules = new System.Windows.Forms.Button();
             this.bLoadRules = new System.Windows.Forms.Button();
-            this.gViewerMission = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+            this.gViewerProduction = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,6 +62,8 @@ namespace LevelGenerator
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
+            this.bSaveProduction = new System.Windows.Forms.Button();
+            this.bLoadProduction = new System.Windows.Forms.Button();
             this.panelLeftGraph.SuspendLayout();
             this.panelRightGraph.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -267,7 +269,7 @@ namespace LevelGenerator
             // 
             // buttonApplyRule
             // 
-            this.buttonApplyRule.Location = new System.Drawing.Point(775, 438);
+            this.buttonApplyRule.Location = new System.Drawing.Point(694, 12);
             this.buttonApplyRule.Name = "buttonApplyRule";
             this.buttonApplyRule.Size = new System.Drawing.Size(75, 23);
             this.buttonApplyRule.TabIndex = 14;
@@ -297,44 +299,44 @@ namespace LevelGenerator
             this.bLoadRules.UseVisualStyleBackColor = true;
             this.bLoadRules.Click += new System.EventHandler(this.bLoadRules_Click);
             // 
-            // gViewerMission
+            // gViewerProduction
             // 
-            this.gViewerMission.ArrowheadLength = 10D;
-            this.gViewerMission.AsyncLayout = false;
-            this.gViewerMission.AutoScroll = true;
-            this.gViewerMission.BackwardEnabled = false;
-            this.gViewerMission.BuildHitTree = true;
-            this.gViewerMission.CurrentLayoutMethod = Microsoft.Msagl.GraphViewerGdi.LayoutMethod.UseSettingsOfTheGraph;
-            this.gViewerMission.EdgeInsertButtonVisible = true;
-            this.gViewerMission.FileName = "";
-            this.gViewerMission.ForwardEnabled = false;
-            this.gViewerMission.Graph = null;
-            this.gViewerMission.InsertingEdge = false;
-            this.gViewerMission.LayoutAlgorithmSettingsButtonVisible = true;
-            this.gViewerMission.LayoutEditingEnabled = true;
-            this.gViewerMission.Location = new System.Drawing.Point(-1, 29);
-            this.gViewerMission.LooseOffsetForRouting = 0.25D;
-            this.gViewerMission.MouseHitDistance = 0.05D;
-            this.gViewerMission.Name = "gViewerMission";
-            this.gViewerMission.NavigationVisible = true;
-            this.gViewerMission.NeedToCalculateLayout = true;
-            this.gViewerMission.OffsetForRelaxingInRouting = 0.6D;
-            this.gViewerMission.PaddingForEdgeRouting = 8D;
-            this.gViewerMission.PanButtonPressed = false;
-            this.gViewerMission.SaveAsImageEnabled = true;
-            this.gViewerMission.SaveAsMsaglEnabled = true;
-            this.gViewerMission.SaveButtonVisible = true;
-            this.gViewerMission.SaveGraphButtonVisible = true;
-            this.gViewerMission.SaveInVectorFormatEnabled = true;
-            this.gViewerMission.Size = new System.Drawing.Size(326, 390);
-            this.gViewerMission.TabIndex = 12;
-            this.gViewerMission.TightOffsetForRouting = 0.125D;
-            this.gViewerMission.ToolBarIsVisible = true;
-            this.gViewerMission.Transform = ((Microsoft.Msagl.Core.Geometry.Curves.PlaneTransformation)(resources.GetObject("gViewerMission.Transform")));
-            this.gViewerMission.UndoRedoButtonsVisible = true;
-            this.gViewerMission.WindowZoomButtonPressed = false;
-            this.gViewerMission.ZoomF = 1D;
-            this.gViewerMission.ZoomWindowThreshold = 0.05D;
+            this.gViewerProduction.ArrowheadLength = 10D;
+            this.gViewerProduction.AsyncLayout = false;
+            this.gViewerProduction.AutoScroll = true;
+            this.gViewerProduction.BackwardEnabled = false;
+            this.gViewerProduction.BuildHitTree = true;
+            this.gViewerProduction.CurrentLayoutMethod = Microsoft.Msagl.GraphViewerGdi.LayoutMethod.UseSettingsOfTheGraph;
+            this.gViewerProduction.EdgeInsertButtonVisible = true;
+            this.gViewerProduction.FileName = "";
+            this.gViewerProduction.ForwardEnabled = false;
+            this.gViewerProduction.Graph = null;
+            this.gViewerProduction.InsertingEdge = false;
+            this.gViewerProduction.LayoutAlgorithmSettingsButtonVisible = true;
+            this.gViewerProduction.LayoutEditingEnabled = true;
+            this.gViewerProduction.Location = new System.Drawing.Point(-1, 29);
+            this.gViewerProduction.LooseOffsetForRouting = 0.25D;
+            this.gViewerProduction.MouseHitDistance = 0.05D;
+            this.gViewerProduction.Name = "gViewerProduction";
+            this.gViewerProduction.NavigationVisible = true;
+            this.gViewerProduction.NeedToCalculateLayout = true;
+            this.gViewerProduction.OffsetForRelaxingInRouting = 0.6D;
+            this.gViewerProduction.PaddingForEdgeRouting = 8D;
+            this.gViewerProduction.PanButtonPressed = false;
+            this.gViewerProduction.SaveAsImageEnabled = true;
+            this.gViewerProduction.SaveAsMsaglEnabled = true;
+            this.gViewerProduction.SaveButtonVisible = true;
+            this.gViewerProduction.SaveGraphButtonVisible = true;
+            this.gViewerProduction.SaveInVectorFormatEnabled = true;
+            this.gViewerProduction.Size = new System.Drawing.Size(326, 390);
+            this.gViewerProduction.TabIndex = 12;
+            this.gViewerProduction.TightOffsetForRouting = 0.125D;
+            this.gViewerProduction.ToolBarIsVisible = true;
+            this.gViewerProduction.Transform = ((Microsoft.Msagl.Core.Geometry.Curves.PlaneTransformation)(resources.GetObject("gViewerProduction.Transform")));
+            this.gViewerProduction.UndoRedoButtonsVisible = true;
+            this.gViewerProduction.WindowZoomButtonPressed = false;
+            this.gViewerProduction.ZoomF = 1D;
+            this.gViewerProduction.ZoomWindowThreshold = 0.05D;
             // 
             // label1
             // 
@@ -460,7 +462,7 @@ namespace LevelGenerator
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.gViewerMission);
+            this.panel4.Controls.Add(this.gViewerProduction);
             this.panel4.Location = new System.Drawing.Point(775, 12);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(325, 420);
@@ -476,11 +478,33 @@ namespace LevelGenerator
             this.label10.TabIndex = 20;
             this.label10.Text = "PRODUCTION:";
             // 
+            // bSaveProduction
+            // 
+            this.bSaveProduction.Location = new System.Drawing.Point(694, 42);
+            this.bSaveProduction.Name = "bSaveProduction";
+            this.bSaveProduction.Size = new System.Drawing.Size(75, 23);
+            this.bSaveProduction.TabIndex = 24;
+            this.bSaveProduction.Text = "Save";
+            this.bSaveProduction.UseVisualStyleBackColor = true;
+            this.bSaveProduction.Click += new System.EventHandler(this.bSaveProduction_Click);
+            // 
+            // bLoadProduction
+            // 
+            this.bLoadProduction.Location = new System.Drawing.Point(694, 71);
+            this.bLoadProduction.Name = "bLoadProduction";
+            this.bLoadProduction.Size = new System.Drawing.Size(75, 23);
+            this.bLoadProduction.TabIndex = 25;
+            this.bLoadProduction.Text = "Load";
+            this.bLoadProduction.UseVisualStyleBackColor = true;
+            this.bLoadProduction.Click += new System.EventHandler(this.bLoadProduction_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 693);
+            this.Controls.Add(this.bLoadProduction);
+            this.Controls.Add(this.bSaveProduction);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -519,7 +543,7 @@ namespace LevelGenerator
         private System.Windows.Forms.TextBox tBNewRule;
         private System.Windows.Forms.ListBox lBRules;
         private System.Windows.Forms.Button buttonClear;
-        private GViewer gViewerMission;
+        private GViewer gViewerProduction;
         private System.Windows.Forms.TextBox tBNodeNumber;
         private System.Windows.Forms.Button buttonApplyRule;
         private System.Windows.Forms.Button bSaveRules;
@@ -539,6 +563,8 @@ namespace LevelGenerator
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button bDeleteRule;
+        private System.Windows.Forms.Button bSaveProduction;
+        private System.Windows.Forms.Button bLoadProduction;
     }
 }
 
