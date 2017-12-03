@@ -9,7 +9,7 @@ namespace NecrodancerGenerator
 {
     public partial class Form1 : Form
     {
-        private Room _room;
+        private List<Room> _rooms = new List<Room>();
 
         public Form1()
         {
@@ -20,7 +20,6 @@ namespace NecrodancerGenerator
         {
             XmlSerializer xs = new XmlSerializer(typeof(XmlContainers.Dungeon));
 
-            List<Room> rooms = new List<Room>();
             XmlContainers.Dungeon d = null;
             string name = null;
 
@@ -35,17 +34,16 @@ namespace NecrodancerGenerator
                 {
                     string roomName = Path.GetFileNameWithoutExtension(filePath);
 
-                    System.IO.StreamReader sr = new
-                        System.IO.StreamReader(filePath);
+                    StreamReader sr = new
+                        StreamReader(filePath);
                     d = (XmlContainers.Dungeon) xs.Deserialize(sr);
                     sr.Close();
 
                     Room r = new Room(roomName, d);
-                    _room = r;
-                    rooms.Add(r);
+                    _rooms.Add(r);
                 }
 
-                RefreshListBox(lbRooms, rooms);
+                RefreshListBox(lbRooms, _rooms);
             }
         }
 
@@ -60,9 +58,7 @@ namespace NecrodancerGenerator
         {
             XmlSerializer x = new XmlSerializer(typeof(XmlContainers.Dungeon));
     
-            List<Room> rooms = new List<Room>();
-            rooms.Add(_room);
-            GeneratedDungeon g = new GeneratedDungeon(rooms);
+            GeneratedDungeon g = new GeneratedDungeon(_rooms);
             XmlContainers.Dungeon d = g.GetXMLDungeon();
 
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();

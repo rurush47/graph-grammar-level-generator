@@ -1,42 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using NecrodancerLevelGenerator;
 
 namespace NecrodancerGenerator
 {
     public class GeneratedDungeon
     {
-        private XmlContainers.Dungeon _dungeon;
         private XmlContainers.Level _level;
 
         public GeneratedDungeon(List<Room> rooms)
         {
-            _level = new XmlContainers.Level();
+            _level = GetEmptyLevel();
 
-            _level.Chests = new XmlContainers.Chests();
-            _level.Tiles = new XmlContainers.Tiles();
-            _level.Crates = new XmlContainers.Crates();
-            _level.Enemies = new XmlContainers.Enemies();
-            _level.Items = new XmlContainers.Items();
-            _level.Shrines = new XmlContainers.Shrines();
-            _level.Traps = new XmlContainers.Traps();
-
-            _level.Chests.Chest = new List<XmlContainers.Chest>();
-            _level.Tiles.Tile = new List<XmlContainers.Tile>();
-            _level.Crates.Crate = new List<XmlContainers.Crate>();
-            _level.Enemies.Enemy = new List<XmlContainers.Enemy>();
-            _level.Items.Item = new List<XmlContainers.Item>();
-            _level.Shrines.Shrine = new List<XmlContainers.Shrine>();
-            _level.Traps.Trap = new List<XmlContainers.Trap>();
-
+            IntVector2 vec = new IntVector2(0, 0);
             foreach (Room room in rooms)
             {
-                room.MoveBy(new IntVector2(-3, -3));
-
+                room.MoveBy(vec);
+                vec += new IntVector2(16, 0);
 
                 _level.Chests.Chest.AddRange(room.Level.Chests.Chest);
                 _level.Tiles.Tile.AddRange(room.Level.Tiles.Tile);
@@ -64,6 +43,30 @@ namespace NecrodancerGenerator
             d.Level = levels;
 
             return d;
+        }
+
+        public static XmlContainers.Level GetEmptyLevel()
+        {
+
+            XmlContainers.Level level = new XmlContainers.Level();
+
+            level.Chests = new XmlContainers.Chests();
+            level.Tiles = new XmlContainers.Tiles();
+            level.Crates = new XmlContainers.Crates();
+            level.Enemies = new XmlContainers.Enemies();
+            level.Items = new XmlContainers.Items();
+            level.Shrines = new XmlContainers.Shrines();
+            level.Traps = new XmlContainers.Traps();
+
+            level.Chests.Chest = new List<XmlContainers.Chest>();
+            level.Tiles.Tile = new List<XmlContainers.Tile>();
+            level.Crates.Crate = new List<XmlContainers.Crate>();
+            level.Enemies.Enemy = new List<XmlContainers.Enemy>();
+            level.Items.Item = new List<XmlContainers.Item>();
+            level.Shrines.Shrine = new List<XmlContainers.Shrine>();
+            level.Traps.Trap = new List<XmlContainers.Trap>();
+
+            return level;
         }
     }
 }

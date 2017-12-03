@@ -20,5 +20,8 @@ namespace NecrodancerGenerator
 
         public static IntVector2 operator -(IntVector2 v1, IntVector2 v2) =>
             new IntVector2(v1.X - v2.X, v1.Y - v2.Y);
+
+        public static IntVector2 operator +(IntVector2 v1, IntVector2 v2) =>
+            new IntVector2(v1.X + v2.X, v1.Y + v2.Y);
     }
 }
