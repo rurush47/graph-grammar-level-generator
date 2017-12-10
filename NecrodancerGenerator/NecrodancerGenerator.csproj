@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{61761E37-3F6C-4DC7-BE3C-8A63F575364E}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>NecrodancerGenerator</RootNamespace>
     <AssemblyName>NecrodancerGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,8 +55,11 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GeneratedDungeon.cs" />
+    <Compile Include="Generator.cs" />
+    <Compile Include="Grid.cs" />
     <Compile Include="IMovable.cs" />
     <Compile Include="IntVector2.cs" />
+    <Compile Include="ObjectCopier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs" />
@@ -83,6 +89,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Drawing\drawing.csproj">
+      <Project>{b76f8f71-4b00-4242-be36-c9f0732511f7}</Project>
+      <Name>drawing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphViewerGDI\GraphViewerGDI.csproj">
+      <Project>{725cd2cb-cf37-414e-a5a6-f1d87d4d6ede}</Project>
+      <Name>GraphViewerGDI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LevelGenerator\LevelGenerator.csproj">
+      <Project>{E10DD4A8-3968-4253-B914-9D3A17F45698}</Project>
+      <Name>LevelGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MSAGL\Msagl.csproj">
+      <Project>{415d3e3f-7105-46c1-84d2-7ecb34213d92}</Project>
+      <Name>Msagl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

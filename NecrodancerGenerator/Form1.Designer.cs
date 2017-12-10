@@ -31,6 +31,8 @@
             this.buttonLoadRooms = new System.Windows.Forms.Button();
             this.lbRooms = new System.Windows.Forms.ListBox();
             this.buttonSaveDungeon = new System.Windows.Forms.Button();
+            this.bLoadGraph = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonLoadRooms
@@ -61,16 +63,39 @@
             this.buttonSaveDungeon.UseVisualStyleBackColor = true;
             this.buttonSaveDungeon.Click += new System.EventHandler(this.buttonSaveDungeon_Click);
             // 
+            // bLoadGraph
+            // 
+            this.bLoadGraph.Location = new System.Drawing.Point(13, 71);
+            this.bLoadGraph.Name = "bLoadGraph";
+            this.bLoadGraph.Size = new System.Drawing.Size(97, 23);
+            this.bLoadGraph.TabIndex = 3;
+            this.bLoadGraph.Text = "Load graph";
+            this.bLoadGraph.UseVisualStyleBackColor = true;
+            this.bLoadGraph.Click += new System.EventHandler(this.bLoadGraph_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 100);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 324);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bLoadGraph);
             this.Controls.Add(this.buttonSaveDungeon);
             this.Controls.Add(this.lbRooms);
             this.Controls.Add(this.buttonLoadRooms);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
@@ -80,6 +105,8 @@
         private System.Windows.Forms.Button buttonLoadRooms;
         private System.Windows.Forms.ListBox lbRooms;
         private System.Windows.Forms.Button buttonSaveDungeon;
+        private System.Windows.Forms.Button bLoadGraph;
+        private System.Windows.Forms.Button button1;
     }
 }
 

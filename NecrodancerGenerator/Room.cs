@@ -5,14 +5,24 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using NecrodancerGenerator;
 
+public enum Neighbourhood
+{
+    Left,
+    Right,
+    Up,
+    Down
+}
+
 namespace NecrodancerLevelGenerator
 {
+    [Serializable]
     public class Room
     {
         public string Name { get; set; }
         public XmlContainers.Level Level;
         public Rectangle Rectangle;
-        public IntVector2 Position;
+        public IntVector2 Position { get; set; }
+        public List<Neighbourhood> Neighbours = new List<Neighbourhood>();
 
         public Room()
         {
@@ -24,6 +34,25 @@ namespace NecrodancerLevelGenerator
             Name = name;
             Level = d.Level[0];
             SetRectangle();
+        }
+
+        //        public bool SetNeighbour(Neighbourhood side, Room neighbour)
+        //        {
+        //            if (_neighbourhood.ContainsKey(side))
+        //            {
+        //                _neighbourhood.Add(side, neighbour);
+        //            }
+        //            return false;
+        //        }
+
+        public bool SetNeighbour(Neighbourhood neighbour)
+        {
+            if (!Neighbours.Contains(neighbour))
+            {
+                Neighbours.Add(neighbour);
+                return true;
+            }
+            return false;
         }
 
         public void SetRectangle()

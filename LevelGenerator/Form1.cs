@@ -317,6 +317,7 @@ namespace LevelGenerator
 
             _symbols = ps.Symbols;
             RefreshListBox(lBSymbols, _symbols);
+            RefreshListBox(cBSymbols, _symbols);
         }
 
         private void bDeleteRule_Click(object sender, EventArgs e)

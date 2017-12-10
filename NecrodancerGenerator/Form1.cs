@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using LevelGenerator;
+using Microsoft.Msagl.Drawing;
 using NecrodancerLevelGenerator;
 
 namespace NecrodancerGenerator
@@ -10,6 +13,7 @@ namespace NecrodancerGenerator
     public partial class Form1 : Form
     {
         private List<Room> _rooms = new List<Room>();
+        private Graph _productonGraph;
 
         public Form1()
         {
@@ -79,6 +83,47 @@ namespace NecrodancerGenerator
 
                 fs.Close();
             }
+        }
+
+        private void bLoadGraph_Click(object sender, EventArgs e)
+        {
+            XmlSerializer xs = new XmlSerializer(typeof(SerializedGraph));
+
+            SerializedGraph g = null;
+
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "XML file|*.xml";
+            openFileDialog1.Title = "Open XML";
+            openFileDialog1.Multiselect = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                
+                StreamReader sr = new
+                    StreamReader(openFileDialog1.FileName);
+                g = (SerializedGraph)xs.Deserialize(sr);
+                sr.Close();
+
+                _productonGraph = g.Deserialize();
+            }
+        }
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            AllocConsole();
+            Console.WriteLine("XD");
+        }
+
+        
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Generator generator = new Generator(_rooms, _productonGraph);
+            generator.GenerateRoomLayout();
         }
     }
 }

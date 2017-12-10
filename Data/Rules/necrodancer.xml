@@ -2,12 +2,47 @@
 <ProductionSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Rules>
     <SerializedRule>
-      <Name>start</Name>
+      <Name>TaskDevelop</Name>
       <RightSide>
         <SerializedNodes>
           <SerializedNode>
             <NodeID>1</NodeID>
-            <NodeSymbol>start</NodeSymbol>
+            <NodeSymbol>TaskDevelop</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+          <SerializedNode>
+            <NodeID>2</NodeID>
+            <NodeSymbol>TaskDevelop</NodeSymbol>
+            <RuleID>-1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges>
+          <SerializedEdge>
+            <SourceID>1</SourceID>
+            <TargetID>2</TargetID>
+          </SerializedEdge>
+        </SerializedEdges>
+        <CurrentID>2</CurrentID>
+      </RightSide>
+      <LeftSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>TaskDevelop</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges />
+        <CurrentID>1</CurrentID>
+      </LeftSide>
+    </SerializedRule>
+    <SerializedRule>
+      <Name>TaskDevelop2</Name>
+      <RightSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>TaskDevelop</NodeSymbol>
             <RuleID>1</RuleID>
           </SerializedNode>
           <SerializedNode>
@@ -17,7 +52,111 @@
           </SerializedNode>
           <SerializedNode>
             <NodeID>3</NodeID>
+            <NodeSymbol>TaskDevelop</NodeSymbol>
+            <RuleID>-1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges>
+          <SerializedEdge>
+            <SourceID>1</SourceID>
+            <TargetID>2</TargetID>
+          </SerializedEdge>
+          <SerializedEdge>
+            <SourceID>1</SourceID>
+            <TargetID>3</TargetID>
+          </SerializedEdge>
+        </SerializedEdges>
+        <CurrentID>3</CurrentID>
+      </RightSide>
+      <LeftSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>TaskDevelop</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges />
+        <CurrentID>1</CurrentID>
+      </LeftSide>
+    </SerializedRule>
+    <SerializedRule>
+      <Name>TaskDevelop3</Name>
+      <RightSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>Task</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges />
+        <CurrentID>1</CurrentID>
+      </RightSide>
+      <LeftSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>TaskDevelop</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges />
+        <CurrentID>2</CurrentID>
+      </LeftSide>
+    </SerializedRule>
+    <SerializedRule>
+      <Name>TaskDevelop4</Name>
+      <RightSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>TaskDevelop</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+          <SerializedNode>
+            <NodeID>2</NodeID>
+            <NodeSymbol>Task</NodeSymbol>
+            <RuleID>-1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges>
+          <SerializedEdge>
+            <SourceID>1</SourceID>
+            <TargetID>2</TargetID>
+          </SerializedEdge>
+        </SerializedEdges>
+        <CurrentID>2</CurrentID>
+      </RightSide>
+      <LeftSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>TaskDevelop</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges />
+        <CurrentID>1</CurrentID>
+      </LeftSide>
+    </SerializedRule>
+    <SerializedRule>
+      <Name>Start</Name>
+      <RightSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>start</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+          <SerializedNode>
+            <NodeID>2</NodeID>
             <NodeSymbol>ShopTask</NodeSymbol>
+            <RuleID>-1</RuleID>
+          </SerializedNode>
+          <SerializedNode>
+            <NodeID>3</NodeID>
+            <NodeSymbol>TaskDevelop</NodeSymbol>
             <RuleID>-1</RuleID>
           </SerializedNode>
           <SerializedNode>
@@ -54,6 +193,188 @@
         <CurrentID>1</CurrentID>
       </LeftSide>
     </SerializedRule>
+    <SerializedRule>
+      <Name>FinalTaskMiniBoss</Name>
+      <RightSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>miniBoss</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+          <SerializedNode>
+            <NodeID>2</NodeID>
+            <NodeSymbol>exitMiniBoss</NodeSymbol>
+            <RuleID>-1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges>
+          <SerializedEdge>
+            <SourceID>1</SourceID>
+            <TargetID>2</TargetID>
+          </SerializedEdge>
+        </SerializedEdges>
+        <CurrentID>2</CurrentID>
+      </RightSide>
+      <LeftSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>FinalTask</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges />
+        <CurrentID>1</CurrentID>
+      </LeftSide>
+    </SerializedRule>
+    <SerializedRule>
+      <Name>TaskMonster</Name>
+      <RightSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>monster</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges />
+        <CurrentID>1</CurrentID>
+      </RightSide>
+      <LeftSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>Task</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges />
+        <CurrentID>1</CurrentID>
+      </LeftSide>
+    </SerializedRule>
+    <SerializedRule>
+      <Name>TaskBigMonster</Name>
+      <RightSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>bigMonster</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges />
+        <CurrentID>1</CurrentID>
+      </RightSide>
+      <LeftSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>Task</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges />
+        <CurrentID>1</CurrentID>
+      </LeftSide>
+    </SerializedRule>
+    <SerializedRule>
+      <Name>ShopMonster</Name>
+      <RightSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>monster</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+          <SerializedNode>
+            <NodeID>2</NodeID>
+            <NodeSymbol>shop</NodeSymbol>
+            <RuleID>-1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges>
+          <SerializedEdge>
+            <SourceID>1</SourceID>
+            <TargetID>2</TargetID>
+          </SerializedEdge>
+        </SerializedEdges>
+        <CurrentID>2</CurrentID>
+      </RightSide>
+      <LeftSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>ShopTask</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges />
+        <CurrentID>1</CurrentID>
+      </LeftSide>
+    </SerializedRule>
+    <SerializedRule>
+      <Name>TaskKeyLock</Name>
+      <RightSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>monster</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+          <SerializedNode>
+            <NodeID>2</NodeID>
+            <NodeSymbol>Task</NodeSymbol>
+            <RuleID>-1</RuleID>
+          </SerializedNode>
+          <SerializedNode>
+            <NodeID>3</NodeID>
+            <NodeSymbol>lock</NodeSymbol>
+            <RuleID>-1</RuleID>
+          </SerializedNode>
+          <SerializedNode>
+            <NodeID>4</NodeID>
+            <NodeSymbol>key</NodeSymbol>
+            <RuleID>-1</RuleID>
+          </SerializedNode>
+          <SerializedNode>
+            <NodeID>5</NodeID>
+            <NodeSymbol>reward</NodeSymbol>
+            <RuleID>-1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges>
+          <SerializedEdge>
+            <SourceID>1</SourceID>
+            <TargetID>3</TargetID>
+          </SerializedEdge>
+          <SerializedEdge>
+            <SourceID>1</SourceID>
+            <TargetID>2</TargetID>
+          </SerializedEdge>
+          <SerializedEdge>
+            <SourceID>2</SourceID>
+            <TargetID>4</TargetID>
+          </SerializedEdge>
+          <SerializedEdge>
+            <SourceID>3</SourceID>
+            <TargetID>5</TargetID>
+          </SerializedEdge>
+        </SerializedEdges>
+        <CurrentID>5</CurrentID>
+      </RightSide>
+      <LeftSide>
+        <SerializedNodes>
+          <SerializedNode>
+            <NodeID>1</NodeID>
+            <NodeSymbol>Task</NodeSymbol>
+            <RuleID>1</RuleID>
+          </SerializedNode>
+        </SerializedNodes>
+        <SerializedEdges />
+        <CurrentID>2</CurrentID>
+      </LeftSide>
+    </SerializedRule>
   </Rules>
   <Symbols>
     <string>Start</string>
@@ -62,5 +383,14 @@
     <string>FinalTask</string>
     <string>Task</string>
     <string>start</string>
+    <string>monster</string>
+    <string>lock</string>
+    <string>key</string>
+    <string>reward</string>
+    <string>bigMonster</string>
+    <string>bigReward</string>
+    <string>miniBoss</string>
+    <string>exitMiniBoss</string>
+    <string>shop</string>
   </Symbols>
 </ProductionSet>
