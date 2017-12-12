@@ -10,9 +10,9 @@ namespace NecrodancerGenerator
     public class Generator
     {
         private Dictionary<string, Room> _symbolToRoom = new Dictionary<string, Room>();
+        private Dictionary<Node, Room> _nodeToRoom = new Dictionary<Node, Room>();
         private Graph _missionGraph;
         private List<Room> _rooms = new List<Room>();
-        private List<Room> _roomsToSpawn = new List<Room>();
         private IntVector2 _currentPosition;
         private int _roomOffset;
         private Grid _grid;
@@ -34,7 +34,12 @@ namespace NecrodancerGenerator
                 }
             }
 
-            _grid = new Grid(100);
+            int cellSize = rooms
+                .OrderByDescending(r => r.GetMaxDimension())
+                .FirstOrDefault()
+                .GetMaxDimension();
+            
+            _grid = new Grid(5, cellSize);
         }
 
         //BFS
@@ -50,32 +55,36 @@ namespace NecrodancerGenerator
             }
 
             Room startRoom = _symbolToRoom["start"];
-            startRoom.Position = new IntVector2(0, 0);
-            _grid.AppendStartRoom(startRoom.Position, startRoom);
+            _nodeToRoom.Add(startNode, startRoom);
+            _grid.AppendStartRoom(startRoom);
 
-            _roomsToSpawn.Add(startRoom);
             queue.Add(startNode);
 
             while (queue.Count > 0)
             {
-                Node n = queue.Last();
-                Room parentRoom = _symbolToRoom[n.NodeSymbol];
+                Node parentNode = queue.Last();
 
-                Console.WriteLine("Parent node: " + n.NodeSymbol);
-                foreach (Edge edge in n.OutEdges)
+                Console.WriteLine("Parent node: " + parentNode.NodeSymbol);
+                foreach (Edge edge in parentNode.OutEdges)
                 {
                     //child node is a child of n
                     Node childNode = edge.TargetNode;
-                    Room childRoom = ObjectCopier.Clone(_symbolToRoom[childNode.NodeSymbol]);
-                    _grid.AppendNewRoom(parentRoom.Position, childRoom);
+                    Room childRoom = Utils.DeepClone(_symbolToRoom[childNode.NodeSymbol]);
+                    _nodeToRoom.Add(childNode, childRoom);
+                    _grid.AppendNewRoom(_nodeToRoom[parentNode], childRoom);
 
                     queue.Insert(0, childNode);
-                    Console.WriteLine(childNode.NodeSymbol + " Parent: " + n.NodeSymbol);
+                    Console.WriteLine(childNode.NodeSymbol + " Parent: " + parentNode.NodeSymbol);
                 }
                 Console.WriteLine("");
 
                 queue.Remove(queue.Last());
             }
+        }
+
+        public Grid GetGrid()
+        {
+            return _grid;
         }
     }
 }

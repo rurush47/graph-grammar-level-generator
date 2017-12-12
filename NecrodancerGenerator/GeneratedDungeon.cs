@@ -11,12 +11,8 @@ namespace NecrodancerGenerator
         {
             _level = GetEmptyLevel();
 
-            IntVector2 vec = new IntVector2(0, 0);
             foreach (Room room in rooms)
             {
-                room.MoveBy(vec);
-                vec += new IntVector2(16, 0);
-
                 _level.Chests.Chest.AddRange(room.Level.Chests.Chest);
                 _level.Tiles.Tile.AddRange(room.Level.Tiles.Tile);
                 _level.Crates.Crate.AddRange(room.Level.Crates.Crate);

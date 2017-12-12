@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NecrodancerGenerator
 {
+    [Serializable]
     public class IntVector2
     {
         public int X;

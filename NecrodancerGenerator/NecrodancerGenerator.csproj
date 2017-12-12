@@ -59,11 +59,11 @@
     <Compile Include="Grid.cs" />
     <Compile Include="IMovable.cs" />
     <Compile Include="IntVector2.cs" />
-    <Compile Include="ObjectCopier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="RoomObject.cs" />
+    <Compile Include="Utils.cs" />
     <Compile Include="XMLContainers.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

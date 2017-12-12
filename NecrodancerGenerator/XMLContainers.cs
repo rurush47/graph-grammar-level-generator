@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 using NecrodancerGenerator;
 
@@ -6,7 +7,7 @@ namespace NecrodancerLevelGenerator
 {
     public class XmlContainers
     {
-        [XmlRoot(ElementName = "tile")]
+        [XmlRoot(ElementName = "tile"), Serializable]
         public class Tile : RoomObject
         {
             [XmlAttribute(AttributeName = "type")]
@@ -19,14 +20,14 @@ namespace NecrodancerLevelGenerator
             public string Cracked { get; set; }
         }
 
-        [XmlRoot(ElementName = "tiles")]
+        [XmlRoot(ElementName = "tiles"), Serializable]
         public class Tiles
         {
             [XmlElement(ElementName = "tile")]
             public List<Tile> Tile { get; set; }
         }
 
-        [XmlRoot(ElementName = "trap")]
+        [XmlRoot(ElementName = "trap"), Serializable]
         public class Trap : RoomObject
         {
             [XmlAttribute(AttributeName = "type")]
@@ -35,14 +36,14 @@ namespace NecrodancerLevelGenerator
             public string Subtype { get; set; }
         }
 
-        [XmlRoot(ElementName = "traps")]
+        [XmlRoot(ElementName = "traps"), Serializable]
         public class Traps
         {
             [XmlElement(ElementName = "trap")]
             public List<Trap> Trap { get; set; }
         }
 
-        [XmlRoot(ElementName = "enemy")]
+        [XmlRoot(ElementName = "enemy"), Serializable]
         public class Enemy : RoomObject
         {
             [XmlAttribute(AttributeName = "type")]
@@ -53,14 +54,14 @@ namespace NecrodancerLevelGenerator
             public string Lord { get; set; }
         }
 
-        [XmlRoot(ElementName = "enemies")]
+        [XmlRoot(ElementName = "enemies"), Serializable]
         public class Enemies
         {
             [XmlElement(ElementName = "enemy")]
             public List<Enemy> Enemy { get; set; }
         }
 
-        [XmlRoot(ElementName = "item")]
+        [XmlRoot(ElementName = "item"), Serializable]
         public class Item : RoomObject
         {
             [XmlAttribute(AttributeName = "type")]
@@ -73,14 +74,14 @@ namespace NecrodancerLevelGenerator
             public string SingleChoice { get; set; }
         }
 
-        [XmlRoot(ElementName = "items")]
+        [XmlRoot(ElementName = "items"), Serializable]
         public class Items
         {
             [XmlElement(ElementName = "item")]
             public List<Item> Item { get; set; }
         }
 
-        [XmlRoot(ElementName = "chest")]
+        [XmlRoot(ElementName = "chest"), Serializable]
         public class Chest : RoomObject
         {
             [XmlAttribute(AttributeName = "saleCost")]
@@ -95,14 +96,14 @@ namespace NecrodancerLevelGenerator
             public string Contents { get; set; }
         }
 
-        [XmlRoot(ElementName = "chests")]
+        [XmlRoot(ElementName = "chests"), Serializable]
         public class Chests
         {
             [XmlElement(ElementName = "chest")]
             public List<Chest> Chest { get; set; }
         }
 
-        [XmlRoot(ElementName = "crate")]
+        [XmlRoot(ElementName = "crate"), Serializable]
         public class Crate : RoomObject
         {
             [XmlAttribute(AttributeName = "type")]
@@ -111,28 +112,28 @@ namespace NecrodancerLevelGenerator
             public string Contents { get; set; }
         }
 
-        [XmlRoot(ElementName = "crates")]
+        [XmlRoot(ElementName = "crates"), Serializable]
         public class Crates
         {
             [XmlElement(ElementName = "crate")]
             public List<Crate> Crate { get; set; }
         }
 
-        [XmlRoot(ElementName = "shrine")]
+        [XmlRoot(ElementName = "shrine"), Serializable]
         public class Shrine : RoomObject
         {
             [XmlAttribute(AttributeName = "type")]
             public string Type { get; set; }
         }
 
-        [XmlRoot(ElementName = "shrines")]
+        [XmlRoot(ElementName = "shrines"), Serializable]
         public class Shrines
         {
             [XmlElement(ElementName = "shrine")]
             public List<Shrine> Shrine { get; set; }
         }
 
-        [XmlRoot(ElementName = "level")]
+        [XmlRoot(ElementName = "level"), Serializable]
         public class Level
         {
             [XmlElement(ElementName = "tiles")]
@@ -157,7 +158,7 @@ namespace NecrodancerLevelGenerator
             public string Num { get; set; }
         }
 
-        [XmlRoot(ElementName = "dungeon")]
+        [XmlRoot(ElementName = "dungeon"), Serializable]
         public class Dungeon
         {
             [XmlElement(ElementName = "level")]

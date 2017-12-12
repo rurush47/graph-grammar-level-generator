@@ -74,8 +74,8 @@ namespace NecrodancerGenerator
             if (saveFileDialog1.FileName != "")
             {
                 // Saves the Image via a FileStream created by the OpenFile method.  
-                System.IO.FileStream fs =
-                    (System.IO.FileStream)saveFileDialog1.OpenFile();
+                FileStream fs =
+                    (FileStream)saveFileDialog1.OpenFile();
                 // Saves the Image in the appropriate ImageFormat based upon the  
                 // File type selected in the dialog box.  
                 // NOTE that the FilterIndex property is one-based.  
@@ -118,12 +118,25 @@ namespace NecrodancerGenerator
             Console.WriteLine("XD");
         }
 
-        
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             Generator generator = new Generator(_rooms, _productonGraph);
             generator.GenerateRoomLayout();
+
+            Grid grid = generator.GetGrid();
+            IntVector2 centerPos = grid.GetGridCenter();
+
+            List<Room> finalRooms = new List<Room>();
+            foreach (Cell cell in grid.GetCells())
+            {
+                if (cell.room != null)
+                {
+                    cell.room.MoveBy((cell.gridPos - centerPos)*grid.GetCellSize());
+                    finalRooms.Add(cell.room);
+                }
+            }
+
+            _rooms = finalRooms;
         }
     }
 }

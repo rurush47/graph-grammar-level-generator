@@ -1,9 +1,8 @@
-﻿using System;
+﻿using NecrodancerGenerator;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using NecrodancerGenerator;
 
 public enum Neighbourhood
 {
@@ -94,6 +93,11 @@ namespace NecrodancerLevelGenerator
             roomObjects.AddRange(Level.Shrines.Shrine);
             roomObjects.AddRange(Level.Traps.Trap);
             return roomObjects;
+        }
+
+        public int GetMaxDimension()
+        {
+            return Math.Max(Rectangle.Width, Rectangle.Height);
         }
     }
 }
