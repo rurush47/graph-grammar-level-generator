@@ -7,7 +7,7 @@ namespace NecrodancerGenerator
     {
         private XmlContainers.Level _level;
 
-        public GeneratedDungeon(List<Room> rooms)
+        public GeneratedDungeon(List<Room> rooms, List<Corridor> corridors = null)
         {
             _level = GetEmptyLevel();
 
@@ -20,6 +20,14 @@ namespace NecrodancerGenerator
                 _level.Items.Item.AddRange(room.Level.Items.Item);
                 _level.Shrines.Shrine.AddRange(room.Level.Shrines.Shrine);
                 _level.Traps.Trap.AddRange(room.Level.Traps.Trap);
+            }
+
+            if (corridors != null)
+            {
+                foreach (Corridor corridor in corridors)
+                {
+                    _level.Tiles.Tile.AddRange(corridor.Tiles);
+                }
             }
 
             _level.BossNum = "-1";

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using NecrodancerLevelGenerator;
 
@@ -20,6 +21,7 @@ namespace NecrodancerGenerator
     {
         private Dictionary<Room, Cell> roomCells = new Dictionary<Room, Cell>();
         private Cell[,] _cells;
+        private List<Corridor> _corridors = new List<Corridor>();
         private int _size;
         private int _cellSize;
 
@@ -48,7 +50,18 @@ namespace NecrodancerGenerator
             {
                 c.AppendRoom(room);
                 roomCells.Add(room, c);
+                room.MoveBy((c.gridPos - GetGridCenter())*_cellSize);
+
+                AddCorridor(
+                    room,
+                    parentRoom,
+                    parentGridPos - roomCells[room].gridPos);
             }
+        }
+
+        private void AddCorridor(Room sourceRoom, Room targetRoom, IntVector2 dir)
+        {
+            _corridors.Add(new Corridor(sourceRoom, targetRoom, dir));
         }
 
         public void AppendStartRoom(Room room)
@@ -156,6 +169,11 @@ namespace NecrodancerGenerator
                 return roomCells[room].gridPos;
             }
             return GetGridCenter();
+        }
+
+        public List<Corridor> GetCorridors()
+        {
+            return _corridors;
         }
     }
 }

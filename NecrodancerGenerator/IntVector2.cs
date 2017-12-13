@@ -24,6 +24,11 @@ namespace NecrodancerGenerator
         public static IntVector2 operator *(IntVector2 v1, int i) =>
             new IntVector2(v1.X * i, v1.Y * i);
 
+        public bool Equals(IntVector2 other)
+        {
+            return X == other.X && Y == other.Y;
+        }
+
         public static IntVector2 up = new IntVector2(0, 1);
         public static IntVector2 down = new IntVector2(0, -1);
         public static IntVector2 left = new IntVector2(-1, 0);

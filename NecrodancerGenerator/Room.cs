@@ -64,7 +64,7 @@ namespace NecrodancerLevelGenerator
             int width = xMax - xMin;
             int height = yMax - yMin;
 
-            Rectangle = new Rectangle(xMin, yMin, width, height);
+            Rectangle = new Rectangle(xMin, yMax, width, height);
             Position = new IntVector2(xMin, yMin);
         }
 

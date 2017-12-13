@@ -13,6 +13,7 @@ namespace NecrodancerGenerator
     public partial class Form1 : Form
     {
         private List<Room> _rooms = new List<Room>();
+        private List<Corridor> _corridors;
         private Graph _productonGraph;
 
         public Form1()
@@ -62,7 +63,7 @@ namespace NecrodancerGenerator
         {
             XmlSerializer x = new XmlSerializer(typeof(XmlContainers.Dungeon));
     
-            GeneratedDungeon g = new GeneratedDungeon(_rooms);
+            GeneratedDungeon g = new GeneratedDungeon(_rooms, _corridors);
             XmlContainers.Dungeon d = g.GetXMLDungeon();
 
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
@@ -131,11 +132,12 @@ namespace NecrodancerGenerator
             {
                 if (cell.room != null)
                 {
-                    cell.room.MoveBy((cell.gridPos - centerPos)*grid.GetCellSize());
+//                    cell.room.MoveBy((cell.gridPos - centerPos)*grid.GetCellSize());
                     finalRooms.Add(cell.room);
                 }
             }
 
+            _corridors = grid.GetCorridors();
             _rooms = finalRooms;
         }
     }
