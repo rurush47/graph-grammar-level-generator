@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<SerializedGraph xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SerializedNodes>
+    <SerializedNode>
+      <NodeID>1</NodeID>
+      <NodeSymbol>Start</NodeSymbol>
+      <RuleID>0</RuleID>
+    </SerializedNode>
+  </SerializedNodes>
+  <SerializedEdges />
+  <CurrentID>1</CurrentID>
+</SerializedGraph>

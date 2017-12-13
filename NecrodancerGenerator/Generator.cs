@@ -22,15 +22,11 @@ namespace NecrodancerGenerator
             _rooms = rooms;
             _missionGraph = missionGraph;
 
-            foreach (Node node in _missionGraph.Nodes)
+            foreach (Room room in rooms)
             {
-                if (!_symbolToRoom.ContainsKey(node.NodeSymbol))
+                if (!_symbolToRoom.ContainsKey(room.Name))
                 {
-                    Room room = _rooms.FirstOrDefault(r => r.Name == node.NodeSymbol);
-                    if (room != null)
-                    {
-                        _symbolToRoom.Add(node.NodeSymbol, room);
-                    }
+                    _symbolToRoom.Add(room.Name, room);
                 }
             }
 
@@ -39,7 +35,8 @@ namespace NecrodancerGenerator
                 .FirstOrDefault()
                 .GetMaxDimension();
             
-            _grid = new Grid(5, cellSize);
+            _grid = new Grid(10
+                , cellSize);
         }
 
         //BFS
@@ -63,15 +60,44 @@ namespace NecrodancerGenerator
             while (queue.Count > 0)
             {
                 Node parentNode = queue.Last();
+                Room parentRoom = _nodeToRoom[parentNode];
 
                 Console.WriteLine("Parent node: " + parentNode.NodeSymbol);
+
+                int childrenCount = parentNode.OutEdges.Count();
+                int neighboursCount = _grid.GetEmptyNeighbourCount(_grid.GetRoomPos(parentRoom));
+
+                if (childrenCount > neighboursCount)
+                {
+                    Node tempNode = new Node(_missionGraph.GetNewID().ToString());
+                    tempNode.NodeSymbol = "temp";
+                    _missionGraph.AddNode(tempNode);
+
+                    List<Edge> spareEdges = parentNode
+                        .OutEdges
+                        .ToList();
+
+                    spareEdges = spareEdges
+                        .Skip(neighboursCount - 1)
+                        .Take(spareEdges.Count - (neighboursCount -1))
+                        .ToList();
+
+                    foreach (Edge edge in spareEdges)
+                    {
+                        _missionGraph.AddEdge(tempNode.Id, edge.Target);
+                        _missionGraph.RemoveEdge(edge);
+                    }
+
+                    _missionGraph.AddEdge(parentNode.Id, tempNode.Id);
+                }
+
                 foreach (Edge edge in parentNode.OutEdges)
                 {
                     //child node is a child of n
                     Node childNode = edge.TargetNode;
                     Room childRoom = Utils.DeepClone(_symbolToRoom[childNode.NodeSymbol]);
                     _nodeToRoom.Add(childNode, childRoom);
-                    _grid.AppendNewRoom(_nodeToRoom[parentNode], childRoom);
+                    _grid.AppendNewRoom(parentRoom, childRoom);
 
                     queue.Insert(0, childNode);
                     Console.WriteLine(childNode.NodeSymbol + " Parent: " + parentNode.NodeSymbol);

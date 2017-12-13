@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using NecrodancerLevelGenerator;
 
 namespace NecrodancerGenerator
@@ -40,16 +41,14 @@ namespace NecrodancerGenerator
 
         public void AppendNewRoom(Room parentRoom, Room room)
         {
-            //change room pos here !!!
             IntVector2 parentGridPos = roomCells[parentRoom].gridPos;
 
-            Cell c = GetRandomEmptyNeighbour(parentGridPos);
+            Cell c = GetPreferedNeighbour(parentGridPos);
             if (c != null)
             {
                 c.AppendRoom(room);
                 roomCells.Add(room, c);
             }
-            //append corridor here !!!
         }
 
         public void AppendStartRoom(Room room)
@@ -64,44 +63,35 @@ namespace NecrodancerGenerator
             return new IntVector2(_size/2, _size/2);
         }
 
-        private int GetEmptyNeighbourCount(IntVector2 pos)
+        public int GetEmptyNeighbourCount(IntVector2 pos)
         {
             int count = 0;
-            int i = pos.X;
-            int j = pos.Y;
-            for (int l = i - 1; l <= i + 1; l++)
+            foreach (IntVector2 dir in IntVector2.GetDirectionalVectors())
             {
-                for (int m = j - 1; m <= j + 1; m++)
+                int x = pos.X + dir.X;
+                int y = pos.Y + dir.Y;
+
+                if (x >= 0 && x < _size && y >= 0 && y < _size &&
+                    _cells[x, y].room == null)
                 {
-                    if (m >= 0 && l >= 0 && l < _size && m < _size)
-                    {
-                        if (_cells[l, m].room == null)
-                        {
-                            count++;
-                        }
-                    }
+                    count++;
                 }
             }
-
             return count;
         }
 
         private List<Cell> GetEmptyNeighbours(IntVector2 pos)
         {
             List<Cell> cells = new List<Cell>();
-            int i = pos.X;
-            int j = pos.Y;
-            for (int l = i - 1; l <= i + 1; l++)
+            foreach (IntVector2 dir in IntVector2.GetDirectionalVectors())
             {
-                for (int m = j - 1; m <= j + 1; m++)
+                int x = pos.X + dir.X;
+                int y = pos.Y + dir.Y;
+
+                if (x >= 0 && x < _size && y >= 0 && y < _size &&
+                    _cells[x, y].room == null)
                 {
-                    if (m >= 0 && l >= 0 && l < _size && m < _size)
-                    {
-                        if (_cells[l, m].room == null)
-                        {
-                            cells.Add(_cells[l, m]);
-                        }
-                    }
+                    cells.Add(_cells[x, y]);
                 }
             }
 
@@ -115,6 +105,27 @@ namespace NecrodancerGenerator
             {
                 Random r = new Random();
                 return randomNs[r.Next(0, randomNs.Count)];
+            }
+            return null;
+        }
+
+        private Cell GetPreferedNeighbour(IntVector2 pos)
+        {
+            List<Cell> randomNs = GetEmptyNeighbours(pos);
+            if (randomNs.Count > 0)
+            {
+                Cell bestN = randomNs
+                    .OrderByDescending(n => GetEmptyNeighbourCount(n.gridPos))
+                    .FirstOrDefault();
+
+                int bestNCount = GetEmptyNeighbourCount(bestN.gridPos);
+
+                List<Cell> bestNs = randomNs
+                    .Where(n => GetEmptyNeighbourCount(n.gridPos) == bestNCount)
+                    .ToList();
+
+                Random r = new Random();
+                return bestNs[r.Next(0, bestNs.Count)];
             }
             return null;
         }
@@ -136,6 +147,15 @@ namespace NecrodancerGenerator
         public int GetCellSize()
         {
             return _cellSize;
+        }
+
+        public IntVector2 GetRoomPos(Room room)
+        {
+            if (roomCells.ContainsKey(room))
+            {
+                return roomCells[room].gridPos;
+            }
+            return GetGridCenter();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace NecrodancerGenerator
 {
@@ -22,5 +23,21 @@ namespace NecrodancerGenerator
 
         public static IntVector2 operator *(IntVector2 v1, int i) =>
             new IntVector2(v1.X * i, v1.Y * i);
+
+        public static IntVector2 up = new IntVector2(0, 1);
+        public static IntVector2 down = new IntVector2(0, -1);
+        public static IntVector2 left = new IntVector2(-1, 0);
+        public static IntVector2 right = new IntVector2(1, 0);
+
+        public static List<IntVector2> GetDirectionalVectors()
+        {
+            return new List<IntVector2>()
+            {
+                up,
+                down,
+                left,
+                right
+            };
+        }
     }
 }

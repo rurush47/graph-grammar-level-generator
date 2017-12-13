@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<dungeon character="0" name="temp" numLevels="1">
+	<level bossNum="-1" music="0" num="1">
+		<tiles>
+			<tile x="-4" y="-4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-3" y="-4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-2" y="-4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-1" y="-4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-4" y="-3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-3" y="-3" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-2" y="-3" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-1" y="-3" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-4" y="-2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-3" y="-2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-2" y="-2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-1" y="-2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-4" y="-1" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-3" y="-1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-2" y="-1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-1" y="-1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-4" y="0" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-3" y="0" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-2" y="0" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-1" y="0" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-4" y="1" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-3" y="1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-2" y="1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-1" y="1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-4" y="2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-3" y="2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-2" y="2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-1" y="2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-4" y="3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-3" y="3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-2" y="3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-1" y="3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="-4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="1" y="-4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="2" y="-4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="3" y="-4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="4" y="-4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="-3" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="1" y="-3" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="2" y="-3" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="3" y="-3" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="4" y="-3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="-2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="1" y="-2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="2" y="-2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="3" y="-2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="4" y="-2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="-1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="1" y="-1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="2" y="-1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="3" y="-1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="4" y="-1" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="0" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="1" y="0" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="2" y="0" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="3" y="0" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="4" y="0" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="1" y="1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="2" y="1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="3" y="1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="4" y="1" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="1" y="2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="2" y="2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="3" y="2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="4" y="2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="1" y="3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="2" y="3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="3" y="3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="4" y="3" type="100" zone="0" torch="0" cracked="0" />
+		</tiles>
+		<traps />
+		<enemies>
+			<enemy x="-3" y="-3" type="107" beatDelay="0" lord="0" />
+			<enemy x="3" y="-3" type="107" beatDelay="0" lord="0" />
+			<enemy x="3" y="1" type="107" beatDelay="0" lord="0" />
+			<enemy x="-3" y="1" type="107" beatDelay="0" lord="0" />
+		</enemies>
+		<items />
+		<chests />
+		<crates />
+		<shrines />
+	</level>
+</dungeon>
