@@ -1,16 +1,27 @@
 <?xml version="1.0"?>
-<dungeon character="0" name="bigMonster" numLevels="1">
+<dungeon character="0" name="bigMonster2" numLevels="1">
 	<level bossNum="-1" music="0" num="1">
 		<tiles>
-			<tile x="-8" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-7" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-6" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-5" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-4" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-3" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-2" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-1" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-8" y="-6" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-9" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-8" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-7" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-6" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-5" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-4" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-3" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-2" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-1" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-9" y="-7" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-8" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-7" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-6" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-5" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-4" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-3" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-2" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-1" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-9" y="-6" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-8" y="-6" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-7" y="-6" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-6" y="-6" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-5" y="-6" type="0" zone="0" torch="0" cracked="0" />
@@ -18,7 +29,8 @@
 			<tile x="-3" y="-6" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-2" y="-6" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-1" y="-6" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-8" y="-5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-9" y="-5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-8" y="-5" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-7" y="-5" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-6" y="-5" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-5" y="-5" type="0" zone="0" torch="0" cracked="0" />
@@ -26,7 +38,8 @@
 			<tile x="-3" y="-5" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-2" y="-5" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-1" y="-5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-8" y="-4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-9" y="-4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-8" y="-4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-7" y="-4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-6" y="-4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-5" y="-4" type="0" zone="0" torch="0" cracked="0" />
@@ -34,7 +47,8 @@
 			<tile x="-3" y="-4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-2" y="-4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-1" y="-4" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-8" y="-3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-9" y="-3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-8" y="-3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-7" y="-3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-6" y="-3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-5" y="-3" type="0" zone="0" torch="0" cracked="0" />
@@ -42,15 +56,17 @@
 			<tile x="-3" y="-3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-2" y="-3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-1" y="-3" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-8" y="-2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-9" y="-2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-8" y="-2" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-7" y="-2" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-6" y="-2" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-5" y="-2" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-4" y="-2" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-3" y="-2" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-2" y="-2" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-1" y="-2" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-8" y="-1" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-4" y="-2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-3" y="-2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-2" y="-2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-1" y="-2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-9" y="-1" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-8" y="-1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-7" y="-1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-6" y="-1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-5" y="-1" type="0" zone="0" torch="0" cracked="0" />
@@ -58,7 +74,8 @@
 			<tile x="-3" y="-1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-2" y="-1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-1" y="-1" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-8" y="0" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-9" y="0" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-8" y="0" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-7" y="0" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-6" y="0" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-5" y="0" type="0" zone="0" torch="0" cracked="0" />
@@ -66,7 +83,8 @@
 			<tile x="-3" y="0" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-2" y="0" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-1" y="0" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-8" y="1" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-9" y="1" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-8" y="1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-7" y="1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-6" y="1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-5" y="1" type="0" zone="0" torch="0" cracked="0" />
@@ -74,7 +92,8 @@
 			<tile x="-3" y="1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-2" y="1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-1" y="1" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-8" y="2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-9" y="2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-8" y="2" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-7" y="2" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-6" y="2" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-5" y="2" type="0" zone="0" torch="0" cracked="0" />
@@ -82,7 +101,8 @@
 			<tile x="-3" y="2" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-2" y="2" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-1" y="2" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-8" y="3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-9" y="3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-8" y="3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-7" y="3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-6" y="3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-5" y="3" type="0" zone="0" torch="0" cracked="0" />
@@ -90,7 +110,8 @@
 			<tile x="-3" y="3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-2" y="3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-1" y="3" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-8" y="4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-9" y="4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-8" y="4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-7" y="4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-6" y="4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-5" y="4" type="0" zone="0" torch="0" cracked="0" />
@@ -98,31 +119,35 @@
 			<tile x="-3" y="4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-2" y="4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="-1" y="4" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="-9" y="5" type="100" zone="0" torch="0" cracked="0" />
 			<tile x="-8" y="5" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-7" y="5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-6" y="5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-5" y="5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-4" y="5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-3" y="5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-2" y="5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-1" y="5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="-8" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-7" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-6" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-5" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-4" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-3" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-2" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="-1" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="0" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="1" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="2" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="3" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="4" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="5" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="6" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="7" y="-7" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="8" y="-7" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-7" y="5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-6" y="5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-5" y="5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-4" y="5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-3" y="5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-2" y="5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="-1" y="5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="1" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="2" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="3" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="4" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="5" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="6" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="7" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="8" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="9" y="-8" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="1" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="2" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="3" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="4" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="5" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="6" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="7" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="8" y="-7" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="9" y="-7" type="100" zone="0" torch="0" cracked="0" />
 			<tile x="0" y="-6" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="1" y="-6" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="2" y="-6" type="0" zone="0" torch="0" cracked="0" />
@@ -131,8 +156,9 @@
 			<tile x="5" y="-6" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="6" y="-6" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="7" y="-6" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="8" y="-6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="0" y="-5" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="8" y="-6" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="9" y="-6" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="-5" type="100" zone="0" torch="0" cracked="0" />
 			<tile x="1" y="-5" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="2" y="-5" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="3" y="-5" type="0" zone="0" torch="0" cracked="0" />
@@ -140,8 +166,9 @@
 			<tile x="5" y="-5" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="6" y="-5" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="7" y="-5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="8" y="-5" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="0" y="-4" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="8" y="-5" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="9" y="-5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="-4" type="100" zone="0" torch="0" cracked="0" />
 			<tile x="1" y="-4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="2" y="-4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="3" y="-4" type="0" zone="0" torch="0" cracked="0" />
@@ -149,8 +176,9 @@
 			<tile x="5" y="-4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="6" y="-4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="7" y="-4" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="8" y="-4" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="0" y="-3" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="8" y="-4" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="9" y="-4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="-3" type="100" zone="0" torch="0" cracked="0" />
 			<tile x="1" y="-3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="2" y="-3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="3" y="-3" type="0" zone="0" torch="0" cracked="0" />
@@ -158,17 +186,19 @@
 			<tile x="5" y="-3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="6" y="-3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="7" y="-3" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="8" y="-3" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="0" y="-2" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="1" y="-2" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="2" y="-2" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="3" y="-2" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="4" y="-2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="8" y="-3" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="9" y="-3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="-2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="1" y="-2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="2" y="-2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="3" y="-2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="4" y="-2" type="100" zone="0" torch="0" cracked="0" />
 			<tile x="5" y="-2" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="6" y="-2" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="7" y="-2" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="8" y="-2" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="0" y="-1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="8" y="-2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="9" y="-2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="-1" type="100" zone="0" torch="0" cracked="0" />
 			<tile x="1" y="-1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="2" y="-1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="3" y="-1" type="0" zone="0" torch="0" cracked="0" />
@@ -176,8 +206,9 @@
 			<tile x="5" y="-1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="6" y="-1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="7" y="-1" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="8" y="-1" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="0" y="0" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="8" y="-1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="9" y="-1" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="0" type="100" zone="0" torch="0" cracked="0" />
 			<tile x="1" y="0" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="2" y="0" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="3" y="0" type="0" zone="0" torch="0" cracked="0" />
@@ -185,8 +216,9 @@
 			<tile x="5" y="0" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="6" y="0" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="7" y="0" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="8" y="0" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="0" y="1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="8" y="0" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="9" y="0" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="1" type="100" zone="0" torch="0" cracked="0" />
 			<tile x="1" y="1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="2" y="1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="3" y="1" type="0" zone="0" torch="0" cracked="0" />
@@ -194,7 +226,8 @@
 			<tile x="5" y="1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="6" y="1" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="7" y="1" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="8" y="1" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="8" y="1" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="9" y="1" type="100" zone="0" torch="0" cracked="0" />
 			<tile x="0" y="2" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="1" y="2" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="2" y="2" type="0" zone="0" torch="0" cracked="0" />
@@ -203,7 +236,8 @@
 			<tile x="5" y="2" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="6" y="2" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="7" y="2" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="8" y="2" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="8" y="2" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="9" y="2" type="100" zone="0" torch="0" cracked="0" />
 			<tile x="0" y="3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="1" y="3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="2" y="3" type="0" zone="0" torch="0" cracked="0" />
@@ -212,7 +246,8 @@
 			<tile x="5" y="3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="6" y="3" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="7" y="3" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="8" y="3" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="8" y="3" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="9" y="3" type="100" zone="0" torch="0" cracked="0" />
 			<tile x="0" y="4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="1" y="4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="2" y="4" type="0" zone="0" torch="0" cracked="0" />
@@ -221,33 +256,27 @@
 			<tile x="5" y="4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="6" y="4" type="0" zone="0" torch="0" cracked="0" />
 			<tile x="7" y="4" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="8" y="4" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="0" y="5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="1" y="5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="2" y="5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="3" y="5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="4" y="5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="5" y="5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="6" y="5" type="0" zone="0" torch="0" cracked="0" />
-			<tile x="7" y="5" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="8" y="4" type="0" zone="0" torch="0" cracked="0" />
+			<tile x="9" y="4" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="0" y="5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="1" y="5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="2" y="5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="3" y="5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="4" y="5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="5" y="5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="6" y="5" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="7" y="5" type="100" zone="0" torch="0" cracked="0" />
 			<tile x="8" y="5" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="0" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="1" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="2" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="3" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="4" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="5" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="6" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="7" y="6" type="100" zone="0" torch="0" cracked="0" />
-			<tile x="8" y="6" type="100" zone="0" torch="0" cracked="0" />
+			<tile x="9" y="5" type="100" zone="0" torch="0" cracked="0" />
 		</tiles>
 		<traps />
 		<enemies>
-			<enemy x="5" y="-4" type="108" beatDelay="0" lord="0" />
-			<enemy x="5" y="4" type="109" beatDelay="0" lord="0" />
-			<enemy x="-3" y="4" type="3" beatDelay="0" lord="0" />
-			<enemy x="-6" y="3" type="3" beatDelay="0" lord="0" />
-			<enemy x="4" y="0" type="3" beatDelay="0" lord="0" />
+			<enemy x="-6" y="-6" type="2" beatDelay="0" lord="0" />
+			<enemy x="6" y="-6" type="2" beatDelay="0" lord="0" />
+			<enemy x="6" y="2" type="2" beatDelay="0" lord="0" />
+			<enemy x="-5" y="2" type="2" beatDelay="0" lord="0" />
+			<enemy x="2" y="-4" type="202" beatDelay="0" lord="0" />
+			<enemy x="-2" y="0" type="202" beatDelay="0" lord="0" />
 		</enemies>
 		<items />
 		<chests />

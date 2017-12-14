@@ -63,6 +63,18 @@ namespace NecrodancerGenerator
                 sideVec2
             };
 
+            if (source.Name.Contains("shovelLock"))
+            {
+                for (int i = 0; i < corridorVectors.Count; i++)
+                {
+                    corridorVectors[i] += dir;
+                }
+            }
+            if (target.Name.Contains("shovelLock"))
+            {
+                road -= 1;
+            }
+
             for (int i = 0; i <= road; i++)
             {
                 for (int j = 0; j < corridorVectors.Count; j ++)

@@ -2,13 +2,18 @@
 <SerializedGraph xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SerializedNodes>
     <SerializedNode>
-      <NodeID>12</NodeID>
-      <NodeSymbol>key</NodeSymbol>
+      <NodeID>21</NodeID>
+      <NodeSymbol>chestRoom</NodeSymbol>
       <RuleID>-1</RuleID>
     </SerializedNode>
     <SerializedNode>
-      <NodeID>11</NodeID>
-      <NodeSymbol>lock</NodeSymbol>
+      <NodeID>17</NodeID>
+      <NodeSymbol>exit</NodeSymbol>
+      <RuleID>-1</RuleID>
+    </SerializedNode>
+    <SerializedNode>
+      <NodeID>20</NodeID>
+      <NodeSymbol>bigMonster</NodeSymbol>
       <RuleID>-1</RuleID>
     </SerializedNode>
     <SerializedNode>
@@ -17,18 +22,13 @@
       <RuleID>-1</RuleID>
     </SerializedNode>
     <SerializedNode>
-      <NodeID>13</NodeID>
-      <NodeSymbol>reward</NodeSymbol>
-      <RuleID>-1</RuleID>
-    </SerializedNode>
-    <SerializedNode>
       <NodeID>14</NodeID>
-      <NodeSymbol>miniBoss</NodeSymbol>
+      <NodeSymbol>monster</NodeSymbol>
       <RuleID>-1</RuleID>
     </SerializedNode>
     <SerializedNode>
       <NodeID>15</NodeID>
-      <NodeSymbol>exitMiniBoss</NodeSymbol>
+      <NodeSymbol>shovelKey</NodeSymbol>
       <RuleID>-1</RuleID>
     </SerializedNode>
     <SerializedNode>
@@ -42,20 +42,33 @@
       <RuleID>-1</RuleID>
     </SerializedNode>
     <SerializedNode>
-      <NodeID>9</NodeID>
+      <NodeID>18</NodeID>
+      <NodeSymbol>bigMonster</NodeSymbol>
+      <RuleID>-1</RuleID>
+    </SerializedNode>
+    <SerializedNode>
+      <NodeID>19</NodeID>
       <NodeSymbol>monster</NodeSymbol>
       <RuleID>-1</RuleID>
     </SerializedNode>
     <SerializedNode>
       <NodeID>16</NodeID>
-      <NodeSymbol>bigMonster</NodeSymbol>
+      <NodeSymbol>shovelLock</NodeSymbol>
       <RuleID>-1</RuleID>
     </SerializedNode>
   </SerializedNodes>
   <SerializedEdges>
     <SerializedEdge>
-      <SourceID>11</SourceID>
-      <TargetID>13</TargetID>
+      <SourceID>20</SourceID>
+      <TargetID>19</TargetID>
+    </SerializedEdge>
+    <SerializedEdge>
+      <SourceID>20</SourceID>
+      <TargetID>14</TargetID>
+    </SerializedEdge>
+    <SerializedEdge>
+      <SourceID>20</SourceID>
+      <TargetID>21</TargetID>
     </SerializedEdge>
     <SerializedEdge>
       <SourceID>2</SourceID>
@@ -63,32 +76,28 @@
     </SerializedEdge>
     <SerializedEdge>
       <SourceID>14</SourceID>
-      <TargetID>15</TargetID>
+      <TargetID>16</TargetID>
     </SerializedEdge>
     <SerializedEdge>
-      <SourceID>6</SourceID>
-      <TargetID>9</TargetID>
+      <SourceID>14</SourceID>
+      <TargetID>18</TargetID>
     </SerializedEdge>
     <SerializedEdge>
       <SourceID>6</SourceID>
       <TargetID>7</TargetID>
     </SerializedEdge>
     <SerializedEdge>
-      <SourceID>9</SourceID>
-      <TargetID>16</TargetID>
+      <SourceID>6</SourceID>
+      <TargetID>20</TargetID>
     </SerializedEdge>
     <SerializedEdge>
-      <SourceID>9</SourceID>
-      <TargetID>11</TargetID>
-    </SerializedEdge>
-    <SerializedEdge>
-      <SourceID>9</SourceID>
-      <TargetID>14</TargetID>
+      <SourceID>18</SourceID>
+      <TargetID>15</TargetID>
     </SerializedEdge>
     <SerializedEdge>
       <SourceID>16</SourceID>
-      <TargetID>12</TargetID>
+      <TargetID>17</TargetID>
     </SerializedEdge>
   </SerializedEdges>
-  <CurrentID>16</CurrentID>
+  <CurrentID>21</CurrentID>
 </SerializedGraph>

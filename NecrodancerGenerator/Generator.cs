@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing.Text;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Microsoft.Msagl.Drawing;
 using NecrodancerLevelGenerator;
 
@@ -9,13 +10,15 @@ namespace NecrodancerGenerator
 {
     public class Generator
     {
-        private Dictionary<string, Room> _symbolToRoom = new Dictionary<string, Room>();
+        private Dictionary<string, List<Room>> _symbolToRooms = new Dictionary<string, List<Room>>();
         private Dictionary<Node, Room> _nodeToRoom = new Dictionary<Node, Room>();
         private Graph _missionGraph;
         private List<Room> _rooms = new List<Room>();
         private IntVector2 _currentPosition;
         private int _roomOffset;
         private Grid _grid;
+        private Random r;
+
 
         public Generator(List<Room> rooms, Graph missionGraph)
         {
@@ -24,9 +27,15 @@ namespace NecrodancerGenerator
 
             foreach (Room room in rooms)
             {
-                if (!_symbolToRoom.ContainsKey(room.Name))
+                string name = Regex.Replace(room.Name, @"[\d-]", string.Empty);
+
+                if (!_symbolToRooms.ContainsKey(name))
                 {
-                    _symbolToRoom.Add(room.Name, room);
+                    _symbolToRooms.Add(name, new List<Room>());
+                }
+                if (!_symbolToRooms[name].Contains(room))
+                {
+                    _symbolToRooms[name].Add(room);
                 }
             }
 
@@ -37,6 +46,8 @@ namespace NecrodancerGenerator
             
             _grid = new Grid(10
                 , cellSize);
+
+            r = new Random();
         }
 
         //BFS
@@ -46,12 +57,12 @@ namespace NecrodancerGenerator
 
             Node startNode = _missionGraph.Nodes.FirstOrDefault(n => n.NodeSymbol == "start");
 
-            if (startNode == null || !_symbolToRoom.ContainsKey("start"))
+            if (startNode == null || !_symbolToRooms.ContainsKey("start"))
             {
                 return;
             }
 
-            Room startRoom = _symbolToRoom["start"];
+            Room startRoom = _symbolToRooms["start"][0];
             _nodeToRoom.Add(startNode, startRoom);
             _grid.AppendStartRoom(startRoom);
 
@@ -94,8 +105,10 @@ namespace NecrodancerGenerator
                 foreach (Edge edge in parentNode.OutEdges)
                 {
                     //child node is a child of n
+
                     Node childNode = edge.TargetNode;
-                    Room childRoom = Utils.DeepClone(_symbolToRoom[childNode.NodeSymbol]);
+                    Room childRoom = Utils.DeepClone(
+                        _symbolToRooms[childNode.NodeSymbol][r.Next(0, _symbolToRooms[childNode.NodeSymbol].Count)]);
                     _nodeToRoom.Add(childNode, childRoom);
                     _grid.AppendNewRoom(parentRoom, childRoom);
 
