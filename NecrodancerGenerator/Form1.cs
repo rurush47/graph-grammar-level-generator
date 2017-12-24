@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using LevelGenerator;
+using LevelGenerator.Serialization;
 using Microsoft.Msagl.Drawing;
 using NecrodancerLevelGenerator;
 
@@ -116,7 +117,6 @@ namespace NecrodancerGenerator
         private void Form1_Load(object sender, EventArgs e)
         {
             AllocConsole();
-            Console.WriteLine("XD");
         }
 
         private void button1_Click_1(object sender, EventArgs e)

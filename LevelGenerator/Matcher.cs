@@ -49,8 +49,7 @@ namespace LevelGenerator
                 foreach (Edge mainEdge in mainNode.OutEdges.ToList())
                 {
                     visitedEdges.Add(ruleEdge);
-                    if (/*ruleEdge.TightCoupling == mainEdge.TightCoupling && */
-                        Compare(ruleEdge.TargetNode, mainEdge.TargetNode, ruleLeft, visitedEdges))
+                    if (Compare(ruleEdge.TargetNode, mainEdge.TargetNode, ruleLeft, visitedEdges))
                     {
                         matched = true;
                         break;

@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using LevelGenerator.Serialization;
 
 namespace LevelGenerator
 {
     [Serializable]
     public class ProductionSet
     {
-        public List<Rule.SerializedRule> Rules;
+        public List<SerializedRule> Rules;
         public List<string> Symbols;
-
-        public ProductionSet(List<Rule.SerializedRule> rules, List<string> symbols)
-        {
-            Rules = rules;
-            Symbols = symbols;
-        }
 
         public ProductionSet()
         {
-            
+
+        }
+
+        public ProductionSet(List<SerializedRule> rules, List<string> symbols)
+        {
+            Rules = rules;
+            Symbols = symbols;
         }
     }
 }

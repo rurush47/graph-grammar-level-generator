@@ -69,12 +69,18 @@ namespace LevelGenerator
             this.lBSymbols = new System.Windows.Forms.ListBox();
             this.bDeleteSymbol = new System.Windows.Forms.Button();
             this.tBSymbolName = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panelLeftGraph.SuspendLayout();
             this.panelRightGraph.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLeftGraph
@@ -203,14 +209,14 @@ namespace LevelGenerator
             // 
             // tBNewNode
             // 
-            this.tBNewNode.Location = new System.Drawing.Point(6, 58);
+            this.tBNewNode.Location = new System.Drawing.Point(6, 98);
             this.tBNewNode.Name = "tBNewNode";
             this.tBNewNode.Size = new System.Drawing.Size(156, 20);
             this.tBNewNode.TabIndex = 5;
             // 
             // buttonAddNode
             // 
-            this.buttonAddNode.Location = new System.Drawing.Point(3, 121);
+            this.buttonAddNode.Location = new System.Drawing.Point(6, 167);
             this.buttonAddNode.Name = "buttonAddNode";
             this.buttonAddNode.Size = new System.Drawing.Size(159, 20);
             this.buttonAddNode.TabIndex = 6;
@@ -220,7 +226,7 @@ namespace LevelGenerator
             // 
             // buttonDeleteNode
             // 
-            this.buttonDeleteNode.Location = new System.Drawing.Point(3, 147);
+            this.buttonDeleteNode.Location = new System.Drawing.Point(6, 193);
             this.buttonDeleteNode.Name = "buttonDeleteNode";
             this.buttonDeleteNode.Size = new System.Drawing.Size(159, 23);
             this.buttonDeleteNode.TabIndex = 7;
@@ -230,9 +236,9 @@ namespace LevelGenerator
             // 
             // buttonNewRule
             // 
-            this.buttonNewRule.Location = new System.Drawing.Point(1, 120);
+            this.buttonNewRule.Location = new System.Drawing.Point(3, 163);
             this.buttonNewRule.Name = "buttonNewRule";
-            this.buttonNewRule.Size = new System.Drawing.Size(157, 23);
+            this.buttonNewRule.Size = new System.Drawing.Size(168, 23);
             this.buttonNewRule.TabIndex = 8;
             this.buttonNewRule.Text = "Save rule to list";
             this.buttonNewRule.UseVisualStyleBackColor = true;
@@ -240,15 +246,15 @@ namespace LevelGenerator
             // 
             // tBNewRule
             // 
-            this.tBNewRule.Location = new System.Drawing.Point(3, 94);
+            this.tBNewRule.Location = new System.Drawing.Point(3, 141);
             this.tBNewRule.Name = "tBNewRule";
-            this.tBNewRule.Size = new System.Drawing.Size(155, 20);
+            this.tBNewRule.Size = new System.Drawing.Size(166, 20);
             this.tBNewRule.TabIndex = 9;
             // 
             // lBRules
             // 
             this.lBRules.FormattingEnabled = true;
-            this.lBRules.Location = new System.Drawing.Point(2, 70);
+            this.lBRules.Location = new System.Drawing.Point(1, 57);
             this.lBRules.Name = "lBRules";
             this.lBRules.Size = new System.Drawing.Size(167, 108);
             this.lBRules.TabIndex = 10;
@@ -256,9 +262,9 @@ namespace LevelGenerator
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(1, 149);
+            this.buttonClear.Location = new System.Drawing.Point(3, 192);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(157, 23);
+            this.buttonClear.Size = new System.Drawing.Size(168, 23);
             this.buttonClear.TabIndex = 11;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
@@ -266,17 +272,17 @@ namespace LevelGenerator
             // 
             // tBNodeNumber
             // 
-            this.tBNodeNumber.Location = new System.Drawing.Point(6, 96);
+            this.tBNodeNumber.Location = new System.Drawing.Point(6, 142);
             this.tBNodeNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tBNodeNumber.Name = "tBNodeNumber";
-            this.tBNodeNumber.Size = new System.Drawing.Size(156, 20);
+            this.tBNodeNumber.Size = new System.Drawing.Size(159, 20);
             this.tBNodeNumber.TabIndex = 13;
             // 
             // buttonApplyRule
             // 
-            this.buttonApplyRule.Location = new System.Drawing.Point(694, 12);
+            this.buttonApplyRule.Location = new System.Drawing.Point(3, 6);
             this.buttonApplyRule.Name = "buttonApplyRule";
-            this.buttonApplyRule.Size = new System.Drawing.Size(75, 23);
+            this.buttonApplyRule.Size = new System.Drawing.Size(89, 48);
             this.buttonApplyRule.TabIndex = 14;
             this.buttonApplyRule.Text = "Apply rule";
             this.buttonApplyRule.UseVisualStyleBackColor = true;
@@ -284,7 +290,7 @@ namespace LevelGenerator
             // 
             // bSaveRules
             // 
-            this.bSaveRules.Location = new System.Drawing.Point(3, 183);
+            this.bSaveRules.Location = new System.Drawing.Point(3, 170);
             this.bSaveRules.Margin = new System.Windows.Forms.Padding(2);
             this.bSaveRules.Name = "bSaveRules";
             this.bSaveRules.Size = new System.Drawing.Size(167, 19);
@@ -295,7 +301,7 @@ namespace LevelGenerator
             // 
             // bLoadRules
             // 
-            this.bLoadRules.Location = new System.Drawing.Point(3, 206);
+            this.bLoadRules.Location = new System.Drawing.Point(3, 192);
             this.bLoadRules.Margin = new System.Windows.Forms.Padding(2);
             this.bLoadRules.Name = "bLoadRules";
             this.bLoadRules.Size = new System.Drawing.Size(167, 19);
@@ -319,7 +325,7 @@ namespace LevelGenerator
             this.gViewerProduction.InsertingEdge = false;
             this.gViewerProduction.LayoutAlgorithmSettingsButtonVisible = true;
             this.gViewerProduction.LayoutEditingEnabled = true;
-            this.gViewerProduction.Location = new System.Drawing.Point(-1, 29);
+            this.gViewerProduction.Location = new System.Drawing.Point(-1, 41);
             this.gViewerProduction.LooseOffsetForRouting = 0.25D;
             this.gViewerProduction.MouseHitDistance = 0.05D;
             this.gViewerProduction.Name = "gViewerProduction";
@@ -333,7 +339,7 @@ namespace LevelGenerator
             this.gViewerProduction.SaveButtonVisible = true;
             this.gViewerProduction.SaveGraphButtonVisible = true;
             this.gViewerProduction.SaveInVectorFormatEnabled = true;
-            this.gViewerProduction.Size = new System.Drawing.Size(326, 390);
+            this.gViewerProduction.Size = new System.Drawing.Size(325, 376);
             this.gViewerProduction.TabIndex = 12;
             this.gViewerProduction.TightOffsetForRouting = 0.125D;
             this.gViewerProduction.ToolBarIsVisible = true;
@@ -346,7 +352,7 @@ namespace LevelGenerator
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 42);
+            this.label1.Location = new System.Drawing.Point(3, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 17;
@@ -355,7 +361,7 @@ namespace LevelGenerator
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 81);
+            this.label2.Location = new System.Drawing.Point(3, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 18;
@@ -364,7 +370,7 @@ namespace LevelGenerator
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 78);
+            this.label3.Location = new System.Drawing.Point(2, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 19;
@@ -378,9 +384,9 @@ namespace LevelGenerator
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.buttonNewRule);
             this.panel1.Controls.Add(this.buttonClear);
-            this.panel1.Location = new System.Drawing.Point(12, 497);
+            this.panel1.Location = new System.Drawing.Point(374, 271);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(164, 176);
+            this.panel1.Size = new System.Drawing.Size(174, 220);
             this.panel1.TabIndex = 20;
             // 
             // label4
@@ -405,15 +411,15 @@ namespace LevelGenerator
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.tBNewNode);
             this.panel2.Controls.Add(this.tBNodeNumber);
-            this.panel2.Location = new System.Drawing.Point(201, 497);
+            this.panel2.Location = new System.Drawing.Point(556, 270);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(298, 175);
+            this.panel2.Size = new System.Drawing.Size(173, 221);
             this.panel2.TabIndex = 21;
             // 
             // cBSymbols
             // 
             this.cBSymbols.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBSymbols.Location = new System.Drawing.Point(172, 57);
+            this.cBSymbols.Location = new System.Drawing.Point(6, 55);
             this.cBSymbols.Name = "cBSymbols";
             this.cBSymbols.Size = new System.Drawing.Size(121, 21);
             this.cBSymbols.TabIndex = 22;
@@ -439,14 +445,14 @@ namespace LevelGenerator
             this.panel3.Controls.Add(this.lBRules);
             this.panel3.Controls.Add(this.bSaveRules);
             this.panel3.Controls.Add(this.bLoadRules);
-            this.panel3.Location = new System.Drawing.Point(385, 13);
+            this.panel3.Location = new System.Drawing.Point(376, 15);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(174, 261);
+            this.panel3.Size = new System.Drawing.Size(174, 249);
             this.panel3.TabIndex = 22;
             // 
             // bDeleteRule
             // 
-            this.bDeleteRule.Location = new System.Drawing.Point(3, 230);
+            this.bDeleteRule.Location = new System.Drawing.Point(3, 216);
             this.bDeleteRule.Name = "bDeleteRule";
             this.bDeleteRule.Size = new System.Drawing.Size(166, 23);
             this.bDeleteRule.TabIndex = 19;
@@ -457,7 +463,7 @@ namespace LevelGenerator
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 54);
+            this.label7.Location = new System.Drawing.Point(3, 41);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 18;
@@ -476,11 +482,12 @@ namespace LevelGenerator
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.gViewerProduction);
-            this.panel4.Location = new System.Drawing.Point(775, 12);
+            this.panel4.Location = new System.Drawing.Point(735, 15);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(325, 420);
+            this.panel4.Size = new System.Drawing.Size(325, 476);
             this.panel4.TabIndex = 23;
             // 
             // label10
@@ -495,9 +502,9 @@ namespace LevelGenerator
             // 
             // bSaveProduction
             // 
-            this.bSaveProduction.Location = new System.Drawing.Point(694, 42);
+            this.bSaveProduction.Location = new System.Drawing.Point(108, 6);
             this.bSaveProduction.Name = "bSaveProduction";
-            this.bSaveProduction.Size = new System.Drawing.Size(75, 23);
+            this.bSaveProduction.Size = new System.Drawing.Size(102, 48);
             this.bSaveProduction.TabIndex = 24;
             this.bSaveProduction.Text = "Save";
             this.bSaveProduction.UseVisualStyleBackColor = true;
@@ -505,9 +512,9 @@ namespace LevelGenerator
             // 
             // bLoadProduction
             // 
-            this.bLoadProduction.Location = new System.Drawing.Point(694, 71);
+            this.bLoadProduction.Location = new System.Drawing.Point(227, 6);
             this.bLoadProduction.Name = "bLoadProduction";
-            this.bLoadProduction.Size = new System.Drawing.Size(75, 23);
+            this.bLoadProduction.Size = new System.Drawing.Size(93, 48);
             this.bLoadProduction.TabIndex = 25;
             this.bLoadProduction.Text = "Load";
             this.bLoadProduction.UseVisualStyleBackColor = true;
@@ -515,9 +522,9 @@ namespace LevelGenerator
             // 
             // bSaveSymbol
             // 
-            this.bSaveSymbol.Location = new System.Drawing.Point(388, 420);
+            this.bSaveSymbol.Location = new System.Drawing.Point(6, 192);
             this.bSaveSymbol.Name = "bSaveSymbol";
-            this.bSaveSymbol.Size = new System.Drawing.Size(166, 23);
+            this.bSaveSymbol.Size = new System.Drawing.Size(156, 23);
             this.bSaveSymbol.TabIndex = 26;
             this.bSaveSymbol.Text = "Save Symbol";
             this.bSaveSymbol.UseVisualStyleBackColor = true;
@@ -526,16 +533,16 @@ namespace LevelGenerator
             // lBSymbols
             // 
             this.lBSymbols.FormattingEnabled = true;
-            this.lBSymbols.Location = new System.Drawing.Point(389, 286);
+            this.lBSymbols.Location = new System.Drawing.Point(3, 52);
             this.lBSymbols.Name = "lBSymbols";
-            this.lBSymbols.Size = new System.Drawing.Size(166, 95);
+            this.lBSymbols.Size = new System.Drawing.Size(144, 95);
             this.lBSymbols.TabIndex = 27;
             // 
             // bDeleteSymbol
             // 
-            this.bDeleteSymbol.Location = new System.Drawing.Point(388, 449);
+            this.bDeleteSymbol.Location = new System.Drawing.Point(6, 221);
             this.bDeleteSymbol.Name = "bDeleteSymbol";
-            this.bDeleteSymbol.Size = new System.Drawing.Size(166, 23);
+            this.bDeleteSymbol.Size = new System.Drawing.Size(156, 23);
             this.bDeleteSymbol.TabIndex = 28;
             this.bDeleteSymbol.Text = "Delete symbol";
             this.bDeleteSymbol.UseVisualStyleBackColor = true;
@@ -543,27 +550,66 @@ namespace LevelGenerator
             // 
             // tBSymbolName
             // 
-            this.tBSymbolName.Location = new System.Drawing.Point(388, 394);
+            this.tBSymbolName.Location = new System.Drawing.Point(6, 166);
             this.tBSymbolName.Name = "tBSymbolName";
-            this.tBSymbolName.Size = new System.Drawing.Size(164, 20);
+            this.tBSymbolName.Size = new System.Drawing.Size(156, 20);
             this.tBSymbolName.TabIndex = 29;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 150);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 13);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "Symbol name:";
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.lBSymbols);
+            this.panel5.Controls.Add(this.bDeleteSymbol);
+            this.panel5.Controls.Add(this.label11);
+            this.panel5.Controls.Add(this.bSaveSymbol);
+            this.panel5.Controls.Add(this.tBSymbolName);
+            this.panel5.Location = new System.Drawing.Point(556, 15);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(173, 249);
+            this.panel5.TabIndex = 31;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label12.Location = new System.Drawing.Point(46, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(104, 24);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "SYMBOLS:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.buttonApplyRule);
+            this.panel6.Controls.Add(this.bLoadProduction);
+            this.panel6.Controls.Add(this.bSaveProduction);
+            this.panel6.Location = new System.Drawing.Point(-1, 416);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(325, 59);
+            this.panel6.TabIndex = 32;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 693);
-            this.Controls.Add(this.tBSymbolName);
-            this.Controls.Add(this.bDeleteSymbol);
-            this.Controls.Add(this.lBSymbols);
-            this.Controls.Add(this.bSaveSymbol);
-            this.Controls.Add(this.bLoadProduction);
-            this.Controls.Add(this.bSaveProduction);
+            this.ClientSize = new System.Drawing.Size(1072, 502);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.buttonApplyRule);
             this.Controls.Add(this.panelRightGraph);
             this.Controls.Add(this.panelLeftGraph);
             this.Name = "Form1";
@@ -580,8 +626,10 @@ namespace LevelGenerator
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -625,6 +673,10 @@ namespace LevelGenerator
         private System.Windows.Forms.ListBox lBSymbols;
         private System.Windows.Forms.Button bDeleteSymbol;
         private System.Windows.Forms.TextBox tBSymbolName;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label12;
     }
 }
 

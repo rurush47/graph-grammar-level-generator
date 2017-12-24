@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using LevelGenerator.Serialization;
 using Microsoft.Msagl.Drawing;
 using Microsoft.Msagl.GraphViewerGdi;
 using Color = System.Drawing.Color;
@@ -151,23 +151,18 @@ namespace LevelGenerator
             Rule listRule = _rules.Find(r => r.Name == text);
             if (listRule != null)
             {
-                //TODO add question prompt
                 _rules.Remove(listRule);
             }
             _rules.Add(rule.CloneRule());
 
             SetRuleFocus(rule);
-            //lBRules.SelectedIndex = _rules.IndexOf(rule) + 1;
             RefreshListBox(lBRules, _rules);
         }
 
         private void SetRuleFocus(Rule rule)
         {
             Rule r = rule.CloneRule();
-            _leftGraph = r.LeftSide;
-            _rightGraph = r.RightSide;
-            gViewerLeft.Graph = _leftGraph;
-            gViewerRight.Graph = _rightGraph;
+            SetViewerRule(r);
         }
 
         private static void RefreshListBox<T>(ListControl lb, List<T> dataSource, string displayMember = "Name")
@@ -203,8 +198,13 @@ namespace LevelGenerator
         {
             Rule r = new Rule();
             r.SetRule("", new Graph(), new Graph());
-            _leftGraph = r.LeftSide;
-            _rightGraph = r.RightSide;
+            SetViewerRule(r);
+        }
+
+        private void SetViewerRule(Rule rule)
+        {
+            _leftGraph = rule.LeftSide;
+            _rightGraph = rule.RightSide;
             gViewerLeft.Graph = _leftGraph;
             gViewerRight.Graph = _rightGraph;
         }
@@ -245,35 +245,29 @@ namespace LevelGenerator
             int randomIndex = r.Next(0, matcher.Matches.Count - 1);
 
             Match m = matcher.Matches[randomIndex];
-
             Replacer.ReplaceNodesWithARule(targetGraph, currentRule, m);
 
-            //TODO make a method for that
-            foreach (Node node in targetGraph.Nodes)
-            {
-                node.Label.Text = node.NodeSymbol;
-            }
-            foreach (Edge edge in targetGraph.Edges)
-            {
-                edge.Label.Text = " ";
-            }
+            ClearEdgesLabels(targetGraph);
 
             _productionGraph = targetGraph;
             gViewerProduction.Graph = _productionGraph;
         }
 
-        private void bSaveRules_Click(object sender, EventArgs e)
+        private void ClearEdgesLabels(Graph graph)
         {
-            XmlSerializer x = new XmlSerializer(typeof(ProductionSet));
-
-            List<Rule.SerializedRule> ruleList = new List<Rule.SerializedRule>();
-            foreach (Rule rule in _rules)
+            foreach (Node node in graph.Nodes)
             {
-                Rule.SerializedRule sr = new Rule.SerializedRule();
-                sr.Serialize(rule);
-                ruleList.Add(sr);
+                node.Label.Text = node.NodeSymbol;
             }
-            ProductionSet ps = new ProductionSet(ruleList, _symbols);
+            foreach (Edge edge in graph.Edges)
+            {
+                edge.Label.Text = " ";
+            }
+        }
+
+        private void SaveXML<T>(T dataSource)
+        {
+            XmlSerializer x = new XmlSerializer(typeof(T));
 
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "XML file|*.xml";
@@ -284,30 +278,59 @@ namespace LevelGenerator
             {
                 System.IO.FileStream fs =
                     (System.IO.FileStream)saveFileDialog1.OpenFile();
-                x.Serialize(fs, ps);
+                x.Serialize(fs, dataSource);
                 fs.Close();
             }
         }
 
+        private object LoadXML<T>()
+        {
+            T pointer = default(T);
+            try
+            {
+                XmlSerializer xs = new XmlSerializer(typeof(T));
+
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                openFileDialog1.Filter = "XML file|*.xml";
+                openFileDialog1.Title = "Open XML";
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    System.IO.StreamReader sr = new
+                        System.IO.StreamReader(openFileDialog1.FileName);
+                    pointer = (T)xs.Deserialize(sr);
+                    sr.Close();
+                    return pointer;
+                }
+            }
+            catch (Exception e)
+            {
+                ShowMessage("Couldn't load XML");
+            }
+            return pointer;
+        }
+
+        private void bSaveRules_Click(object sender, EventArgs e)
+        {
+            List<SerializedRule> ruleList = new List<SerializedRule>();
+            foreach (Rule rule in _rules)
+            {
+                SerializedRule sr = new SerializedRule();
+                sr.Serialize(rule);
+                ruleList.Add(sr);
+            }
+            ProductionSet ps = new ProductionSet(ruleList, _symbols);
+
+            SaveXML(ps);
+        }
+
         private void bLoadRules_Click(object sender, EventArgs e)
         {
-            XmlSerializer xs = new XmlSerializer(typeof(ProductionSet));
-            ProductionSet ps = null;
-
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "XML file|*.xml";
-            openFileDialog1.Title = "Open XML";
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                System.IO.StreamReader sr = new
-                    System.IO.StreamReader(openFileDialog1.FileName);
-                ps = (ProductionSet)xs.Deserialize(sr);
-                sr.Close();
-            }
+            ProductionSet ps = (ProductionSet)LoadXML<ProductionSet>();
+            if (ps == null) return;
 
             List<Rule> rules = new List<Rule>();
-            foreach (Rule.SerializedRule serializedRule in ps.Rules)
+            foreach (SerializedRule serializedRule in ps.Rules)
             {
                 rules.Add(serializedRule.Deserialize());
             }
@@ -340,42 +363,18 @@ namespace LevelGenerator
 
         private void bSaveProduction_Click(object sender, EventArgs e)
         {
-            XmlSerializer x = new XmlSerializer(typeof(SerializedGraph));
             SerializedGraph sg = new SerializedGraph();
             sg.Serialize(_productionGraph);
-
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "XML file|*.xml";
-            saveFileDialog1.Title = "Save as XML";
-            saveFileDialog1.ShowDialog();
-  
-            if (saveFileDialog1.FileName != "")
-            {
-                System.IO.FileStream fs =
-                    (System.IO.FileStream)saveFileDialog1.OpenFile();
-                x.Serialize(fs, sg);
-                fs.Close();
-            }
+            SaveXML(sg);
         }
 
         private void bLoadProduction_Click(object sender, EventArgs e)
         {
-            XmlSerializer x = new XmlSerializer(typeof(SerializedGraph));
+            SerializedGraph sg = (SerializedGraph)LoadXML<SerializedGraph>();
+            if (sg == null) return;
 
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "XML file|*.xml";
-            openFileDialog1.Title = "Open XML";
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                System.IO.StreamReader sr = new
-                    System.IO.StreamReader(openFileDialog1.FileName);
-                SerializedGraph sg = (SerializedGraph)x.Deserialize(sr);
-                sr.Close();
-
-                _productionGraph = sg.Deserialize();
-                gViewerProduction.Graph = _productionGraph;
-            }
+            _productionGraph = sg.Deserialize();
+            gViewerProduction.Graph = _productionGraph;
         }
 
         private void button1_Click(object sender, EventArgs e)

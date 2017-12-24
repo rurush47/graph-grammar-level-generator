@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Msagl.Drawing;
 
-namespace LevelGenerator
+namespace LevelGenerator.Serialization
 {
     [Serializable]
     public class SerializedGraph
