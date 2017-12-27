@@ -111,17 +111,6 @@ namespace NecrodancerGenerator
             return cells;
         }
 
-        private Cell GetRandomEmptyNeighbour(IntVector2 pos)
-        {
-            List<Cell> randomNs = GetEmptyNeighbours(pos);
-            if (randomNs.Count > 0)
-            {
-                Random r = new Random();
-                return randomNs[r.Next(0, randomNs.Count)];
-            }
-            return null;
-        }
-
         private Cell GetPreferedNeighbour(IntVector2 pos)
         {
             List<Cell> randomNs = GetEmptyNeighbours(pos);

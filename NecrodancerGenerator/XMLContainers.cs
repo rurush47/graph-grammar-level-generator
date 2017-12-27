@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using NecrodancerGenerator;
 
-namespace NecrodancerLevelGenerator
+namespace NecrodancerGenerator
 {
     public class XmlContainers
     {

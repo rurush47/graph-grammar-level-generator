@@ -58,7 +58,6 @@
     <Compile Include="GeneratedDungeon.cs" />
     <Compile Include="Generator.cs" />
     <Compile Include="Grid.cs" />
-    <Compile Include="IMovable.cs" />
     <Compile Include="IntVector2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

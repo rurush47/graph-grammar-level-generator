@@ -1,6 +1,0 @@
-﻿namespace NecrodancerGenerator
-{
-    interface IMovable
-    {
-    }
-}

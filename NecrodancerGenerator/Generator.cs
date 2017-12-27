@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing.Text;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Msagl.Drawing;
@@ -105,7 +104,6 @@ namespace NecrodancerGenerator
                 foreach (Edge edge in parentNode.OutEdges)
                 {
                     //child node is a child of n
-
                     Node childNode = edge.TargetNode;
                     Room childRoom = Utils.DeepClone(
                         _symbolToRooms[childNode.NodeSymbol][r.Next(0, _symbolToRooms[childNode.NodeSymbol].Count)]);

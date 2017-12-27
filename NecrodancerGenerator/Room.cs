@@ -35,25 +35,6 @@ namespace NecrodancerLevelGenerator
             SetRectangle();
         }
 
-        //        public bool SetNeighbour(Neighbourhood side, Room neighbour)
-        //        {
-        //            if (_neighbourhood.ContainsKey(side))
-        //            {
-        //                _neighbourhood.Add(side, neighbour);
-        //            }
-        //            return false;
-        //        }
-
-        public bool SetNeighbour(Neighbourhood neighbour)
-        {
-            if (!Neighbours.Contains(neighbour))
-            {
-                Neighbours.Add(neighbour);
-                return true;
-            }
-            return false;
-        }
-
         public void SetRectangle()
         {
             int xMin = Level.Tiles.Tile.Select(t => Int32.Parse(t.X)).ToList().Min(x => x);
@@ -66,11 +47,6 @@ namespace NecrodancerLevelGenerator
 
             Rectangle = new Rectangle(xMin, yMax, width, height);
             Position = new IntVector2(xMin, yMin);
-        }
-
-        public void ChangePosition(IntVector2 newPos)
-        {
-            MoveBy(newPos - Position);
         }
 
         public void MoveBy(IntVector2 vec)

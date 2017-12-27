@@ -147,6 +147,16 @@ namespace LevelGenerator
             Graph rightSide = gViewerRight.Graph;
             rule.SetRule(text, leftSide, rightSide);
 
+            try
+            {
+                rule.IsValid();
+            }
+            catch (Exception e)
+            {
+                ShowMessage(e.Message);
+                return;
+            }
+
             //Overwrite rule
             Rule listRule = _rules.Find(r => r.Name == text);
             if (listRule != null)
