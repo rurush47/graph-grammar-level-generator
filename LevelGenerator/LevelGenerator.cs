@@ -10,7 +10,7 @@ using Color = System.Drawing.Color;
 
 namespace LevelGenerator
 {
-    public partial class Form1 : Form
+    public partial class LevelGenerator : Form
     {
         private Graph _leftGraph;
         private Graph _rightGraph;
@@ -18,8 +18,9 @@ namespace LevelGenerator
         private GViewer _currentGViewer;
         private List<Rule> _rules = new List<Rule>();
         private List<string> _symbols = new List<string>();
+        private Matcher _matcher;
 
-        public Form1()
+        public LevelGenerator()
         {
             InitializeComponent();
 
@@ -242,19 +243,19 @@ namespace LevelGenerator
             Graph targetGraph = _productionGraph;
             Rule currentRule = GetItemFromListBox<Rule>(lBRules);
 
-            Matcher matcher = new Matcher();
-            matcher.CheckSubgraphPresent(currentRule, targetGraph);
+            _matcher = new Matcher();
+            _matcher.CheckSubgraphPresent(currentRule, targetGraph);
 
-            if (matcher.Matches.Count == 0)
+            if (_matcher.Matches.Count == 0)
             {
                 ShowMessage("No matches found in mission graph!");
                 return;
             }
 
             Random r = new Random();
-            int randomIndex = r.Next(0, matcher.Matches.Count - 1);
+            int randomIndex = r.Next(0, _matcher.Matches.Count - 1);
 
-            Match m = matcher.Matches[randomIndex];
+            Match m = _matcher.Matches[randomIndex];
             Replacer.ReplaceNodesWithARule(targetGraph, currentRule, m);
 
             ClearEdgesLabels(targetGraph);

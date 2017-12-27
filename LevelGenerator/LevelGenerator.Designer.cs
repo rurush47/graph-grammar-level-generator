@@ -2,7 +2,7 @@
 
 namespace LevelGenerator
 {
-    partial class Form1
+    partial class LevelGenerator
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace LevelGenerator
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LevelGenerator));
             this.panelLeftGraph = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.gViewerLeft = new Microsoft.Msagl.GraphViewerGdi.GViewer();
@@ -62,9 +62,10 @@ namespace LevelGenerator
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.bSaveProduction = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.bLoadProduction = new System.Windows.Forms.Button();
+            this.bSaveProduction = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.bSaveSymbol = new System.Windows.Forms.Button();
             this.lBSymbols = new System.Windows.Forms.ListBox();
             this.bDeleteSymbol = new System.Windows.Forms.Button();
@@ -72,15 +73,14 @@ namespace LevelGenerator
             this.label11 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panelLeftGraph.SuspendLayout();
             this.panelRightGraph.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLeftGraph
@@ -490,15 +490,26 @@ namespace LevelGenerator
             this.panel4.Size = new System.Drawing.Size(325, 476);
             this.panel4.TabIndex = 23;
             // 
-            // label10
+            // panel6
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label10.Location = new System.Drawing.Point(94, 2);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(139, 24);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "PRODUCTION:";
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.buttonApplyRule);
+            this.panel6.Controls.Add(this.bLoadProduction);
+            this.panel6.Controls.Add(this.bSaveProduction);
+            this.panel6.Location = new System.Drawing.Point(-1, 416);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(325, 59);
+            this.panel6.TabIndex = 32;
+            // 
+            // bLoadProduction
+            // 
+            this.bLoadProduction.Location = new System.Drawing.Point(227, 6);
+            this.bLoadProduction.Name = "bLoadProduction";
+            this.bLoadProduction.Size = new System.Drawing.Size(93, 48);
+            this.bLoadProduction.TabIndex = 25;
+            this.bLoadProduction.Text = "Load";
+            this.bLoadProduction.UseVisualStyleBackColor = true;
+            this.bLoadProduction.Click += new System.EventHandler(this.bLoadProduction_Click);
             // 
             // bSaveProduction
             // 
@@ -510,15 +521,15 @@ namespace LevelGenerator
             this.bSaveProduction.UseVisualStyleBackColor = true;
             this.bSaveProduction.Click += new System.EventHandler(this.bSaveProduction_Click);
             // 
-            // bLoadProduction
+            // label10
             // 
-            this.bLoadProduction.Location = new System.Drawing.Point(227, 6);
-            this.bLoadProduction.Name = "bLoadProduction";
-            this.bLoadProduction.Size = new System.Drawing.Size(93, 48);
-            this.bLoadProduction.TabIndex = 25;
-            this.bLoadProduction.Text = "Load";
-            this.bLoadProduction.UseVisualStyleBackColor = true;
-            this.bLoadProduction.Click += new System.EventHandler(this.bLoadProduction_Click);
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label10.Location = new System.Drawing.Point(94, 2);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(139, 24);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "PRODUCTION:";
             // 
             // bSaveSymbol
             // 
@@ -589,18 +600,7 @@ namespace LevelGenerator
             this.label12.Text = "SYMBOLS:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.buttonApplyRule);
-            this.panel6.Controls.Add(this.bLoadProduction);
-            this.panel6.Controls.Add(this.bSaveProduction);
-            this.panel6.Location = new System.Drawing.Point(-1, 416);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(325, 59);
-            this.panel6.TabIndex = 32;
-            // 
-            // Form1
+            // LevelGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -612,8 +612,8 @@ namespace LevelGenerator
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelRightGraph);
             this.Controls.Add(this.panelLeftGraph);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "LevelGenerator";
+            this.Text = "Level Generator";
             this.panelLeftGraph.ResumeLayout(false);
             this.panelLeftGraph.PerformLayout();
             this.panelRightGraph.ResumeLayout(false);
@@ -626,9 +626,9 @@ namespace LevelGenerator
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

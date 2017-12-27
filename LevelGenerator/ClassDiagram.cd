@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LevelGenerator.Serialization.SerializedGraph">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="LevelGenerator.Serialization.SerializedGraph.SerializedNode" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Serialization\SerializedGraph.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="LevelGenerator.Serialization.SerializedGraph.SerializedEdge" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Serialization\SerializedGraph.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAABAQAAAAAAAAAAAAAAAAACBAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Serialization\SerializedGraph.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelGenerator.Serialization.SerializedRule">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAQAACDAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialization\SerializedRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelGenerator.LevelGenerator">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="bDeleteRule" Hidden="true" />
+      <Method Name="bDeleteRule_Click" Hidden="true" />
+      <Field Name="bDeleteSymbol" Hidden="true" />
+      <Method Name="bDeleteSymbol_Click" Hidden="true" />
+      <Field Name="bLoadProduction" Hidden="true" />
+      <Method Name="bLoadProduction_Click" Hidden="true" />
+      <Field Name="bLoadRules" Hidden="true" />
+      <Method Name="bLoadRules_Click" Hidden="true" />
+      <Field Name="bSaveProduction" Hidden="true" />
+      <Method Name="bSaveProduction_Click" Hidden="true" />
+      <Field Name="bSaveRules" Hidden="true" />
+      <Method Name="bSaveRules_Click" Hidden="true" />
+      <Field Name="bSaveSymbol" Hidden="true" />
+      <Method Name="button1_Click" Hidden="true" />
+      <Field Name="buttonAddNode" Hidden="true" />
+      <Method Name="buttonAddNode_Click" Hidden="true" />
+      <Field Name="buttonApplyRule" Hidden="true" />
+      <Method Name="buttonApplyRule_Click" Hidden="true" />
+      <Field Name="buttonClear" Hidden="true" />
+      <Method Name="buttonClear_Click" Hidden="true" />
+      <Field Name="buttonDeleteNode" Hidden="true" />
+      <Method Name="buttonDeleteNode_Click" Hidden="true" />
+      <Field Name="buttonNewRule" Hidden="true" />
+      <Method Name="buttonNewRule_Click" Hidden="true" />
+      <Field Name="cBSymbols" Hidden="true" />
+      <Method Name="cBSymbols_SelectedIndexChanged" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="gViewerLeft" Hidden="true" />
+      <Method Name="gViewerLeft_Click" Hidden="true" />
+      <Field Name="gViewerProduction" Hidden="true" />
+      <Field Name="gViewerRight" Hidden="true" />
+      <Method Name="gViewerRight_Click" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label10" Hidden="true" />
+      <Field Name="label11" Hidden="true" />
+      <Field Name="label12" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label7" Hidden="true" />
+      <Field Name="label8" Hidden="true" />
+      <Field Name="label9" Hidden="true" />
+      <Field Name="lBRules" Hidden="true" />
+      <Method Name="lBRules_SelectedIndexChanged" Hidden="true" />
+      <Field Name="lBSymbols" Hidden="true" />
+      <Method Name="LevelGenerator" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="panel2" Hidden="true" />
+      <Field Name="panel3" Hidden="true" />
+      <Field Name="panel4" Hidden="true" />
+      <Field Name="panel5" Hidden="true" />
+      <Field Name="panel6" Hidden="true" />
+      <Field Name="panelLeftGraph" Hidden="true" />
+      <Method Name="panelLeftGraph_Click" Hidden="true" />
+      <Field Name="panelRightGraph" Hidden="true" />
+      <Method Name="panelRightGraph_Click" Hidden="true" />
+      <Field Name="tBNewNode" Hidden="true" />
+      <Field Name="tBNewRule" Hidden="true" />
+      <Field Name="tBNodeNumber" Hidden="true" />
+      <Field Name="tBSymbolName" Hidden="true" />
+    </Members>
+    <AssociationLine Name="_rightGraph" Type="Microsoft.Msagl.Drawing.Graph" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="1.188" />
+        <Point X="3.5" Y="1.188" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.277" Y="-0.43" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="_leftGraph" Type="Microsoft.Msagl.Drawing.Graph" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="0.812" />
+        <Point X="3.5" Y="0.812" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_productionGraph" Type="Microsoft.Msagl.Drawing.Graph">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.027" Y="0.289" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>cEFAsAiggqRAgBAAOgK0gggOCCiBTSQhQEADBUaEFAA=</HashCode>
+      <FileName>LevelGenerator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_rightGraph" />
+      <Field Name="_leftGraph" />
+      <Field Name="_productionGraph" />
+      <Field Name="_matcher" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_rules" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LevelGenerator.Match">
+    <Position X="8.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Match.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelGenerator.Matcher">
+    <Position X="5.75" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAgAAAABAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Matcher.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="Matches" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LevelGenerator.ProductionSet">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProductionSet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="Rules" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="LevelGenerator.Replacer">
+    <Position X="5.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Replacer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelGenerator.Rule">
+    <Position X="3.5" Y="2" Width="1.5" />
+    <AssociationLine Name="LeftSide" Type="Microsoft.Msagl.Drawing.Graph" FixedToPoint="true">
+      <Path>
+        <Point X="3.688" Y="2" />
+        <Point X="3.688" Y="1.441" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.765" Y="0.3" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="RightSide" Type="Microsoft.Msagl.Drawing.Graph" FixedToPoint="true">
+      <Path>
+        <Point X="4.688" Y="2" />
+        <Point X="4.688" Y="1.441" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.827" Y="0.279" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAEAAAAAAwAAAQAACCAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rule.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LeftSide" />
+      <Property Name="RightSide" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.Msagl.Drawing.Graph" Collapsed="true">
+    <Position X="3.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
