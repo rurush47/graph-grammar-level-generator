@@ -49,9 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Corridor.cs" />
-    <Compile Include="Form1.cs" />
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="DungeonGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DungeonGenerator.Designer.cs">
+      <DependentUpon>DungeonGenerator.cs</DependentUpon>
     </Compile>
     <Compile Include="GeneratedDungeon.cs" />
     <Compile Include="Generator.cs" />
@@ -63,8 +65,8 @@
     <Compile Include="RoomObject.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="XMLContainers.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="DungeonGenerator.resx">
+      <DependentUpon>DungeonGenerator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
