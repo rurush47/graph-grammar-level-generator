@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NecrodancerGenerator.GeneratedDungeon">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedDungeon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NecrodancerGenerator.DungeonGenerator">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <Members>
+      <Method Name="AllocConsole" Hidden="true" />
+      <Field Name="bLoadGraph" Hidden="true" />
+      <Method Name="bLoadGraph_Click" Hidden="true" />
+      <Field Name="button1" Hidden="true" />
+      <Method Name="button1_Click" Hidden="true" />
+      <Method Name="button1_Click_1" Hidden="true" />
+      <Field Name="buttonLoadRooms" Hidden="true" />
+      <Field Name="buttonSaveDungeon" Hidden="true" />
+      <Method Name="buttonSaveDungeon_Click" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="Form1_Load" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="lbRooms" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ACAAIQCAACAIARgAAACABAAGAAAKAgggAEQAAAAAAAA=</HashCode>
+      <FileName>DungeonGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NecrodancerGenerator.Corridor">
+    <Position X="6.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Corridor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NecrodancerGenerator.Cell">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAQAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NecrodancerGenerator.Grid">
+    <Position X="10.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAIAAAAgAgAAAApAIQQBAABAAAgAAAAAABAAAMAAAA=</HashCode>
+      <FileName>Grid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NecrodancerGenerator.IntVector2">
+    <Position X="12.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAA4AEAAAAAAAAIAAAAAAAAAoAA4AA=</HashCode>
+      <FileName>IntVector2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NecrodancerGenerator.Room">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAQAEAAiAAABAAAAAAAAIBA=</HashCode>
+      <FileName>Room.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NecrodancerGenerator.RoomObject" Collapsed="true">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>RoomObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NecrodancerGenerator.Utils">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NecrodancerGenerator.XmlContainers">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="NecrodancerGenerator.XmlContainers.Crates" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Chests" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Level" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Chest" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Trap" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Enemy" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Item" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Dungeon" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Items" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Crate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Shrine" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Shrines" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Traps" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Enemies" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Tile" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="NecrodancerGenerator.XmlContainers.Tiles" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>XMLContainers.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XMLContainers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

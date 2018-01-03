@@ -10,7 +10,7 @@ using Color = System.Drawing.Color;
 
 namespace LevelGenerator
 {
-    public partial class LevelGenerator : Form
+    public partial class GraphEditor : Form
     {
         private Graph _leftGraph;
         private Graph _rightGraph;
@@ -20,7 +20,7 @@ namespace LevelGenerator
         private List<string> _symbols = new List<string>();
         private Matcher _matcher;
 
-        public LevelGenerator()
+        public GraphEditor()
         {
             InitializeComponent();
 
@@ -62,7 +62,7 @@ namespace LevelGenerator
             }
         }
 
-        private void AddNewNodeToSelectedGraph(string text)
+        private void AddNewNodeToGraph(string text)
         {
             if (text == null) return;
 
@@ -114,7 +114,7 @@ namespace LevelGenerator
         private void buttonAddNode_Click(object sender, EventArgs e)
         {
             String text = GetTextFromTextBox(tBNewNode);
-            AddNewNodeToSelectedGraph(text);
+            AddNewNodeToGraph(text);
         }
 
         private string GetTextFromTextBox(TextBox tb)

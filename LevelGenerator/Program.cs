@@ -16,7 +16,7 @@ namespace LevelGenerator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LevelGenerator());
+            Application.Run(new GraphEditor());
         }
     }
 }

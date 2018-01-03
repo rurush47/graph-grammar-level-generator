@@ -2,7 +2,7 @@
 
 namespace LevelGenerator
 {
-    partial class LevelGenerator
+    partial class GraphEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace LevelGenerator
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LevelGenerator));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GraphEditor));
             this.panelLeftGraph = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.gViewerLeft = new Microsoft.Msagl.GraphViewerGdi.GViewer();
@@ -600,7 +600,7 @@ namespace LevelGenerator
             this.label12.Text = "SYMBOLS:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // LevelGenerator
+            // GraphEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -612,8 +612,8 @@ namespace LevelGenerator
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelRightGraph);
             this.Controls.Add(this.panelLeftGraph);
-            this.Name = "LevelGenerator";
-            this.Text = "Level Generator";
+            this.Name = "GraphEditor";
+            this.Text = "Graph Editor";
             this.panelLeftGraph.ResumeLayout(false);
             this.panelLeftGraph.PerformLayout();
             this.panelRightGraph.ResumeLayout(false);

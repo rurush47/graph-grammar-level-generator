@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="LevelGenerator.Serialization.SerializedGraph">
-    <Position X="9.75" Y="0.5" Width="1.5" />
+    <Position X="7.5" Y="2.25" Width="1.5" />
     <NestedTypes>
       <Class Name="LevelGenerator.Serialization.SerializedGraph.SerializedNode" Collapsed="true">
         <TypeIdentifier>
@@ -20,14 +20,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="LevelGenerator.Serialization.SerializedRule">
-    <Position X="8" Y="0.5" Width="1.5" />
+    <Position X="5.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAAAAAAAAQAACDAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Serialization\SerializedRule.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="LevelGenerator.LevelGenerator">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+  <Class Name="LevelGenerator.GraphEditor">
+    <Position X="0.5" Y="0.5" Width="2" />
     <Members>
       <Field Name="bDeleteRule" Hidden="true" />
       <Method Name="bDeleteRule_Click" Hidden="true" />
@@ -57,6 +57,7 @@
       <Method Name="cBSymbols_SelectedIndexChanged" Hidden="true" />
       <Field Name="components" Hidden="true" />
       <Method Name="Dispose" Hidden="true" />
+      <Method Name="GraphEditor" Hidden="true" />
       <Field Name="gViewerLeft" Hidden="true" />
       <Method Name="gViewerLeft_Click" Hidden="true" />
       <Field Name="gViewerProduction" Hidden="true" />
@@ -78,7 +79,6 @@
       <Field Name="lBRules" Hidden="true" />
       <Method Name="lBRules_SelectedIndexChanged" Hidden="true" />
       <Field Name="lBSymbols" Hidden="true" />
-      <Method Name="LevelGenerator" Hidden="true" />
       <Field Name="panel1" Hidden="true" />
       <Field Name="panel2" Hidden="true" />
       <Field Name="panel3" Hidden="true" />
@@ -94,20 +94,20 @@
       <Field Name="tBNodeNumber" Hidden="true" />
       <Field Name="tBSymbolName" Hidden="true" />
     </Members>
+    <AssociationLine Name="_leftGraph" Type="Microsoft.Msagl.Drawing.Graph" FixedToPoint="true">
+      <Path>
+        <Point X="2.5" Y="0.812" />
+        <Point X="4" Y="0.812" />
+      </Path>
+    </AssociationLine>
     <AssociationLine Name="_rightGraph" Type="Microsoft.Msagl.Drawing.Graph" FixedToPoint="true">
       <Path>
-        <Point X="2" Y="1.188" />
-        <Point X="3.5" Y="1.188" />
+        <Point X="2.5" Y="1.188" />
+        <Point X="4" Y="1.188" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.277" Y="-0.43" />
       </MemberNameLabel>
-    </AssociationLine>
-    <AssociationLine Name="_leftGraph" Type="Microsoft.Msagl.Drawing.Graph" FixedToPoint="true">
-      <Path>
-        <Point X="2" Y="0.812" />
-        <Point X="3.5" Y="0.812" />
-      </Path>
     </AssociationLine>
     <AssociationLine Name="_productionGraph" Type="Microsoft.Msagl.Drawing.Graph">
       <MemberNameLabel ManuallyPlaced="true">
@@ -115,12 +115,12 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>cEFAsAiggqRAgBAAOgK0gggOCCiBTSQhQEADBUaEFAA=</HashCode>
-      <FileName>LevelGenerator.cs</FileName>
+      <HashCode>cEFAsAiggqRAgBAAOgKkgggOCCiBTSQhQMADBUaEFAA=</HashCode>
+      <FileName>GraphEditor.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="_rightGraph" />
       <Field Name="_leftGraph" />
+      <Field Name="_rightGraph" />
       <Field Name="_productionGraph" />
       <Field Name="_matcher" />
     </ShowAsAssociation>
@@ -129,14 +129,14 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="LevelGenerator.Match">
-    <Position X="8.75" Y="4" Width="1.5" />
+    <Position X="0.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Match.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LevelGenerator.Matcher">
-    <Position X="5.75" Y="3.5" Width="2" />
+    <Position X="3.5" Y="4.5" Width="2" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAgAAAABAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>Matcher.cs</FileName>
@@ -156,30 +156,30 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="LevelGenerator.Replacer">
-    <Position X="5.75" Y="2.25" Width="1.5" />
+    <Position X="5.75" Y="5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Replacer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LevelGenerator.Rule">
-    <Position X="3.5" Y="2" Width="1.5" />
-    <AssociationLine Name="LeftSide" Type="Microsoft.Msagl.Drawing.Graph" FixedToPoint="true">
-      <Path>
-        <Point X="3.688" Y="2" />
-        <Point X="3.688" Y="1.441" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-0.765" Y="0.3" />
-      </MemberNameLabel>
-    </AssociationLine>
+    <Position X="4" Y="2" Width="1.5" />
     <AssociationLine Name="RightSide" Type="Microsoft.Msagl.Drawing.Graph" FixedToPoint="true">
       <Path>
-        <Point X="4.688" Y="2" />
-        <Point X="4.688" Y="1.441" />
+        <Point X="5.188" Y="2" />
+        <Point X="5.188" Y="1.441" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-0.827" Y="0.279" />
+        <Position X="-0.473" Y="0.289" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="LeftSide" Type="Microsoft.Msagl.Drawing.Graph" FixedToPoint="true">
+      <Path>
+        <Point X="4.188" Y="2" />
+        <Point X="4.188" Y="1.441" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.38" Y="0.3" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
@@ -187,12 +187,12 @@
       <FileName>Rule.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="LeftSide" />
       <Property Name="RightSide" />
+      <Property Name="LeftSide" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Microsoft.Msagl.Drawing.Graph" Collapsed="true">
-    <Position X="3.5" Y="0.75" Width="1.5" />
+    <Position X="4" Y="0.75" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>

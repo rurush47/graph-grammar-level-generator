@@ -1,18 +1,9 @@
-﻿using NecrodancerGenerator;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 
-public enum Neighbourhood
-{
-    Left,
-    Right,
-    Up,
-    Down
-}
-
-namespace NecrodancerLevelGenerator
+namespace NecrodancerGenerator
 {
     [Serializable]
     public class Room
@@ -21,7 +12,6 @@ namespace NecrodancerLevelGenerator
         public XmlContainers.Level Level;
         public Rectangle Rectangle;
         public IntVector2 Position { get; set; }
-        public List<Neighbourhood> Neighbours = new List<Neighbourhood>();
 
         public Room()
         {

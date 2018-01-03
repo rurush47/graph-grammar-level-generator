@@ -7,22 +7,26 @@ using System.Xml.Serialization;
 using LevelGenerator;
 using LevelGenerator.Serialization;
 using Microsoft.Msagl.Drawing;
-using NecrodancerLevelGenerator;
 
 namespace NecrodancerGenerator
 {
-    public partial class Form1 : Form
+    public partial class DungeonGenerator : Form
     {
         private List<Room> _rooms = new List<Room>();
         private List<Corridor> _corridors;
         private Graph _productonGraph;
 
-        public Form1()
+        public DungeonGenerator()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            GenerateDungeon();
+        }
+
+        public void GenerateDungeon()
         {
             XmlSerializer xs = new XmlSerializer(typeof(XmlContainers.Dungeon));
 
@@ -42,7 +46,7 @@ namespace NecrodancerGenerator
 
                     StreamReader sr = new
                         StreamReader(filePath);
-                    d = (XmlContainers.Dungeon) xs.Deserialize(sr);
+                    d = (XmlContainers.Dungeon)xs.Deserialize(sr);
                     sr.Close();
 
                     Room r = new Room(roomName, d);

@@ -49,9 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Corridor.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form1.cs" />
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
@@ -99,9 +97,9 @@
       <Project>{725cd2cb-cf37-414e-a5a6-f1d87d4d6ede}</Project>
       <Name>GraphViewerGDI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LevelGenerator\LevelGenerator.csproj">
+    <ProjectReference Include="..\LevelGenerator\GraphEditor.csproj">
       <Project>{E10DD4A8-3968-4253-B914-9D3A17F45698}</Project>
-      <Name>LevelGenerator</Name>
+      <Name>GraphEditor</Name>
     </ProjectReference>
     <ProjectReference Include="..\MSAGL\Msagl.csproj">
       <Project>{415d3e3f-7105-46c1-84d2-7ecb34213d92}</Project>

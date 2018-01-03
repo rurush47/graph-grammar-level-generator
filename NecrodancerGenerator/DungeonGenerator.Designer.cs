@@ -1,6 +1,6 @@
 ﻿namespace NecrodancerGenerator
 {
-    partial class Form1
+    partial class DungeonGenerator
     {
         /// <summary>
         /// Required designer variable.

@@ -1,0 +1,3 @@
+[submodule "GraphTransformationLanguage"]
+	path = GraphTransformationLanguage
+	url = https://github.com/rurush47/graph-transformation-language-interpreter.git

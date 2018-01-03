@@ -17,7 +17,7 @@ namespace LevelGenerator
             {
                 if (node.NodeSymbol == rule.LeftSide.Nodes.ToArray()[0].NodeSymbol)
                 {
-                    if (Compare(rule.LeftSide.Nodes.ToArray()[0], node, rule.LeftSide, new List<Edge>()))
+                    if (Compare(rule.LeftSide.Nodes.ToArray()[0], node, new List<Edge>()))
                     {
                         compareReturnValue = true;
 
@@ -32,7 +32,7 @@ namespace LevelGenerator
             return compareReturnValue;
         }
 
-        private bool Compare(Node ruleNode, Node mainNode, Graph ruleLeft, List<Edge> visitedEdges)
+        private bool Compare(Node ruleNode, Node mainNode, List<Edge> visitedEdges)
         {
             if (ruleNode.NodeSymbol != mainNode.NodeSymbol)
                 return false;
@@ -49,7 +49,7 @@ namespace LevelGenerator
                 foreach (Edge mainEdge in mainNode.OutEdges.ToList())
                 {
                     visitedEdges.Add(ruleEdge);
-                    if (Compare(ruleEdge.TargetNode, mainEdge.TargetNode, ruleLeft, visitedEdges))
+                    if (Compare(ruleEdge.TargetNode, mainEdge.TargetNode, visitedEdges))
                     {
                         matched = true;
                         break;

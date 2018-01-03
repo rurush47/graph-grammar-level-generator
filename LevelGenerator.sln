@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelGenerator", "LevelGenerator\LevelGenerator.csproj", "{E10DD4A8-3968-4253-B914-9D3A17F45698}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphEditor", "LevelGenerator\GraphEditor.csproj", "{E10DD4A8-3968-4253-B914-9D3A17F45698}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphViewerGDI", "GraphViewerGDI\GraphViewerGDI.csproj", "{725CD2CB-CF37-414E-A5A6-F1D87D4D6EDE}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "msagl_projects", "msagl_pro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{821BF0B5-ADC7-46CC-810F-C70163F9C4A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NecrodancerGenerator", "NecrodancerGenerator\NecrodancerGenerator.csproj", "{61761E37-3F6C-4DC7-BE3C-8A63F575364E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NecrodancerLevelGenerator", "NecrodancerGenerator\NecrodancerLevelGenerator.csproj", "{61761E37-3F6C-4DC7-BE3C-8A63F575364E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

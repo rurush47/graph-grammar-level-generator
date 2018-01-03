@@ -48,11 +48,11 @@
     <Compile Include="ProductionSet.cs" />
     <Compile Include="Serialization\SerializedGraph.cs" />
     <Compile Include="Matcher.cs" />
-    <Compile Include="View.cs">
+    <Compile Include="GraphEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View.Designer.cs">
-      <DependentUpon>View.cs</DependentUpon>
+    <Compile Include="GraphEditor.Designer.cs">
+      <DependentUpon>GraphEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Match.cs" />
     <Compile Include="Program.cs" />
@@ -60,8 +60,8 @@
     <Compile Include="Replacer.cs" />
     <Compile Include="Rule.cs" />
     <Compile Include="Serialization\SerializedRule.cs" />
-    <EmbeddedResource Include="View.resx">
-      <DependentUpon>View.cs</DependentUpon>
+    <EmbeddedResource Include="GraphEditor.resx">
+      <DependentUpon>GraphEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

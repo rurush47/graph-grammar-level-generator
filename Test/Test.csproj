@@ -63,9 +63,9 @@
       <Project>{725cd2cb-cf37-414e-a5a6-f1d87d4d6ede}</Project>
       <Name>GraphViewerGDI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LevelGenerator\LevelGenerator.csproj">
+    <ProjectReference Include="..\LevelGenerator\GraphEditor.csproj">
       <Project>{e10dd4a8-3968-4253-b914-9d3a17f45698}</Project>
-      <Name>LevelGenerator</Name>
+      <Name>GraphEditor</Name>
     </ProjectReference>
     <ProjectReference Include="..\MSAGL\Msagl.csproj">
       <Project>{415d3e3f-7105-46c1-84d2-7ecb34213d92}</Project>
