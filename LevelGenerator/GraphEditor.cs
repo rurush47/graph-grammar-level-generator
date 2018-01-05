@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using GraphTransformationLanguage;
 using LevelGenerator.Serialization;
 using Microsoft.Msagl.Drawing;
 using Microsoft.Msagl.GraphViewerGdi;
@@ -414,6 +416,51 @@ namespace LevelGenerator
         private void cBSymbols_SelectedIndexChanged(object sender, EventArgs e)
         {
             tBNewNode.Text = GetItemFromListBox<string>(cBSymbols);
+        }
+
+        private void bLoadScript_Click(object sender, EventArgs e)
+        {
+            Stream myStream = null;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 2;
+            openFileDialog1.RestoreDirectory = true;
+
+             
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Source source = new Source(openFileDialog1.FileName);
+                    Lexer lexer = new Lexer(source);
+                    Parser parser = new Parser(lexer);
+
+                    parser.ParseFile();
+
+                    _productionGraph = parser.StartGraph;
+                    _rules = parser.Rules.ConvertAll((input =>
+                    {
+                        Rule r = new Rule();
+                        r.SetRule(input.Name, input.LeftSide, input.RightSide);
+                        return r;
+                    }));
+
+                    foreach (Node node in _productionGraph.Nodes)
+                    {
+                        node.Label.Text = node.NodeSymbol;
+                    }
+                    
+                    gViewerProduction.Graph = _productionGraph;
+                    RefreshListBox(lBRules, _rules);
+                }
+                catch (Exception ex)
+                {
+                    ShowMessage("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+            }
         }
     }
 }

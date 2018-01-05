@@ -73,6 +73,7 @@ namespace LevelGenerator
             this.label11 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.bLoadScript = new System.Windows.Forms.Button();
             this.panelLeftGraph.SuspendLayout();
             this.panelRightGraph.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -282,7 +283,7 @@ namespace LevelGenerator
             // 
             this.buttonApplyRule.Location = new System.Drawing.Point(3, 6);
             this.buttonApplyRule.Name = "buttonApplyRule";
-            this.buttonApplyRule.Size = new System.Drawing.Size(89, 48);
+            this.buttonApplyRule.Size = new System.Drawing.Size(70, 48);
             this.buttonApplyRule.TabIndex = 14;
             this.buttonApplyRule.Text = "Apply rule";
             this.buttonApplyRule.UseVisualStyleBackColor = true;
@@ -493,6 +494,7 @@ namespace LevelGenerator
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.bLoadScript);
             this.panel6.Controls.Add(this.buttonApplyRule);
             this.panel6.Controls.Add(this.bLoadProduction);
             this.panel6.Controls.Add(this.bSaveProduction);
@@ -503,9 +505,9 @@ namespace LevelGenerator
             // 
             // bLoadProduction
             // 
-            this.bLoadProduction.Location = new System.Drawing.Point(227, 6);
+            this.bLoadProduction.Location = new System.Drawing.Point(166, 5);
             this.bLoadProduction.Name = "bLoadProduction";
-            this.bLoadProduction.Size = new System.Drawing.Size(93, 48);
+            this.bLoadProduction.Size = new System.Drawing.Size(74, 48);
             this.bLoadProduction.TabIndex = 25;
             this.bLoadProduction.Text = "Load";
             this.bLoadProduction.UseVisualStyleBackColor = true;
@@ -513,9 +515,9 @@ namespace LevelGenerator
             // 
             // bSaveProduction
             // 
-            this.bSaveProduction.Location = new System.Drawing.Point(108, 6);
+            this.bSaveProduction.Location = new System.Drawing.Point(79, 5);
             this.bSaveProduction.Name = "bSaveProduction";
-            this.bSaveProduction.Size = new System.Drawing.Size(102, 48);
+            this.bSaveProduction.Size = new System.Drawing.Size(81, 48);
             this.bSaveProduction.TabIndex = 24;
             this.bSaveProduction.Text = "Save";
             this.bSaveProduction.UseVisualStyleBackColor = true;
@@ -600,6 +602,16 @@ namespace LevelGenerator
             this.label12.Text = "SYMBOLS:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // bLoadScript
+            // 
+            this.bLoadScript.Location = new System.Drawing.Point(246, 6);
+            this.bLoadScript.Name = "bLoadScript";
+            this.bLoadScript.Size = new System.Drawing.Size(74, 48);
+            this.bLoadScript.TabIndex = 26;
+            this.bLoadScript.Text = "LoadScript";
+            this.bLoadScript.UseVisualStyleBackColor = true;
+            this.bLoadScript.Click += new System.EventHandler(this.bLoadScript_Click);
+            // 
             // GraphEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -677,6 +689,7 @@ namespace LevelGenerator
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button bLoadScript;
     }
 }
 
