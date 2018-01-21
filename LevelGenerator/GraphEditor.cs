@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using GraphTransformationLanguage;
@@ -12,6 +13,12 @@ using Color = System.Drawing.Color;
 
 namespace LevelGenerator
 {
+    public enum MatchMode
+    {
+        Random,
+        First
+    }
+    
     public partial class GraphEditor : Form
     {
         private Graph _leftGraph;
@@ -21,6 +28,9 @@ namespace LevelGenerator
         private List<Rule> _rules = new List<Rule>();
         private List<string> _symbols = new List<string>();
         private Matcher _matcher;
+        private MatchMode _matchMode = MatchMode.Random;
+        private int _minNodes;
+        private int _randomGraphIterations = 500;
 
         public GraphEditor()
         {
@@ -242,39 +252,70 @@ namespace LevelGenerator
 
         private void buttonApplyRule_Click(object sender, EventArgs e)
         {
-            Graph targetGraph = _productionGraph;
+            
             Rule currentRule = GetItemFromListBox<Rule>(lBRules);
 
-            _matcher = new Matcher();
-            _matcher.CheckSubgraphPresent(currentRule, targetGraph);
-
-            if (_matcher.Matches.Count == 0)
+            if (currentRule == null)
             {
-                ShowMessage("No matches found in mission graph!");
+                ShowMessage("Rule not selected form the listbox!");    
                 return;
             }
 
-            Random r = new Random();
-            int randomIndex = r.Next(0, _matcher.Matches.Count - 1);
+            if (!ApplyRule(currentRule))
+            {
+                ShowMessage("No matches found in mission graph!");
+            }
+        }
 
-            Match m = _matcher.Matches[randomIndex];
-            Replacer.ReplaceNodesWithARule(targetGraph, currentRule, m);
+        private bool ApplyRule(Rule rule)
+        {
+            Graph targetGraph = _productionGraph;
+            
+            _matcher = new Matcher();
+            _matcher.CheckSubgraphPresent(rule, targetGraph);
+
+            if (_matcher.Matches.Count == 0)
+            {
+                return false;
+            }
+
+            Match m;
+            if (_matchMode == MatchMode.Random)
+            {
+                Random r = new Random();
+                int randomIndex = r.Next(0, _matcher.Matches.Count - 1);
+                m = _matcher.Matches[randomIndex];
+            }
+            else
+            {
+                m = _matcher.Matches.First();
+            }
+
+            Replacer.ReplaceNodesWithARule(targetGraph, rule, m);
 
             ClearEdgesLabels(targetGraph);
 
             _productionGraph = targetGraph;
             gViewerProduction.Graph = _productionGraph;
-        }
 
+            return true;
+        }
+        
         private void ClearEdgesLabels(Graph graph)
         {
             foreach (Node node in graph.Nodes)
             {
-                node.Label.Text = node.NodeSymbol;
+                if (node.Label != null)
+                {
+                    node.Label.Text = node.NodeSymbol;
+                }
             }
             foreach (Edge edge in graph.Edges)
             {
-                edge.Label.Text = " ";
+                if (edge.Label != null)
+                {
+                    edge.Label.Text = " ";
+                }
             }
         }
 
@@ -428,39 +469,87 @@ namespace LevelGenerator
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
 
-             
-
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    Source source = new Source(openFileDialog1.FileName);
-                    Lexer lexer = new Lexer(source);
-                    Parser parser = new Parser(lexer);
-
-                    parser.ParseFile();
-
-                    _productionGraph = parser.StartGraph;
-                    _rules = parser.Rules.ConvertAll((input =>
-                    {
-                        Rule r = new Rule();
-                        r.SetRule(input.Name, input.LeftSide, input.RightSide);
-                        return r;
-                    }));
-
-                    foreach (Node node in _productionGraph.Nodes)
-                    {
-                        node.Label.Text = node.NodeSymbol;
-                    }
-                    
-                    gViewerProduction.Graph = _productionGraph;
-                    RefreshListBox(lBRules, _rules);
+                    ExecuteScript(openFileDialog1.FileName);
                 }
                 catch (Exception ex)
                 {
                     ShowMessage("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
             }
+        }
+
+        private void GenerateRanomGraph()
+        {
+            Random r = new Random();
+            for (int i = 0; i < _randomGraphIterations; i++)
+            {
+                if (_productionGraph.Nodes.Count() >= _minNodes)
+                {
+                    return;                    
+                }
+                int randomIndex = r.Next(0, _rules.Count - 1);
+                Rule randomRule = _rules[randomIndex];
+                ApplyRule(randomRule);
+            }
+        }
+        
+        private void ExecuteScript(string path)
+        {
+            Source source = new Source(path);
+            Lexer lexer = new Lexer(source);
+            Parser parser = new Parser(lexer);
+            Interpreter interpreter = new Interpreter();
+                    
+            parser.ParseFile();
+
+            interpreter.CheckConfig(parser.Config);
+            if (parser.FixedProduction)
+            {
+                interpreter.CheckProduction(
+                    parser.Rules.Select(r => r.Name).ToList(),
+                    parser.Production);    
+            }
+                    
+            _productionGraph = parser.StartGraph;
+            _rules = parser.Rules.ConvertAll((input =>
+            {
+                Rule r = new Rule();
+                r.SetRule(input.Name, input.LeftSide, input.RightSide);
+                return r;
+            }));
+
+            foreach (Node node in _productionGraph.Nodes)
+            {
+                node.Label.Text = node.NodeSymbol;
+            }
+
+            if (parser.FixedProduction)
+            {
+                foreach (string productionName in parser.Production)
+                {
+                    if (ApplyRule(
+                        _rules.FirstOrDefault(r => r.Name == productionName))) continue;
+                    ShowMessage("Rules provided in specified order cannot be applied");
+                    break;
+                }
+            }
+            else
+            {
+                _minNodes = interpreter.MinimumNodes;
+                _matchMode = interpreter.MatchMode;
+
+                if (_minNodes > 0)
+                {
+                    GenerateRanomGraph();
+                }
+            }
+            
+            gViewerProduction.Graph = _productionGraph;
+            RefreshListBox(lBRules, _rules);
         }
     }
 }

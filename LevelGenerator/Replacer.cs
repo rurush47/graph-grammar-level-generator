@@ -40,6 +40,7 @@ namespace LevelGenerator
                 }
                 else
                 {
+                    graph.RemoveNode(m.Value);
                     continue;
                 }
 

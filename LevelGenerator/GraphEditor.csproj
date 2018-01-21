@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interpreter.cs" />
     <Compile Include="ProductionSet.cs" />
     <Compile Include="Serialization\SerializedGraph.cs" />
     <Compile Include="Matcher.cs" />

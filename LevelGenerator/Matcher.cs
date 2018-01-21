@@ -26,6 +26,7 @@ namespace LevelGenerator
                         _mNodes = new Dictionary<int, Node>();
                         Matches.Add(newMatch);
                     }
+                    _mNodes = new Dictionary<int, Node>();
                 }
             }
 
@@ -37,7 +38,10 @@ namespace LevelGenerator
             if (ruleNode.NodeSymbol != mainNode.NodeSymbol)
                 return false;
 
-            _mNodes.Add(ruleNode.RuleNodeID, mainNode);
+            if (ruleNode.RuleNodeID >= 0)
+            {
+                _mNodes.Add(ruleNode.RuleNodeID, mainNode);
+            }
 
             foreach (Edge ruleEdge in ruleNode.OutEdges.ToList())
             {
