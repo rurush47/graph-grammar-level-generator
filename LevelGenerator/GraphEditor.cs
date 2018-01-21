@@ -28,8 +28,8 @@ namespace LevelGenerator
         private List<Rule> _rules = new List<Rule>();
         private List<string> _symbols = new List<string>();
         private Matcher _matcher;
-        private MatchMode _matchMode = MatchMode.Random;
-        private int _minNodes;
+        public MatchMode MatchMode = MatchMode.Random;
+        public int MinNodes;
         private int _randomGraphIterations = 500;
 
         public GraphEditor()
@@ -140,7 +140,7 @@ namespace LevelGenerator
             return text;
         }
 
-        private void ShowMessage(string message)
+        public void ShowMessage(string message)
         {
             MessageBox.Show(message);
         }
@@ -267,7 +267,7 @@ namespace LevelGenerator
             }
         }
 
-        private bool ApplyRule(Rule rule)
+        public bool ApplyRule(Rule rule)
         {
             Graph targetGraph = _productionGraph;
             
@@ -280,7 +280,7 @@ namespace LevelGenerator
             }
 
             Match m;
-            if (_matchMode == MatchMode.Random)
+            if (MatchMode == MatchMode.Random)
             {
                 Random r = new Random();
                 int randomIndex = r.Next(0, _matcher.Matches.Count - 1);
@@ -467,7 +467,6 @@ namespace LevelGenerator
             openFileDialog1.InitialDirectory = "c:\\";
             openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             openFileDialog1.FilterIndex = 2;
-            openFileDialog1.RestoreDirectory = true;
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -477,17 +476,17 @@ namespace LevelGenerator
                 }
                 catch (Exception ex)
                 {
-                    ShowMessage("Error: Could not read file from disk. Original error: " + ex.Message);
+                    ShowMessage(ex.Message);
                 }
             }
         }
 
-        private void GenerateRanomGraph()
+        public void GenerateRanomGraph()
         {
             Random r = new Random();
             for (int i = 0; i < _randomGraphIterations; i++)
             {
-                if (_productionGraph.Nodes.Count() >= _minNodes)
+                if (_productionGraph.Nodes.Count() >= MinNodes)
                 {
                     return;                    
                 }
@@ -502,52 +501,81 @@ namespace LevelGenerator
             Source source = new Source(path);
             Lexer lexer = new Lexer(source);
             Parser parser = new Parser(lexer);
-            Interpreter interpreter = new Interpreter();
-                    
-            parser.ParseFile();
-
-            interpreter.CheckConfig(parser.Config);
-            if (parser.FixedProduction)
-            {
-                interpreter.CheckProduction(
-                    parser.Rules.Select(r => r.Name).ToList(),
-                    parser.Production);    
-            }
-                    
-            _productionGraph = parser.StartGraph;
-            _rules = parser.Rules.ConvertAll((input =>
-            {
-                Rule r = new Rule();
-                r.SetRule(input.Name, input.LeftSide, input.RightSide);
-                return r;
-            }));
-
-            foreach (Node node in _productionGraph.Nodes)
-            {
-                node.Label.Text = node.NodeSymbol;
-            }
-
-            if (parser.FixedProduction)
-            {
-                foreach (string productionName in parser.Production)
-                {
-                    if (ApplyRule(
-                        _rules.FirstOrDefault(r => r.Name == productionName))) continue;
-                    ShowMessage("Rules provided in specified order cannot be applied");
-                    break;
-                }
-            }
-            else
-            {
-                _minNodes = interpreter.MinimumNodes;
-                _matchMode = interpreter.MatchMode;
-
-                if (_minNodes > 0)
-                {
-                    GenerateRanomGraph();
-                }
-            }
+            Interpreter interpreter = new Interpreter(parser, this);        
             
+            interpreter.InterpreteScript();
+//            parser.ParseFile();
+//
+//            interpreter.CheckConfig(parser.Config);
+//            if (parser.FixedProduction)
+//            {
+//                interpreter.CheckProduction(
+//                    parser.Rules.Select(r => r.Name).ToList(),
+//                    parser.Production);    
+//            }
+//                    
+//            _productionGraph = parser.StartGraph;
+//            _rules = parser.Rules.ConvertAll((input =>
+//            {
+//                Rule r = new Rule();
+//                r.SetRule(input.Name, input.LeftSide, input.RightSide);
+//                return r;
+//            }));
+//
+//            foreach (var rule in _rules)
+//            {
+//                try
+//                {
+//                    rule.IsValid();
+//                }
+//                catch (Exception e)
+//                {
+//                    throw;
+//                }
+//            }
+//
+//            foreach (Node node in _productionGraph.Nodes)
+//            {
+//                node.Label.Text = node.NodeSymbol;
+//            }
+//
+//            if (parser.FixedProduction)
+//            {
+//                foreach (string productionName in parser.Production)
+//                {
+//                    if (ApplyRule(
+//                        _rules.FirstOrDefault(r => r.Name == productionName))) continue;
+//                    ShowMessage("Rules provided in specified order cannot be applied");
+//                    break;
+//                }
+//            }
+//            else
+//            {
+//                MinNodes = interpreter.MinimumNodes;
+//                MatchMode = interpreter.MatchMode;
+//
+//                if (MinNodes > 0)
+//                {
+//                    GenerateRanomGraph();
+//                }
+//            }
+//            
+//            gViewerProduction.Graph = _productionGraph;
+//            RefreshListBox(lBRules, _rules);
+        }
+
+        public void SetProductionGraph(Graph productionGraph)
+        {
+            _productionGraph = productionGraph;
+        }
+
+        public void SetRuleList(List<Rule> rules)
+        {
+            _rules = rules;
+        }
+        
+        public void RefreshProductionView()
+        {
             gViewerProduction.Graph = _productionGraph;
             RefreshListBox(lBRules, _rules);
         }
